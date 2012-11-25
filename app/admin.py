@@ -2,13 +2,14 @@ from django.contrib import admin
 from app.models import Choice
 from app.models import Poll
 
-#admin.site.register(Choice)
+# All that is required to enable the admin i-face
+# admin.site.register(Choice)
+# admin.site.register(Poll)
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 3
     
-# admin.site.register(Poll)
 
 class PollAdmin(admin.ModelAdmin):
     #fields = ['pub_date', 'question']

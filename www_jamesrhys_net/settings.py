@@ -103,6 +103,7 @@ ROOT_URLCONF = 'www_jamesrhys_net.urls'
 WSGI_APPLICATION = 'www_jamesrhys_net.wsgi.application'
 
 TEMPLATE_DIRS = (
+    '/var/www/django-sites/www_jamesrhys_net/app/templates'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
