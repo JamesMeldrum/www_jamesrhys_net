@@ -1,10 +1,11 @@
 from django.conf.urls import patterns, include, url
-from django.views.generic import DetailView, ListView
+from app.view_templates.JRMBase import JRMListView
+from django.views.generic import DetailView
 from labs.models import Experiment 
 
 urlpatterns = patterns('',
     url(r'^$',
-        ListView.as_view(
+        JRMListView.as_view(
             queryset=Experiment.objects.order_by('-published')[:5],
             template_name='labs/frontend/index.html')
     ),
