@@ -29,10 +29,14 @@ class Choice(models.Model):
 
 class Tags(models.Model):
     title = models.CharField(max_length = 50)
-    order = models.IntegerField(blank=False)
+    order = models.IntegerField(blank=True)
 
 class Interests(models.Model):
     title = models.CharField(max_length = 50)
-    order = models.IntegerField(blank=False)
+    order = models.IntegerField(blank=True)
+
+class SiteMetaData(models.Model):
+    meta_key = models.CharField(max_length = 256)
+    meta_var = models.CharField(max_length = 512)
 
 # JRM models unique to home page

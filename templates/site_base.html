@@ -1,0 +1,27 @@
+{#
+
+ Author: JRM
+ Date: 11/27/2012
+ Desc: Base template for 
+
+#}
+
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="site_base.css"/>
+    <title>{% block title %}Default Site Title{% endblock title %}
+    {% block meta_app %} 
+        {# Block Meta-data #}
+    {% endblock meta_app %}
+    {% block css_app %} {% endblock css_app %}
+</head>
+<body>
+{% block body_app %}
+{% endblock body_app %}
+
+{# Google Analytics #}
+
+<script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-36634018-1']);_gaq.push(['_setDomainName', 'jamesrhys.net']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+
+</body>
+</html>

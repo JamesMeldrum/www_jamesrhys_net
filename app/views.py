@@ -7,6 +7,9 @@ from django.http import Http404
 from app.models import Poll, Choice
 from django.http import HttpResponse, HttpResponseRedirect
 
+def index(request):
+    return render_to_response('site_base.html')
+
 #def index(request):
 #
 #    latest_poll_list = Poll.objects.all().order_by('-pub_date')[:5]

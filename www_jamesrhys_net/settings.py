@@ -5,7 +5,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('James Rhys', 'james@jamesrhys.net'),
 )
 
 MANAGERS = ADMINS
@@ -104,7 +104,7 @@ ROOT_URLCONF = 'www_jamesrhys_net.urls'
 WSGI_APPLICATION = 'www_jamesrhys_net.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/var/www/django-sites/www_jamesrhys_net/app/templates'
+    '/var/www/django-sites/www_jamesrhys_net/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -118,6 +118,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'labs',
+    'blog',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
