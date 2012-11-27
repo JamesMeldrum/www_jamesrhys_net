@@ -1,6 +1,7 @@
 import datetime
 from django.utils import timezone
 from django.db import models
+#from etc.meta_data_list import META_KEYS
 
 # Create your models here.
 

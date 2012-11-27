@@ -1,4 +1,8 @@
-# Create your views here.
+"""
+    Author: James Meldrum
+    Date: 11/27/2012
+    Desc: Default View request handler
+"""
 
 from django.template import Context,loader, RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
@@ -48,3 +52,9 @@ def vote(request,poll_id):
         selected_choice.votes += 1
         selected_choice.save()
         return HttpResponseRedirect(reverse('poll_results',args=(p.id,)))
+
+def assets_dynamic(request):
+    loader.get
+    pass        
+def assets_static(request):
+    pass        

@@ -16,5 +16,9 @@ class JRMListView(ListView):
         # Call the base implementation first to get a context
         context = super(JRMListView,self).get_context_data(**kwargs)
         # Add in a query set of all the books
-        context['meta_data'] = SiteMetaData.all()
+        context['meta_data'] = SiteMetaData.objects.all()
+        context['site_title'] = "James' Site Title"
+
+        # Space here to configure globals
+
         return context 

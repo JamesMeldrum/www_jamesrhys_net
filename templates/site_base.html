@@ -8,10 +8,13 @@
 
 <!doctype html>
 <head>
-    <link rel="stylesheet" href="site_base.css"/>
-    <title>{% block title %}Default Site Title{% endblock title %}
+    <link rel="stylesheet" href="{{STATIC_URL}}site_base.css"/>
+    <title>{% block title %}{{site_title}{% endblock title %}
+    </title>
     {% block meta_app %} 
-        {# Block Meta-data #}
+        {% for meta in meta_data %}
+            <meta property="{{meta.meta_key}}" content="{{meta.meta_var}}"/>
+        {% endfor %}
     {% endblock meta_app %}
     {% block css_app %} {% endblock css_app %}
 </head>
