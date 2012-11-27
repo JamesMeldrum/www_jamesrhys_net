@@ -24,3 +24,15 @@ class Choice(models.Model):
 
     def __unicode__(self): # Reflected over in admin
         return self.choice
+
+# Core JRM models - used site-wide
+
+class Tags(models.Model):
+    title = models.CharField(max_length = 50)
+    order = models.IntegerField(blank=False)
+
+class Interests(models.Model):
+    title = models.CharField(max_length = 50)
+    order = models.IntegerField(blank=False)
+
+# JRM models unique to home page
