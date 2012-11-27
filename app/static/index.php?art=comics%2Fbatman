@@ -1,0 +1,1143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   
+   
+
+   <title>Chris.com - ASCII ART - Batman - Action Comics - DC Comics - Robin - Bruce Wayne - Gotham City</title>
+
+   <link href="../css/chris2008.css" rel="stylesheet" type="text/css" />
+   <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css' />
+   <link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css' />
+   <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css' />
+   <link rel="StyleSheet" href="dtree.css" type="text/css" />
+
+   <script type="text/javascript" src="../scripts/styley.js"></script>
+
+
+<script type="text/javascript">
+
+      function toggle1(e)
+      {
+      //Checking if select field is enabled
+      if (document.getElementById("btn").value=="Dark on Light")
+      {
+      //Changing the select field state to disabled and changing the value of button to enable
+
+      document.getElementById("btn").value="Light on Dark"
+      setStyleById("art1","background","#FFFFFF");
+      setStyleById("art1","color","#000000");
+      return
+      }
+      //Checking if select field is disabled
+      if (document.getElementById("btn").value=="Light on Dark")
+      {
+      //Changing the select field state to enabled and changing the value of button to disable
+      
+      document.getElementById("btn").value="Dark on Light"
+      setStyleById("art1","background","#2A4767");
+      setStyleById("art1","color","#FFFFFF");
+      return
+      }
+      } 
+
+
+</script>
+
+
+
+<script type="text/javascript" src="dtree.js"></script>
+        
+        
+
+   <style type="text/css">
+   <!-- /* Hide content from old browsers */
+
+   #art1 {
+   color: #000000;
+   border: 1px solid #345678;
+   background: #FFFFFF;
+   margin: 15px 0;
+   padding: 8px;
+   }
+
+   /* end hiding content from old browsers */ -->
+   </style>
+
+
+
+        
+</head>
+
+
+
+
+<body><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-97741-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+   <div class="masterstyle">
+
+
+   
+
+
+<div class="topnav">
+<ul class="topnavmenu">
+
+<li><a href="http://www.chris.com/">Home</a></li>  <!--eventuall will change from self to up a level -->
+<li><a href="http://www.chris.com/about/">About</a></li>
+<li>ASCII Art</li>
+<li><a href="http://www.chris.com/links/">Cool Links</a></li>
+<li><a href="http://www.chris.com/telemarketing/">Telemarketer Abuse</a></li>
+
+</ul>
+
+    <div class="copyright">
+          &copy;2012 chris.com
+	</div>
+
+</div>
+      
+
+<div class="asciimenu">
+
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick" />
+<input type="hidden" name="hosted_button_id" value="VAZA6KRTAD7GJ" />
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+</form>
+<br />
+<form action="http://chris.com/ascii/index.php?page=search-results" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-4074990861294766:7dhzk0-pjae" />
+    <input type="hidden" name="cof" value="FORID:9" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="15" />
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+<br />
+
+
+   <div class="asciiartleftheader">
+      About ASCII Art
+   </div>
+   
+   <div class="asciiartleftlink">
+      <ul>      
+         <li><a href="/ascii/">Welcome!</a></li>
+         <li><a href="index.php?page=recent-updates">Recent Updates</a></li>
+         <li><a href="index.php?page=what-is-ascii-art">What is ASCII Art?</a></li>
+         <li><a href="index.php?page=how-to-display">How to display</a></li>
+         <li><a href="index.php?page=legal-ascii-characters">Legal ASCII Characters</a></li>
+   </ul>
+   </div>
+
+   <div class="asciiartleftheader">
+      The collection
+   </div>
+
+   <div class="asciiartleftlink">
+<ul><li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="dtree">
+            <p><a href="javascript: d.openAll();">open all</a> | <a href="javascript: d.closeAll();">close all</a></p>
+            <script type="text/javascript">
+                <!--
+                    d = new dTree('d');
+                    d.config.target="_self";
+                    d.config.folderLinks =false;
+                    d.config.useSelection =true;
+                    d.config.useCookies =true;
+                    d.config.useLines=true;
+                    d.config.useIcons=true;
+                    d.config.useStatusText=true;
+                    d.config.closeSameLevel=false;
+                    d.config.inOrder =true;
+                    d.add(0,-1,'Categories','','','','','');
+                    d.add(1, 0,'animals','index.php?art=','','_self');
+                    d.add(2, 1,'aardvarks','index.php?art=animals/aardvarks','','_self');
+                    d.add(3, 1,'amoeba','index.php?art=animals/amoeba','','_self');
+                    d.add(4, 1,'bats','index.php?art=animals/bats','','_self');
+                    d.add(5, 1,'bears (teddybears)','index.php?art=animals/bears (teddybears)','','_self');
+                    d.add(6, 1,'bears','index.php?art=animals/bears','','_self');
+                    d.add(7, 1,'beavers','index.php?art=animals/beavers','','_self');
+                    d.add(8, 1,'birds (land)','index.php?art=animals/birds (land)','','_self');
+                    d.add(9, 1,'birds (water)','index.php?art=animals/birds (water)','','_self');
+                    d.add(10, 1,'bison','index.php?art=animals/bison','','_self');
+                    d.add(11, 1,'camels','index.php?art=animals/camels','','_self');
+                    d.add(12, 1,'cats','index.php?art=animals/cats','','_self');
+                    d.add(13, 1,'cows','index.php?art=animals/cows','','_self');
+                    d.add(14, 1,'deer','index.php?art=animals/deer','','_self');
+                    d.add(15, 1,'dogs','index.php?art=animals/dogs','','_self');
+                    d.add(16, 1,'dolphins','index.php?art=animals/dolphins','','_self');
+                    d.add(17, 1,'elephants','index.php?art=animals/elephants','','_self');
+                    d.add(18, 1,'fish','index.php?art=animals/fish','','_self');
+                    d.add(19, 1,'frogs','index.php?art=animals/frogs','','_self');
+                    d.add(20, 1,'gorillas','index.php?art=animals/gorillas','','_self');
+                    d.add(21, 1,'horses','index.php?art=animals/horses','','_self');
+                    d.add(22, 1,'insects','index.php?art=','','_self');
+                    d.add(23, 22,'ants','index.php?art=animals/insects/ants','','_self');
+                    d.add(24, 22,'bees','index.php?art=animals/insects/bees','','_self');
+                    d.add(25, 22,'beetles','index.php?art=animals/insects/beetles','','_self');
+                    d.add(26, 22,'butterflies','index.php?art=animals/insects/butterflies','','_self');
+                    d.add(27, 22,'cockroaches','index.php?art=animals/insects/cockroaches','','_self');
+                    d.add(28, 22,'other','index.php?art=animals/insects/other','','_self');
+                    d.add(29, 1,'moose','index.php?art=animals/moose','','_self');
+                    d.add(30, 1,'other (land)','index.php?art=animals/other (land)','','_self');
+                    d.add(31, 1,'other (water)','index.php?art=animals/other (water)','','_self');
+                    d.add(32, 1,'rabbits','index.php?art=animals/rabbits','','_self');
+                    d.add(33, 1,'reptiles','index.php?art=','','_self');
+                    d.add(34, 33,'aligators','index.php?art=animals/reptiles/aligators','','_self');
+                    d.add(35, 33,'dinosaurs','index.php?art=animals/reptiles/dinosaurs','','_self');
+                    d.add(36, 33,'lizards','index.php?art=animals/reptiles/lizards','','_self');
+                    d.add(37, 33,'snakes','index.php?art=animals/reptiles/snakes','','_self');
+                    d.add(38, 33,'turtles','index.php?art=animals/reptiles/turtles','','_self');
+                    d.add(39, 1,'rhinoceros','index.php?art=animals/rhinoceros','','_self');
+                    d.add(40, 1,'rodents','index.php?art=','','_self');
+                    d.add(41, 40,'mice','index.php?art=animals/rodents/mice','','_self');
+                    d.add(42, 40,'other','index.php?art=animals/rodents/other','','_self');
+                    d.add(43, 1,'scorpions','index.php?art=animals/scorpions','','_self');
+                    d.add(44, 1,'spiders','index.php?art=animals/spiders','','_self');
+                    d.add(45, 1,'wolves','index.php?art=animals/wolves','','_self');
+                    d.add(46, 0,'anime and manga','index.php?art=','','_self');
+                    d.add(47, 46,'3x3 eyes','index.php?art=anime and manga/3x3 eyes','','_self');
+                    d.add(48, 46,'akira','index.php?art=anime and manga/akira','','_self');
+                    d.add(49, 46,'astro boy','index.php?art=anime and manga/astro boy','','_self');
+                    d.add(50, 46,'dirty pair','index.php?art=anime and manga/dirty pair','','_self');
+                    d.add(51, 46,'dragon ball','index.php?art=anime and manga/dragon ball','','_self');
+                    d.add(52, 46,'futaba-kun change','index.php?art=anime and manga/futaba-kun change','','_self');
+                    d.add(53, 46,'gall force','index.php?art=anime and manga/gall force','','_self');
+                    d.add(54, 46,'kimagure orange road','index.php?art=anime and manga/kimagure orange road','','_self');
+                    d.add(55, 46,'maison ikkoku','index.php?art=anime and manga/maison ikkoku','','_self');
+                    d.add(56, 46,'moldiver','index.php?art=anime and manga/moldiver','','_self');
+                    d.add(57, 46,'my neighbor totoro','index.php?art=anime and manga/my neighbor totoro','','_self');
+                    d.add(58, 46,'neon genesis evangelion','index.php?art=anime and manga/neon genesis evangelion','','_self');
+                    d.add(59, 46,'otaku no video','index.php?art=anime and manga/otaku no video','','_self');
+                    d.add(60, 46,'other','index.php?art=anime and manga/other','','_self');
+                    d.add(61, 46,'outlanders','index.php?art=anime and manga/outlanders','','_self');
+                    d.add(62, 46,'project a-ko','index.php?art=anime and manga/project a-ko','','_self');
+                    d.add(63, 46,'ranma saotome','index.php?art=anime and manga/ranma saotome','','_self');
+                    d.add(64, 46,'sailor moon','index.php?art=anime and manga/sailor moon','','_self');
+                    d.add(65, 46,'tenchi muyou','index.php?art=anime and manga/tenchi muyou','','_self');
+                    d.add(66, 46,'urusei yatsura','index.php?art=anime and manga/urusei yatsura','','_self');
+                    d.add(67, 46,'vampire princess miyu','index.php?art=anime and manga/vampire princess miyu','','_self');
+                    d.add(68, 0,'art and design','index.php?art=','','_self');
+                    d.add(69, 68,'banksy','index.php?art=art and design/banksy','','_self');
+                    d.add(70, 68,'borders','index.php?art=art and design/borders','','_self');
+                    d.add(71, 68,'egyptian','index.php?art=art and design/egyptian','','_self');
+                    d.add(72, 68,'escher','index.php?art=art and design/escher','','_self');
+                    d.add(73, 68,'famous paintings','index.php?art=art and design/famous paintings','','_self');
+                    d.add(74, 68,'mona lisa','index.php?art=art and design/mona lisa','','_self');
+                    d.add(75, 68,'other','index.php?art=art and design/other','','_self');
+                    d.add(76, 68,'patterns','index.php?art=art and design/patterns','','_self');
+                    d.add(77, 68,'signatures','index.php?art=art and design/signatures','','_self');
+                    d.add(78, 0,'books','index.php?art=','','_self');
+                    d.add(79, 78,'alice in wonderland','index.php?art=books/alice in wonderland','','_self');
+                    d.add(80, 78,'dr seuss','index.php?art=books/dr seuss','','_self');
+                    d.add(81, 78,'lord of the rings','index.php?art=books/lord of the rings','','_self');
+                    d.add(82, 0,'cartoons','index.php?art=','','_self');
+                    d.add(83, 82,'animaniacs','index.php?art=cartoons/animaniacs','','_self');
+                    d.add(84, 82,'beavis and Butt-head','index.php?art=cartoons/beavis and Butt-head','','_self');
+                    d.add(85, 82,'betty boop','index.php?art=cartoons/betty boop','','_self');
+                    d.add(86, 82,'cartoon planet','index.php?art=cartoons/cartoon planet','','_self');
+                    d.add(87, 82,'casper','index.php?art=cartoons/casper','','_self');
+                    d.add(88, 82,'felix the cat','index.php?art=cartoons/felix the cat','','_self');
+                    d.add(89, 82,'flintstones','index.php?art=cartoons/flintstones','','_self');
+                    d.add(90, 82,'inspector gadget','index.php?art=cartoons/inspector gadget','','_self');
+                    d.add(91, 82,'mickey mouse','index.php?art=cartoons/mickey mouse','','_self');
+                    d.add(92, 82,'pink panther','index.php?art=cartoons/pink panther','','_self');
+                    d.add(93, 82,'ren and stimpy','index.php?art=cartoons/ren and stimpy','','_self');
+                    d.add(94, 82,'rocky and bullwinkle','index.php?art=cartoons/rocky and bullwinkle','','_self');
+                    d.add(95, 82,'roger rabbit','index.php?art=cartoons/roger rabbit','','_self');
+                    d.add(96, 82,'simpsons','index.php?art=cartoons/simpsons','','_self');
+                    d.add(97, 82,'smurfs','index.php?art=cartoons/smurfs','','_self');
+                    d.add(98, 82,'south park','index.php?art=cartoons/south park','','_self');
+                    d.add(99, 82,'spongebob squarepants','index.php?art=cartoons/spongebob squarepants','','_self');
+                    d.add(100, 82,'tiny toon adventures','index.php?art=cartoons/tiny toon adventures','','_self');
+                    d.add(101, 82,'two stupid dogs','index.php?art=cartoons/two stupid dogs','','_self');
+                    d.add(102, 82,'warner bros','index.php?art=cartoons/warner bros','','_self');
+                    d.add(103, 0,'comics','index.php?art=','','_self');
+                    d.add(104, 103,'alfred e neuman','index.php?art=comics/alfred e neuman','','_self');
+                    d.add(105, 103,'archie','index.php?art=comics/archie','','_self');
+                    d.add(106, 103,'asterix','index.php?art=comics/asterix','','_self');
+                    d.add(107, 103,'batman','index.php?art=comics/batman','','_self');
+                    d.add(108, 103,'bloom county','index.php?art=comics/bloom county','','_self');
+                    d.add(109, 103,'calvin and hobbes','index.php?art=comics/calvin and hobbes','','_self');
+                    d.add(110, 103,'captain america','index.php?art=comics/captain america','','_self');
+                    d.add(111, 103,'dilbert','index.php?art=comics/dilbert','','_self');
+                    d.add(112, 103,'garfield','index.php?art=comics/garfield','','_self');
+                    d.add(113, 103,'life in hell','index.php?art=comics/life in hell','','_self');
+                    d.add(114, 103,'mafalda','index.php?art=comics/mafalda','','_self');
+                    d.add(115, 103,'peanuts','index.php?art=comics/peanuts','','_self');
+                    d.add(116, 103,'superman','index.php?art=comics/superman','','_self');
+                    d.add(117, 0,'creatures','index.php?art=','','_self');
+                    d.add(118, 117,'aliens','index.php?art=creatures/aliens','','_self');
+                    d.add(119, 117,'angels','index.php?art=creatures/angels','','_self');
+                    d.add(120, 117,'centuars','index.php?art=creatures/centuars','','_self');
+                    d.add(121, 117,'devils','index.php?art=creatures/devils','','_self');
+                    d.add(122, 117,'dragons','index.php?art=creatures/dragons','','_self');
+                    d.add(123, 117,'fairies','index.php?art=creatures/fairies','','_self');
+                    d.add(124, 117,'grim reapers','index.php?art=creatures/grim reapers','','_self');
+                    d.add(125, 117,'mermaids','index.php?art=creatures/mermaids','','_self');
+                    d.add(126, 117,'monsters','index.php?art=creatures/monsters','','_self');
+                    d.add(127, 117,'mythology','index.php?art=creatures/mythology','','_self');
+                    d.add(128, 117,'unicorns','index.php?art=creatures/unicorns','','_self');
+                    d.add(129, 0,'events','index.php?art=','','_self');
+                    d.add(130, 129,'birthday','index.php?art=events/birthday','','_self');
+                    d.add(131, 129,'graduation','index.php?art=events/graduation','','_self');
+                    d.add(132, 129,'wedding','index.php?art=events/wedding','','_self');
+                    d.add(133, 0,'food and drink','index.php?art=','','_self');
+                    d.add(134, 133,'apples','index.php?art=food and drink/apples','','_self');
+                    d.add(135, 133,'beer','index.php?art=food and drink/beer','','_self');
+                    d.add(136, 133,'chocolate','index.php?art=food and drink/chocolate','','_self');
+                    d.add(137, 133,'ice cream','index.php?art=food and drink/ice cream','','_self');
+                    d.add(138, 133,'other','index.php?art=food and drink/other','','_self');
+                    d.add(139, 0,'holiday','index.php?art=','','_self');
+                    d.add(140, 139,'4th of july','index.php?art=holiday/4th of july','','_self');
+                    d.add(141, 139,'christmas','index.php?art=','','_self');
+                    d.add(142, 141,'other','index.php?art=holiday/christmas/other','','_self');
+                    d.add(143, 141,'religious','index.php?art=holiday/christmas/religious','','_self');
+                    d.add(144, 141,'santa','index.php?art=holiday/christmas/santa','','_self');
+                    d.add(145, 141,'snowman','index.php?art=holiday/christmas/snowman','','_self');
+                    d.add(146, 141,'trees','index.php?art=holiday/christmas/trees','','_self');
+                    d.add(147, 139,'easter','index.php?art=holiday/easter','','_self');
+                    d.add(148, 139,'fathers day','index.php?art=holiday/fathers day','','_self');
+                    d.add(149, 139,'halloween','index.php?art=holiday/halloween','','_self');
+                    d.add(150, 139,'hanukkah','index.php?art=holiday/hanukkah','','_self');
+                    d.add(151, 139,'mothers day','index.php?art=holiday/mothers day','','_self');
+                    d.add(152, 139,'new year','index.php?art=holiday/new year','','_self');
+                    d.add(153, 139,'thanksgiving','index.php?art=holiday/thanksgiving','','_self');
+                    d.add(154, 139,'valentine','index.php?art=holiday/valentine','','_self');
+                    d.add(155, 0,'logos and insignias','index.php?art=','','_self');
+                    d.add(156, 155,'amnesty international','index.php?art=logos and insignias/amnesty international','','_self');
+                    d.add(157, 155,'bauhaus','index.php?art=logos and insignias/bauhaus','','_self');
+                    d.add(158, 155,'caduceus','index.php?art=logos and insignias/caduceus','','_self');
+                    d.add(159, 155,'coca-cola','index.php?art=logos and insignias/coca-cola','','_self');
+                    d.add(160, 155,'drama masks','index.php?art=logos and insignias/drama masks','','_self');
+                    d.add(161, 155,'fonts','index.php?art=logos and insignias/fonts','','_self');
+                    d.add(162, 155,'hello kitty','index.php?art=logos and insignias/hello kitty','','_self');
+                    d.add(163, 155,'j r dobbs','index.php?art=logos and insignias/j r dobbs','','_self');
+                    d.add(164, 155,'jolly roger','index.php?art=logos and insignias/jolly roger','','_self');
+                    d.add(165, 155,'kool-aid','index.php?art=logos and insignias/kool-aid','','_self');
+                    d.add(166, 155,'linux','index.php?art=logos and insignias/linux','','_self');
+                    d.add(167, 155,'no bs','index.php?art=logos and insignias/no bs','','_self');
+                    d.add(168, 155,'no smoking','index.php?art=logos and insignias/no smoking','','_self');
+                    d.add(169, 155,'peace','index.php?art=logos and insignias/peace','','_self');
+                    d.add(170, 155,'pillsbury doughboy','index.php?art=logos and insignias/pillsbury doughboy','','_self');
+                    d.add(171, 155,'playboy','index.php?art=logos and insignias/playboy','','_self');
+                    d.add(172, 155,'recycle','index.php?art=logos and insignias/recycle','','_self');
+                    d.add(173, 155,'red dog beer','index.php?art=logos and insignias/red dog beer','','_self');
+                    d.add(174, 155,'smiley','index.php?art=logos and insignias/smiley','','_self');
+                    d.add(175, 155,'sun microsystems','index.php?art=logos and insignias/sun microsystems','','_self');
+                    d.add(176, 155,'television','index.php?art=logos and insignias/television','','_self');
+                    d.add(177, 155,'walt jabsco','index.php?art=logos and insignias/walt jabsco','','_self');
+                    d.add(178, 155,'yin and yang','index.php?art=logos and insignias/yin and yang','','_self');
+                    d.add(179, 0,'movies','index.php?art=','','_self');
+                    d.add(180, 179,'aladdin','index.php?art=movies/aladdin','','_self');
+                    d.add(181, 179,'bambi','index.php?art=movies/bambi','','_self');
+                    d.add(182, 179,'beauty and the beast','index.php?art=movies/beauty and the beast','','_self');
+                    d.add(183, 179,'galaxy quest','index.php?art=movies/galaxy quest','','_self');
+                    d.add(184, 179,'ghostbusters','index.php?art=movies/ghostbusters','','_self');
+                    d.add(185, 179,'ice age','index.php?art=movies/ice age','','_self');
+                    d.add(186, 179,'james bond','index.php?art=movies/james bond','','_self');
+                    d.add(187, 179,'lion king','index.php?art=movies/lion king','','_self');
+                    d.add(188, 179,'little mermaid','index.php?art=movies/little mermaid','','_self');
+                    d.add(189, 179,'pinocchio','index.php?art=movies/pinocchio','','_self');
+                    d.add(190, 179,'resident evil','index.php?art=movies/resident evil','','_self');
+                    d.add(191, 179,'shrek','index.php?art=movies/shrek','','_self');
+                    d.add(192, 179,'snow white','index.php?art=movies/snow white','','_self');
+                    d.add(193, 179,'star wars','index.php?art=movies/star wars','','_self');
+                    d.add(194, 179,'tinkerbell','index.php?art=movies/tinkerbell','','_self');
+                    d.add(195, 179,'toy story','index.php?art=movies/toy story','','_self');
+                    d.add(196, 179,'wallace and gromit','index.php?art=movies/wallace and gromit','','_self');
+                    d.add(197, 179,'winnie the pooh','index.php?art=movies/winnie the pooh','','_self');
+                    d.add(198, 179,'young frankenstein','index.php?art=movies/young frankenstein','','_self');
+                    d.add(199, 0,'music','index.php?art=','','_self');
+                    d.add(200, 199,'band logos','index.php?art=','','_self');
+                    d.add(201, 200,'metallica','index.php?art=music/band logos/metallica','','_self');
+                    d.add(202, 200,'other','index.php?art=music/band logos/other','','_self');
+                    d.add(203, 200,'pink floyd','index.php?art=music/band logos/pink floyd','','_self');
+                    d.add(204, 199,'musical instruments','index.php?art=music/musical instruments','','_self');
+                    d.add(205, 199,'musical notation','index.php?art=music/musical notation','','_self');
+                    d.add(206, 199,'musicians','index.php?art=','','_self');
+                    d.add(207, 206,'alice cooper','index.php?art=music/musicians/alice cooper','','_self');
+                    d.add(208, 206,'beatles','index.php?art=music/musicians/beatles','','_self');
+                    d.add(209, 206,'elvis presley','index.php?art=music/musicians/elvis presley','','_self');
+                    d.add(210, 206,'marilyn manson','index.php?art=music/musicians/marilyn manson','','_self');
+                    d.add(211, 206,'snoop dogg','index.php?art=music/musicians/snoop dogg','','_self');
+                    d.add(212, 199,'pianos','index.php?art=music/pianos','','_self');
+                    d.add(213, 0,'nature','index.php?art=','','_self');
+                    d.add(214, 213,'astronomy','index.php?art=nature/astronomy','','_self');
+                    d.add(215, 213,'beach','index.php?art=nature/beach','','_self');
+                    d.add(216, 213,'mountains','index.php?art=nature/mountains','','_self');
+                    d.add(217, 213,'other','index.php?art=nature/other','','_self');
+                    d.add(218, 213,'sunset','index.php?art=nature/sunset','','_self');
+                    d.add(219, 213,'tornado','index.php?art=nature/tornado','','_self');
+                    d.add(220, 0,'objects','index.php?art=','','_self');
+                    d.add(221, 220,'abacus','index.php?art=objects/abacus','','_self');
+                    d.add(222, 220,'anchors','index.php?art=objects/anchors','','_self');
+                    d.add(223, 220,'antennas','index.php?art=objects/antennas','','_self');
+                    d.add(224, 220,'arrows','index.php?art=objects/arrows','','_self');
+                    d.add(225, 220,'audio equipment','index.php?art=objects/audio equipment','','_self');
+                    d.add(226, 220,'awards','index.php?art=objects/awards','','_self');
+                    d.add(227, 220,'axes','index.php?art=objects/axes','','_self');
+                    d.add(228, 220,'badges','index.php?art=objects/badges','','_self');
+                    d.add(229, 220,'balloons','index.php?art=objects/balloons','','_self');
+                    d.add(230, 220,'bikinis','index.php?art=objects/bikinis','','_self');
+                    d.add(231, 220,'blender','index.php?art=objects/blender','','_self');
+                    d.add(232, 220,'bones','index.php?art=objects/bones','','_self');
+                    d.add(233, 220,'books','index.php?art=objects/books','','_self');
+                    d.add(234, 220,'bottles','index.php?art=objects/bottles','','_self');
+                    d.add(235, 220,'boxes','index.php?art=objects/boxes','','_self');
+                    d.add(236, 220,'bridges','index.php?art=objects/bridges','','_self');
+                    d.add(237, 220,'brooms','index.php?art=objects/brooms','','_self');
+                    d.add(238, 220,'buckets','index.php?art=objects/buckets','','_self');
+                    d.add(239, 220,'buildings','index.php?art=objects/buildings','','_self');
+                    d.add(240, 220,'calculators','index.php?art=objects/calculators','','_self');
+                    d.add(241, 220,'cameras','index.php?art=objects/cameras','','_self');
+                    d.add(242, 220,'candles','index.php?art=objects/candles','','_self');
+                    d.add(243, 220,'castles','index.php?art=objects/castles','','_self');
+                    d.add(244, 220,'chains','index.php?art=objects/chains','','_self');
+                    d.add(245, 220,'clocks','index.php?art=objects/clocks','','_self');
+                    d.add(246, 220,'computers','index.php?art=objects/computers','','_self');
+                    d.add(247, 220,'diamonds','index.php?art=objects/diamonds','','_self');
+                    d.add(248, 220,'dice','index.php?art=objects/dice','','_self');
+                    d.add(249, 220,'dresses','index.php?art=objects/dresses','','_self');
+                    d.add(250, 220,'electronics','index.php?art=objects/electronics','','_self');
+                    d.add(251, 220,'explosives','index.php?art=objects/explosives','','_self');
+                    d.add(252, 220,'fences','index.php?art=objects/fences','','_self');
+                    d.add(253, 220,'flags','index.php?art=objects/flags','','_self');
+                    d.add(254, 220,'footwear','index.php?art=objects/footwear','','_self');
+                    d.add(255, 220,'furniture','index.php?art=','','_self');
+                    d.add(256, 255,'beds','index.php?art=objects/furniture/beds','','_self');
+                    d.add(257, 255,'benches','index.php?art=objects/furniture/benches','','_self');
+                    d.add(258, 255,'chairs','index.php?art=objects/furniture/chairs','','_self');
+                    d.add(259, 255,'office','index.php?art=objects/furniture/office','','_self');
+                    d.add(260, 255,'sofas','index.php?art=objects/furniture/sofas','','_self');
+                    d.add(261, 220,'guns','index.php?art=objects/guns','','_self');
+                    d.add(262, 220,'handcuffs','index.php?art=objects/handcuffs','','_self');
+                    d.add(263, 220,'keys','index.php?art=objects/keys','','_self');
+                    d.add(264, 220,'kleenex','index.php?art=objects/kleenex','','_self');
+                    d.add(265, 220,'knives','index.php?art=objects/knives','','_self');
+                    d.add(266, 220,'light bulbs','index.php?art=objects/light bulbs','','_self');
+                    d.add(267, 220,'magnifying glass','index.php?art=objects/magnifying glass','','_self');
+                    d.add(268, 220,'medical','index.php?art=objects/medical','','_self');
+                    d.add(269, 220,'money','index.php?art=objects/money','','_self');
+                    d.add(270, 220,'noose','index.php?art=objects/noose','','_self');
+                    d.add(271, 220,'optical illusions','index.php?art=objects/optical illusions','','_self');
+                    d.add(272, 220,'playing cards','index.php?art=objects/playing cards','','_self');
+                    d.add(273, 220,'scales','index.php?art=objects/scales','','_self');
+                    d.add(274, 220,'signs','index.php?art=objects/signs','','_self');
+                    d.add(275, 220,'slinky','index.php?art=objects/slinky','','_self');
+                    d.add(276, 220,'swords','index.php?art=objects/swords','','_self');
+                    d.add(277, 220,'televisions','index.php?art=objects/televisions','','_self');
+                    d.add(278, 220,'tools','index.php?art=objects/tools','','_self');
+                    d.add(279, 220,'umbrella','index.php?art=objects/umbrella','','_self');
+                    d.add(280, 0,'people','index.php?art=','','_self');
+                    d.add(281, 280,'babies','index.php?art=people/babies','','_self');
+                    d.add(282, 280,'bathing','index.php?art=people/bathing','','_self');
+                    d.add(283, 280,'beach','index.php?art=people/beach','','_self');
+                    d.add(284, 280,'body parts','index.php?art=','','_self');
+                    d.add(285, 284,'brains','index.php?art=people/body parts/brains','','_self');
+                    d.add(286, 284,'buttocks','index.php?art=people/body parts/buttocks','','_self');
+                    d.add(287, 284,'eyes','index.php?art=people/body parts/eyes','','_self');
+                    d.add(288, 284,'hand gestures','index.php?art=people/body parts/hand gestures','','_self');
+                    d.add(289, 284,'lips','index.php?art=people/body parts/lips','','_self');
+                    d.add(290, 280,'chris johnson','index.php?art=people/chris johnson','','_self');
+                    d.add(291, 280,'faces','index.php?art=people/faces','','_self');
+                    d.add(292, 280,'famous','index.php?art=','','_self');
+                    d.add(293, 292,'al capone','index.php?art=people/famous/al capone','','_self');
+                    d.add(294, 292,'al pacino','index.php?art=people/famous/al pacino','','_self');
+                    d.add(295, 292,'albert einstein','index.php?art=people/famous/albert einstein','','_self');
+                    d.add(296, 292,'barack obama','index.php?art=people/famous/barack obama','','_self');
+                    d.add(297, 292,'bill clinton','index.php?art=people/famous/bill clinton','','_self');
+                    d.add(298, 292,'cher','index.php?art=people/famous/cher','','_self');
+                    d.add(299, 292,'cindy crawford','index.php?art=people/famous/cindy crawford','','_self');
+                    d.add(300, 292,'marylin monroe','index.php?art=people/famous/marylin monroe','','_self');
+                    d.add(301, 292,'michelle pfeiffer','index.php?art=people/famous/michelle pfeiffer','','_self');
+                    d.add(302, 292,'princess diana','index.php?art=people/famous/princess diana','','_self');
+                    d.add(303, 292,'sarah michelle gellar','index.php?art=people/famous/sarah michelle gellar','','_self');
+                    d.add(304, 280,'naked ladies','index.php?art=people/naked ladies','','_self');
+                    d.add(305, 280,'native americans','index.php?art=people/native americans','','_self');
+                    d.add(306, 280,'occupations','index.php?art=','','_self');
+                    d.add(307, 306,'artists','index.php?art=people/occupations/artists','','_self');
+                    d.add(308, 306,'ascii artists','index.php?art=people/occupations/ascii artists','','_self');
+                    d.add(309, 306,'astronauts','index.php?art=people/occupations/astronauts','','_self');
+                    d.add(310, 306,'bodybuilders','index.php?art=people/occupations/bodybuilders','','_self');
+                    d.add(311, 306,'builders','index.php?art=people/occupations/builders','','_self');
+                    d.add(312, 306,'butcher','index.php?art=people/occupations/butcher','','_self');
+                    d.add(313, 306,'clowns','index.php?art=people/occupations/clowns','','_self');
+                    d.add(314, 306,'dentists','index.php?art=people/occupations/dentists','','_self');
+                    d.add(315, 306,'disc jockeys','index.php?art=people/occupations/disc jockeys','','_self');
+                    d.add(316, 306,'hair stylists','index.php?art=people/occupations/hair stylists','','_self');
+                    d.add(317, 306,'knights','index.php?art=people/occupations/knights','','_self');
+                    d.add(318, 280,'other','index.php?art=people/other','','_self');
+                    d.add(319, 280,'skeletons','index.php?art=people/skeletons','','_self');
+                    d.add(320, 280,'tribal people','index.php?art=people/tribal people','','_self');
+                    d.add(321, 280,'vikings','index.php?art=people/vikings','','_self');
+                    d.add(322, 0,'places','index.php?art=','','_self');
+                    d.add(323, 322,'alcatraz','index.php?art=places/alcatraz','','_self');
+                    d.add(324, 322,'eiffel tower','index.php?art=places/eiffel tower','','_self');
+                    d.add(325, 322,'maps','index.php?art=places/maps','','_self');
+                    d.add(326, 322,'statue of liberty','index.php?art=places/statue of liberty','','_self');
+                    d.add(327, 322,'stonehenge','index.php?art=places/stonehenge','','_self');
+                    d.add(328, 322,'washington space needle','index.php?art=places/washington space needle','','_self');
+                    d.add(329, 0,'plants','index.php?art=','','_self');
+                    d.add(330, 329,'bonsai trees','index.php?art=plants/bonsai trees','','_self');
+                    d.add(331, 329,'cactus','index.php?art=plants/cactus','','_self');
+                    d.add(332, 329,'dandelions','index.php?art=plants/dandelions','','_self');
+                    d.add(333, 329,'flowers','index.php?art=plants/flowers','','_self');
+                    d.add(334, 329,'marijuana','index.php?art=plants/marijuana','','_self');
+                    d.add(335, 0,'religion','index.php?art=','','_self');
+                    d.add(336, 335,'astrology','index.php?art=religion/astrology','','_self');
+                    d.add(337, 335,'buddhism','index.php?art=religion/buddhism','','_self');
+                    d.add(338, 335,'christianity','index.php?art=religion/christianity','','_self');
+                    d.add(339, 335,'judaism','index.php?art=religion/judaism','','_self');
+                    d.add(340, 0,'sports and activities','index.php?art=','','_self');
+                    d.add(341, 340,'archery','index.php?art=sports and activities/archery','','_self');
+                    d.add(342, 340,'baseball','index.php?art=sports and activities/baseball','','_self');
+                    d.add(343, 340,'basketball','index.php?art=sports and activities/basketball','','_self');
+                    d.add(344, 340,'billiards','index.php?art=sports and activities/billiards','','_self');
+                    d.add(345, 340,'bowling','index.php?art=sports and activities/bowling','','_self');
+                    d.add(346, 340,'boxing','index.php?art=sports and activities/boxing','','_self');
+                    d.add(347, 340,'dancing','index.php?art=sports and activities/dancing','','_self');
+                    d.add(348, 340,'darts','index.php?art=sports and activities/darts','','_self');
+                    d.add(349, 340,'fishing','index.php?art=sports and activities/fishing','','_self');
+                    d.add(350, 340,'football','index.php?art=sports and activities/football','','_self');
+                    d.add(351, 340,'hockey','index.php?art=sports and activities/hockey','','_self');
+                    d.add(352, 340,'other','index.php?art=sports and activities/other','','_self');
+                    d.add(353, 340,'rodeo','index.php?art=sports and activities/rodeo','','_self');
+                    d.add(354, 340,'scuba','index.php?art=sports and activities/scuba','','_self');
+                    d.add(355, 340,'skiing','index.php?art=sports and activities/skiing','','_self');
+                    d.add(356, 340,'soccer','index.php?art=sports and activities/soccer','','_self');
+                    d.add(357, 340,'surfing','index.php?art=sports and activities/surfing','','_self');
+                    d.add(358, 0,'television','index.php?art=','','_self');
+                    d.add(359, 358,'barney','index.php?art=television/barney','','_self');
+                    d.add(360, 358,'bear in the big blue house','index.php?art=television/bear in the big blue house','','_self');
+                    d.add(361, 358,'futurama','index.php?art=television/futurama','','_self');
+                    d.add(362, 358,'gumby and pokey','index.php?art=television/gumby and pokey','','_self');
+                    d.add(363, 358,'muppets','index.php?art=television/muppets','','_self');
+                    d.add(364, 358,'sesame street','index.php?art=television/sesame street','','_self');
+                    d.add(365, 358,'star trek','index.php?art=television/star trek','','_self');
+                    d.add(366, 358,'x-files','index.php?art=television/x-files','','_self');
+                    d.add(367, 0,'transportation','index.php?art=','','_self');
+                    d.add(368, 367,'airplanes','index.php?art=transportation/airplanes','','_self');
+                    d.add(369, 367,'bicycles','index.php?art=transportation/bicycles','','_self');
+                    d.add(370, 367,'busses','index.php?art=transportation/busses','','_self');
+                    d.add(371, 367,'cars','index.php?art=transportation/cars','','_self');
+                    d.add(372, 367,'motorcycles','index.php?art=transportation/motorcycles','','_self');
+                    d.add(373, 367,'nautical','index.php?art=transportation/nautical','','_self');
+                    d.add(374, 367,'other','index.php?art=transportation/other','','_self');
+                    d.add(375, 367,'space ships','index.php?art=transportation/space ships','','_self');
+                    d.add(376, 367,'trains','index.php?art=transportation/trains','','_self');
+                    d.add(377, 0,'video games','index.php?art=','','_self');
+                    d.add(378, 377,'atomic bomberman','index.php?art=video games/atomic bomberman','','_self');
+                    d.add(379, 377,'max payne','index.php?art=video games/max payne','','_self');
+                    d.add(380, 377,'mortal kombat','index.php?art=video games/mortal kombat','','_self');
+                    d.add(381, 377,'other','index.php?art=video games/other','','_self');
+                    d.add(382, 377,'pokemon','index.php?art=video games/pokemon','','_self');
+                    d.add(383, 377,'samurai shodown','index.php?art=video games/samurai shodown','','_self');
+                    d.add(384, 377,'tomb raider','index.php?art=video games/tomb raider','','_self');
+                    document.write(d);
+                //-->   
+            </script>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </li>
+</ul>
+
+   <div class="asciiartleftheader">
+      Tutorials
+   </div>
+
+   <div class="asciiartleftlink">
+      <ul>      
+         <li><a href="index.php?page=rowan-crawford">Rowan Crawford</a></li>
+         <li><a href="index.php?page=daniel-au">Daniel Au</a></li>
+         <li><a href="index.php?page=scarecrow">Scarecrow</a></li>
+         <li><a href="index.php?page=popular-mechanics">Popular Mechanics</a></li>
+         <li><a href="http://www.geocities.com/SoHo/7373/howto.htm" target="_blank">Joan Stark</a></li>
+      </ul>
+   </div>
+
+   <div class="asciiartleftheader">
+      ASCII Art Tools
+   </div>
+   
+   <div class="asciiartleftlink">
+      <ul>      
+         <li><a href="http://www.patorjk.com/software/taag/" target="_blank">Figlet</a></li>
+         <li><a href="http://www.sigsoftware.com/emaileffects/" target="_blank">Email Effects</a></li>
+   </ul>
+   </div>
+
+   </div>
+</div>
+
+
+
+
+
+
+
+
+
+   <div class="asciirightmain">
+      
+
+
+
+
+
+         
+            <div class="artdescription">Batman - Action Comics - DC Comics - Robin - Bruce Wayne - Gotham City  <br />
+				 	
+                                        
+                    <div id="art1">
+                    <form action="">
+                    <input id="btn" name="artinvertbutton" class="artinvert" onclick="toggle1()" value="Light on Dark" type="button" />
+                    </form>
+                    <div class="masterstyle">Note: You can click on the button above to toggle light and dark.<br />You can also click on the button that floats on the right side of the screen. ---><br /><br />
+                    
+                    
+ 
+<script type="text/javascript"><!--
+google_ad_client = "pub-4074990861294766";
+/* With Art - Larger */
+google_ad_slot = "0542079692";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+                    
+                                        
+                    </div>
+                    
+                    
+                                        
+  
+					<pre>
+
+
+                  l                         l   
+                 iIi                       i^i    
+                 |Il                       |i|   
+                 |H i                     i&quot;I| 
+                 |H:l                     |iI|  
+                 |Vb i      _______      i&quot;II|  
+                 |:M:l_.--~&quot;,..... ~&quot;--._j HI|  
+                 |`Mb.   ,jHHHMHMBb.     &quot;-HI|  
+                 | MMAa,jHHMMMMMMMMHb      :I| 
+                 | VMMF &quot;VMMMHYHMMMMMA.    `I|  &quot;I&#039;m Batman.&quot;  
+                 | :MP   :MHI=:=IHMMMMMt    !|  
+                 | `MI   .MY=: :=YMMMMP   ,a.|  
+                 |  M!   jMHI=:=IHMMMMAwmAMMb|   
+                 |  &quot;Q;  MYFHHFFMMEFFEYF^:_;Dl  
+                 |      jAK`&#039;] ,&gt;HMWWK`&#039;].dP:H 
+                 |     iMMMMMMMMMHMMMMMMMMF&quot;:H  
+                 |    .:YMMMMMMMMl  &quot;\. &quot;~&quot;_:T  
+                 |  : : !VMMMMMMMk___,;--~X:&quot;I  
+                 |  H . :M&quot;/ ~;&quot;_&quot;||~_&quot;\. `Y H  
+                 |  M.. :M:  i &lt;.--v-.&gt; I. : H   
+                 |  Hk  `M.  :. &quot;--w-&quot;  H:  .H   
+                 |  VMb. Vl  `ka..:H:. .F&#039;  JH   -Row
+                 |  `VMMbYAi  &quot;VbaHaHI::;.,jAH   
+                 |   :HMMMMMk.  &quot;^VIV&#039;&quot;~IkaAMH   
+                 |   ;HMMMMMMMAa,.j:l.,aAMMMMH  
+                 j  .dMMMMMMMMMMMHUbUHMMMMMMMHl
+  
+
+
+       _==/          i     i          \==_
+     /XX/            |\___/|            \XX\
+   /XXXX\            |XXXXX|            /XXXX\
+  |XXXXXX\_         _XXXXXXX_         _/XXXXXX|
+ XXXXXXXXXXXxxxxxxxXXXXXXXXXXXxxxxxxxXXXXXXXXXXX
+|XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+|XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
+ XXXXXX/^^^^&quot;\XXXXXXXXXXXXXXXXXXXXX/^^^^^\XXXXXX
+  |XXX|       \XXX/^^\XXXXX/^^\XXX/       |XXX|
+    \XX\       \X/    \XXX/    \X/       /XX/
+       &quot;\       &quot;      \X/      &quot;      /&quot;
+
+
+        __.--&#039;\     \.__./     /&#039;--.__
+    _.-&#039;       &#039;.__.&#039;    &#039;.__.&#039;       &#039;-._
+  .&#039;                                      &#039;.
+ /                                          \
+|                                            |
+|                                            |
+ \         .---.              .---.         /
+  &#039;._    .&#039;     &#039;.&#039;&#039;.    .&#039;&#039;.&#039;     &#039;.    _.&#039;
+     &#039;-./            \  /            \.-&#039;
+                      &#039;&#039;mrf
+                      
+
+                          .      .
+                 ./       |      |        \.
+               .:(        |i __ j|        ):`.
+             .&#039;   `._     |`::::&#039;|     _.&#039;    `.
+           .&#039;        &quot;---.j `::&#039; f.---&quot;         `.
+     _____/     ___  ______      __    __   ___   \_   __
+    |      \   |   ||      |`__&#039;|  \  /  | |   | |&quot; \ |  |
+    |  .-.  | .&#039;   `|_    _|\--/|   \/   |.&#039;   `.|   \|  |
+    |  |_|  | |  i  | |  |  :&quot;&quot;:|        ||  i  ||    |  |
+    |       / | .^. | |  |  ::::|        || .^. ||       |
+    |  .-.  \ | | | | |  |   :: |        || | | ||  |\   |
+    |  | |  |.&#039; &quot;&quot;&quot; `.|  |      |  i  i  j&#039; &quot;&quot;&quot; `.  | \  | LS
+    |  `-&#039;  ||   _   ||  |      |  |\/|  |   _   |  | [  |
+   [|      / |  | |  ||  |      |  |  |  |  | |  |  | |  |].
+  ] `-----&#039;  :--&#039; `--::--&#039;      `--&#039; ::--&quot;--::`--&quot;--&#039; `--&#039;:[
+  |      __  ::-&quot;&quot;&quot;`.:&#039; &quot;--.    .----::.----:: ,.---._    :|
+  [  .-&quot;&quot;  &quot;`&#039;              \  /      &quot;      `&#039;       `-. :].
+ ]:.&#039;                        \/                          `.:[
+ |/                                                        \|
+
+
+
+                    ,.ood888888888888boo.,
+               .od888P^&quot;&quot;            &quot;&quot;^Y888bo.
+           .od8P&#039;&#039;   ..oood88888888booo.    ``Y8bo.
+        .odP&#039;&quot;  .ood8888888888888888888888boo.  &quot;`Ybo.
+      .d8&#039;   od8&#039;d888888888f`8888&#039;t888888888b`8bo   `Yb.
+     d8&#039;  od8^   8888888888[  `&#039;  ]8888888888   ^8bo  `8b
+   .8P  d88&#039;     8888888888P      Y8888888888     `88b  Y8.
+  d8&#039; .d8&#039;       `Y88888888&#039;      `88888888P&#039;       `8b. `8b
+ .8P .88P            &quot;&quot;&quot;&quot;            &quot;&quot;&quot;&quot;            Y88. Y8.
+ 88  888                                              888  88
+ 88  888                                              888  88
+ 88  888.        ..                        ..        .888  88
+ `8b `88b,     d8888b.od8bo.      .od8bo.d8888b     ,d88&#039; d8&#039;
+  Y8. `Y88.    8888888888888b    d8888888888888    .88P&#039; .8P
+   `8b  Y88b.  `88888888888888  88888888888888&#039;  .d88P  d8&#039;
+     Y8.  ^Y88bod8888888888888..8888888888888bod88P^  .8P
+      `Y8.   ^Y888888888888888LS888888888888888P^   .8P&#039;
+        `^Yb.,  `^^Y8888888888888888888888P^^&#039;  ,.dP^&#039;
+           `^Y8b..   ``^^^Y88888888P^^^&#039;    ..d8P^&#039;
+               `^Y888bo.,            ,.od888P^&#039;
+                    &quot;`^^Y888888888888P^^&#039;&quot;         LS
+
+                      
+                  T\ T\
+                  | \| \
+                  |  |  :
+             _____I__I  |
+           .&#039;            &#039;.
+         .&#039;                &#039;
+         |   ..             &#039;
+         |  /__.            |
+         :.&#039; -&#039;             |
+        /__.                |
+       /__, \               |
+          |__\        _|    |
+          :  &#039;\     .&#039;|     |
+          |___|_,,,/  |     |    _..--.
+       ,--_-   |     /&#039;      \../ /  /\\
+      ,&#039;|_ I---|    7    ,,,_/ / ,  / _\\
+    ,-- 7 \|  / ___..,,/   /  ,  ,_/   &#039;-----.
+   /   ,   \  |/  ,____,,,__,,__/            &#039;\
+  ,   ,     \__,,/                             |
+  | &#039;.       _..---.._                         !.
+  ! |      .&#039; z_M__s. &#039;.                        |
+  .:&#039;      | (-_ _--&#039;)  :          L            !
+  .&#039;.       &#039;.  Y    _.&#039;             \,         :
+   .          &#039;-----&#039;                 !          .
+   .           /  \                   .          . 
+   
+
+
+             .  .
+             |\_|\
+             | a_a\
+             | | &quot;]
+         ____| &#039;-\___
+        /.----.___.-&#039;\
+       //        _    \
+      //   .-. (~v~) /|
+     |&#039;|  /\:  .--  / \
+    // |-/  \_/____/\/~|
+   |/  \ |  []_|_|_] \ |
+   | \  | \ |___   _\ ]_}
+   | |  &#039;-&#039; /   &#039;.&#039;  |
+   | |     /    /|:  |
+   | |     |   / |:  /\
+   | |     /  /  |  /  \
+   | |    |  /  /  |    \
+   \ |    |/\/  |/|/\    \
+    \|\ |\|  |  | / /\/\__\
+     \ \| | /   | |__
+   snd    / |   |____)
+          |_/
+
+            |    |              _.-7
+            |\.-.|             ( ,(_
+            | a a|              \\  \,
+            ) [&quot;||          _.--&#039; \  \\
+         .-&#039;  &#039;-&#039;&#039;-..____.-&#039;    ___)  )\
+        F   _/-``-.__;-.-.--`--&#039; . .&#039; \_L_
+       |   l  {~~} ,_\  &#039;.&#039;.      ` __.&#039; )\
+       (    -.;___,;  | &#039;- _       :__.&#039;( /
+       | -.__ _/_.&#039;.-&#039;      &#039;-._ .&#039;      \\
+       |     .&#039;   |  -- _                 &#039;\,
+       |  \ /--,--{ .    &#039;---.__.       .&#039;  .&#039;
+       J  ;/ __;__]. &#039;.-.            .-&#039; )_/
+       J  (-.     &#039;\&#039;. &#039;. &#039;-._.-.-&#039;--._ /
+       |  |  &#039;. .&#039; | \&#039;. &#039;.    ._       \
+       |   \   T   |  \  &#039;. &#039;._  &#039;-._    &#039;.
+       F   J   |   |  &#039;.    .  &#039;._   &#039;-,_.--`
+       F   \   \   F .  \    &#039;.   &#039;.  /
+      J     \  |  J   \  &#039;.   &#039;.    &#039;/
+      J      &#039;.L__|    .   \    &#039;    |
+      |   .    \  |     \   &#039;.   &#039;. /
+      |    &#039;    &#039;.|      |    ,-.  (
+      F   | &#039; ___  &#039;,._   .  /   &#039;. \
+      F   (.&#039;`|| (-._\ &#039;.  \-      &#039;-\
+      \ .-&#039;  ( L `._ &#039;\ &#039;._ (
+ snd  /&#039;  |  /  &#039;-._\      &#039;&#039;\
+          `-&#039;
+
+
+_ ~/~/~/~/~/~/\~~/~/
+                                      _  _                \/__/_|/_/_/_|_/_/
+                            _____*~~~  **  ~~~*_____             \____/  
+                         __* ___     |\__/|     ___ *__              
+                       _*  / 888~~\__(8OO8)__/~~888 \  *_            
+                     _*   /88888888888888888888888888\   *_          
+                     *   |8888888888888888888888888888|   *
+                    /~*  \8888/~\88/~\8888/~\88/~\8888/  *~
+                   /  ~*  \88/   \/   (88)   \/   \88/  *~
+                  /    ~*  \/          \/          \/  *~
+                 /       ~~*_                      _*~~/
+                /            ~~~~~*___ ** ___*~~~~~  /
+               /                      ~  ~         /
+              /                                  /
+             /                                 /
+            /                                /
+           /                    t__n__r__  /        
+          /                    | ####### |        
+         /            ___      | ####### |             ____i__           /
+        /  _____p_____l_l____  | ####### |            | ooooo |         qp
+i__p__ /  |  ##############  | | ####### |__l___xp____| ooooo |      |~~~~|
+ oooo |_I_|  ##############  | | ####### |oo%Xoox%ooxo| ooooo |p__h__|##%#|
+ oooo |ooo|  ##############  | | ####### |o%xo%%xoooo%| ooooo |      |#xx%|
+ oooo |ooo|  ##############  | | ####### |o%ooxx%ooo%%| ooooo |######|x##%|
+ oooo |ooo|  ##############  | | ####### |oo%%x%oo%xoo| ooooo |######|##%x|
+ oooo |ooo|  ##############  | | ####### |%x%%oo%/oo%o| ooooo |######|/#%x|
+ oooo |ooo|  ##############  | | ####### |%%x/oo/xx%xo| ooooo |######|#%x/|
+ oooo |ooo|  ##############  | | ####### |xxooo%%/xo%o| ooooo |######|#^x#|
+ oooo |ooo|  ##############  | | ####### |oox%%o/x%%ox| ooooo |~~~$~~|x##/|
+ oooo |ooo|  ##############  | | ####### |x%oo%x/o%//x| ooooo |_KKKK_|#x/%|
+ ooo~\|ooo|~\##############  | ~\####### |oox%xo%%oox%~\ooooo |_|~|~\|xx%/|
+ ooo ||oHo| |####AAAA######  |h||##XX### |x%x%WWx%%/ox||ooDoo |_| |Y||xGGx|
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  | ~~~~~~~
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::-&#039;    `-::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::-&#039;          `::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::-  &#039;   /(_M_)\  `:::::::::::::::
+:::::::::::::::::::::::::::::::::::-&#039;        |       |  :::::::::::::::
+::::::::::::::::::::::::::::::::-         .   \/~V~\/  ,:::::::::::::::
+::::::::::::::::::::::::::::-&#039;             .          ,::::::::::::::::
+:::::::::::::::::::::::::-&#039;                 `-.    .-::::::::::::::::::
+:::::::::::::::::::::-&#039;                  _,,-::::::::::::::::::::::::::
+::::::::::::::::::-&#039;                _,--:::::::::::::::::::::::::::::::
+::::::::::::::-&#039;               _.--::::::::::::::::::::::#####:::::::::
+:::::::::::-&#039;             _.--:::::::::::::::::::::::::::#####:::::####
+::::::::&#039;    ##     ###.-::::::###:::::::::::::::::::::::#####:::::####
+::::-&#039;       ###_.::######:::::###::::::::::::::#####:##########:::####
+:&#039;         .:###::########:::::###::::::::::::::#####:##########:::####
+     ...--:::###::########:::::###:::::######:::#####:##########:::####
+ _.--:::##:::###:#########:::::###:::::######:::#####:#################
+&#039;#########:::###:#########::#########::######:::#####:#################
+:#########:::#############::#########::######:::#######################
+##########:::########################::################################
+##########:::##########################################################
+##########:::##########################################################
+#######################################################################
+#######################################################################
+################################################################# dp ##
+#######################################################################
+
+
+
+                    ***********************
+               *********************************
+           *******   *     *       *    *    *******
+        *******   ***      **     **     ***   *******
+      ******   *****       *********      *****    *****
+    ******  ********       *********       ******    *****
+   ****   **********       *********       *********   *****
+  ****  **************    ***********     ************   ****
+ ****  *************************************************  ****
+****  ***************************************************  ****
+****  ****************************************************  ****
+****  ****************************************************  ****
+ ****  ***************************************************  ****
+  ****  *******     ****  ***********  ****     *********  ****
+   ****   *****      *      *******      *      ********  ****
+    *****   ****             *****             ******   *****
+      *****   **              ***              **    ******
+       ******   *              *              *   *******
+         *******                                *******
+            ********                         *******
+               *********************************
+                    *********************** 
+                    
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MM.:  .:&#039;   `:::  .:`MMMMMMMMMMM|`MMM&#039;|MMMMMMMMMMM&#039;:  .:&#039;   `:::  .:&#039;.MM
+MMMM.     :          `MMMMMMMMMM  :*&#039;  MMMMMMMMMM&#039;        :        .MMMM
+MMMMM.    ::    .     `MMMMMMMM&#039;  ::   `MMMMMMMM&#039;   .     ::   .  .MMMMM
+MMMMMM. :   :: ::&#039;  :   :: ::&#039;  :   :: ::&#039;      :: ::&#039;  :   :: ::.MMMMMM
+MMMMMMM    ;::         ;::         ;::         ;::         ;::   MMMMMMM
+MMMMMMM .:&#039;   `:::  .:&#039;   `:::  .:&#039;   `:::  .:&#039;   `:::  .:&#039;   `::MMMMMMM
+MMMMMM&#039;     :           :           :           :           :    `MMMMMM
+MMMMM&#039;______::____      ::    .     ::    .     ::     ___._::____`MMMMM
+MMMMMMMMMMMMMMMMMMM`---._ :: ::&#039;  :   :: ::&#039;  _.--::MMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMM::.         ::  .--MMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-.     ;::-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM. .:&#039; .M:F_P:MMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.   .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\ /MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMVMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+MMMMMMMMMMMMMMMMMMMMM.                             MMMMMMMMMMMMMMMMMMMMM
+ `MMMMMMMMMMMMMMMMMMMM           M\  /M           MMMMMMMMMMMMMMMMMMMM&#039;
+   `MMMMMMMMMMMMMMMMMMM          MMMMMM          MMMMMMMMMMMMMMMMMMM&#039;  
+     MMMMMMMMMMMMMMMMMMM-_______MMMMMMMM_______-MMMMMMMMMMMMMMMMMMM    
+      MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM    
+      MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM    
+      MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM    
+     .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.    
+    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM  
+                   `MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM&#039;                
+                          `MMMMMMMMMMMMMMMMMM&#039;                    
+                              `MMMMMMMMMM&#039;                              
+                                 MMMMMM :F_P:                          
+                                  MMMM                                  
+                                   MM                                  
+
+
+
+_____________________                              _____________________
+`-._                 \           |\__/|           /                 _.-&#039;
+    \                 \          |    |          /                 /  
+     \                 `-_______/      \_______-&#039;                 /    
+      |                                                          |    
+      |                                                          |    
+      |                                                          |    
+      /                                                          \    
+     /_____________                                  _____________\
+                   `----._                    _.----&#039;                
+                          `--.            .--&#039;                          
+                              `-.      .-&#039;                              
+                                 \    / :F_P:                          
+                                  \  /                                  
+                                   \/             
+
+_____________________                              _____________________
+`-._:  .:&#039;   `:::  .:\           |\__/|           /::  .:&#039;   `:::  .:.-&#039;
+    \      :          \          |:   |          /         :       /    
+     \     ::    .     `-_______/ ::   \_______-&#039;   .      ::   . /      
+      |  :   :: ::&#039;  :   :: ::&#039;  :   :: ::&#039;      :: ::&#039;  :   :: :|      
+      |     ;::         ;::         ;::         ;::         ;::  |      
+      |  .:&#039;   `:::  .:&#039;   `:::  .:&#039;   `:::  .:&#039;   `:::  .:&#039;   `:|      
+      /     :           :           :           :           :    \      
+     /______::_____     ::    .     ::    .     ::   _____._::____\      
+                   `----._:: ::&#039;  :   :: ::&#039;  _.----&#039;                    
+                          `--.       ;::  .--&#039;                          
+                              `-. .:&#039;  .-&#039;                              
+                                 \    / :F_P:                            
+                                  \  /                                  
+                                   \/  
+
+
+              _,     _   _     ,_
+          .-&#039;` /     \&#039;-&#039;/     \ `&#039;-.
+         /    |      |   |      |    \
+        ;      \_  _/     \_  _/      ;
+       |         ``         ``         |
+       |                               |
+        ;    .-.   .-.   .-.   .-.    ;
+    jgs  \  (   &#039;.&#039;   \ /   &#039;.&#039;   )  /
+          &#039;-.;         V         ;.-&#039;
+              `                 `
+              
+              
+              _,     _   _    ,_  
+           o888P     Y8o8Y     Y888o.
+         d88888      88888      88888b
+       ,8888888b_  _d88888b_  _d8888888,
+       888888888888888888888888888888888
+       888888888888888888888888888888888
+        Y8888P&quot;Y888P&quot;Y888P-Y888P&quot;Y88888&#039;
+    jgs  Y888   &#039;8&#039;   Y8P   &#039;8&#039;   888Y
+          &#039;8o          V          o8&#039;
+             `                   `
+
+
+                   ..oo$00ooo..                    ..ooo00$oo..
+                .o$$$$$$$$$&#039;                          &#039;$$$$$$$$$o.
+             .o$$$$$$$$$&quot;             .   .              &quot;$$$$$$$$$o.
+           .o$$$$$$$$$$~             /$   $\              ~$$$$$$$$$$o.
+         .{$$$$$$$$$$$.              $\___/$               .$$$$$$$$$$$}.
+        o$$$$$$$$$$$$8              .$$$$$$$.               8$$$$$$$$$$$$o
+       $$$$$$$$$$$$$$$              $$$$$$$$$               $$$$$$$$$$$$$$$
+      o$$$$$$$$$$$$$$$.             o$$$$$$$o              .$$$$$$$$$$$$$$$o
+      $$$$$$$$$$$$$$$$$.           o{$$$$$$$}o            .$$$$$$$$$$$$$$$$$
+     ^$$$$$$$$$$$$$$$$$$.         J$$$$$$$$$$$L          .$$$$$$$$$$$$$$$$$$^
+     !$$$$$$$$$$$$$$$$$$$$oo..oo$$$$$$$$$$$$$$$$$oo..oo$$$$$$$$$$$$$$$$$$$$$!
+     {$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$}
+     6$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$?
+     &#039;$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&#039;
+      o$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$o
+       $$$$$$$$$$$$$$;&#039;~`^Y$$$7^&#039;&#039;o$$$$$$$$$$$o&#039;&#039;^Y$$$7^`~&#039;;$$$$$$$$$$$$$$$
+       &#039;$$$$$$$$$$$&#039;       `$&#039;    `&#039;$$$$$$$$$&#039;     `$&#039;       &#039;$$$$$$$$$$$$&#039;
+        !$$$$$$$$$7         !       &#039;$$$$$$$&#039;       !         V$$$$$$$$$!
+         ^o$$$$$$!                   &#039;$$$$$&#039;                   !$$$$$$o^
+           ^$$$$$&quot;                    $$$$$                    &quot;$$$$$^
+             &#039;o$$$`                   ^$$$&#039;                   &#039;$$$o&#039;
+               ~$$$.                   $$$.                  .$$$~
+                 &#039;$;.                  `$&#039;                  .;$&#039;
+                    &#039;.                  !                  .`
+
+
+
+                     Tb.          Tb.                                
+                     :$$b.        $$$b.                              
+                     :$$$$b.      :$$$$b.                            
+                     :$$$$$$b     :$$$$$$b                           
+                      $$$$$$$b     $$$$$$$b                          
+                      $$$$$$$$b    :$$$$$$$b                         
+                      :$$$$$$$$b---^$$$$$$$$b                        
+                      :$$$$$$$$$b        &quot;&quot;^Tb                       
+                       $$$$$$$$$$b    __...__`.                      
+                       $$$$$$$$$$$b.g$$$$$$$$$pb                     
+                       $$$$$$$$$$$$$$$$$$$$$$$$$b                    
+                       $$$$$$$$$$$$$$$$$$$$$$$$$$b                   
+                       :$$$$$$$$$$$$$$$$$$$$$$$$$$;                  
+                       :$$$$$$$$$$$$$^T$$$$$$$$$$P;                  
+                       :$$$$$$$$$$$$$b  &quot;^T$$$$P&#039; :                  
+                       :$$$$$$$$$$$$$$b._.g$$$$$p.db                 
+                       :$$$$$$$$$$$$$$$$$$$$$$$$$$$$;                
+                       :$$$$$$$$&quot;&quot;&quot;^^T$$$$$$$$$$$$P^;                
+                       :$$$$$$$$       &quot;&quot;^^T$$$P^&#039;  ;                
+                       :$$$$$$$$    .&#039;       `&quot;     ;                
+                       $$$$$$$$;   /                :                
+                       $$$$$$$$;           .----,   :                
+                       $$$$$$$$;         ,&quot;          ;               
+                       $$$$$$$$$p.                   |               
+                      :$$$$$$$$$$$$p.                :               
+                      :$$$$$$$$$$$$$$$p.            .&#039;               
+                      :$$$$$$$$$$$$$$$$$$p...___..-&quot;                 
+                      $$$$$$$$$$$$$$$$$$$$$$$$$;                     
+   .db.          bug  $$$$$$$$$$$$$$$$$$$$$$$$$$                     
+  d$$$$bp.            $$$$$$$$$$$$$$$$$$$$$$$$$$;                    
+ d$$$$$$$$$$pp..__..gg$$$$$$$$$$$$$$$$$$$$$$$$$$$                    
+d$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$p._            .gp. 
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$p._.ggp._.d$$$$b
+
+
+
+
+
+       _N\
+      /_ |
+      B_||.
+      /_ | &#039;.
+      0_ m.,,;          ARV
+      //_|
+
+
+      ^._.^
+    _ &#039;h i&#039; _
+   /-\|---|/-\
+  / //\-^-/\\ \
+ ;_//.=(Y)=.\\_;
+; mn :-._.-: nm ;
+|  .  || ||  .  |
+|/&#039; &#039;/_I L_\&#039; &#039;\|
+
+ARV
+
+
+
+ ._M_.
+(     )
+ `&#039;V`&#039; VK
+
+
+
+ /(_M_)\
+|       |
+ \/~V~\/
+
+
+ </pre> </div></div>      
+     </div>
+
+   </div>
+
+<div class="asciiinvertbuttonfloater">   
+<form action="">
+<input id="btn2" name="artinvertbutton" class="artinvert" onclick="toggle1()" value="Toggle Light and Dark" type="button" />
+</form>
+</div>
+   
+</body>
+</html>
