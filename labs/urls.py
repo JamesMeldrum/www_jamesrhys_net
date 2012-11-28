@@ -7,12 +7,11 @@ from labs.view_templates.Labs import LabDetailView
 urlpatterns = patterns('',
     url(r'^$',
         JRMListView.as_view(
-            queryset=Experiment.objects.order_by('-published')[:5],
+            queryset=Experiment.objects.order_by('-published'),
             context_object_name = 'experiments_list',
             template_name='labs/frontend/index.html')
     ),
-    url(r'^(\d)/$',
-        LabDetailView.as_view()
+    url(r'^(?P<experiment_id>\d+)$','labs.views.list_experiments'
     )
 )
 

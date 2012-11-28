@@ -3,15 +3,14 @@
 Labs list
 {% endblock title %}
 {% block body_app %}
-    {% if experiment_list %}
+    {% if experiments_list %}
         <h1> Experiment List</h1>
         {% for experiment in experiments_list %}
-            <h3>Experiment {{forloop.counter1}}</h3>
-            {{experiment.tags}}
-            {{experiment.title}}
-            {{experiment.description}}
-            {{experiment.published}}
-            {{experiment.last_modified}}
+            <h3><a href="{{experiment.id}}">Experiment: {{experiment.title}}</a></h3>
+            {{experiment.tags}}<br />
+            {{experiment.description}}<br />
+            {{experiment.published}}<br />
+            {{experiment.last_modified}}<br />
         {% endfor %} 
     {% else %}
         <h1>No experiments :(</h1>

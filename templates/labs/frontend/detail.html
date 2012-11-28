@@ -1,1 +1,21 @@
+{# 
+
+    Date: 11/28/2012
+    Author: James Meldrum
+    Desc: A template to deep copy on creating a new project. Kept here for ease.
+
+#}
+
 {% extends "site_base.html" %}
+{% if experiment %}
+  {% block title %}{{experiment.title}}{% endblock title %}
+  {% block css_app %} {% endblock css_app %}
+  {% block body_app %}
+    {% block js_app %} 
+    {% endblock js_app %}
+  {% endblock body_app %}
+{% else %}
+
+Experiment has not been set up :(
+
+{% endif %}
