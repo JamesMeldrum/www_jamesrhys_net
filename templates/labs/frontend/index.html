@@ -1,1 +1,19 @@
 {% extends "site_base.html" %}
+{% block title %}
+Labs list
+{% endblock title %}
+{% block body_app %}
+    {% if experiment_list %}
+        <h1> Experiment List</h1>
+        {% for experiment in experiments_list %}
+            <h3>Experiment {{forloop.counter1}}</h3>
+            {{experiment.tags}}
+            {{experiment.title}}
+            {{experiment.description}}
+            {{experiment.published}}
+            {{experiment.last_modified}}
+        {% endfor %} 
+    {% else %}
+        <h1>No experiments :(</h1>
+    {% endif %}
+{% endblock body_app %}

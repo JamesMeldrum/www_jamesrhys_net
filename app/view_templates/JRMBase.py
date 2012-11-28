@@ -4,6 +4,8 @@
     Desc: Base view template for all pages. Really just sets up meta-data at the moment 
 
           Looks as thought I'm forced to subclass each of the basic templates as they each implement the get_context_data method separately through mix-ins...blargh
+          
+    TODO: Sooooooooooooo ugly. Refactor.
 
 """
 
@@ -20,5 +22,14 @@ class JRMListView(ListView):
         context['site_title'] = "James' Site Title"
 
         # Space here to configure globals
+
+        return context 
+
+class JRMDetailView(DetailView):
+    
+    def get_context_data(self,**kwargs):
+        context = super(JRMDetailView,self).get_context_data(**kwargs)
+        context['meta_data'] = SiteMetaData.objects.all()
+        context['site_title'] = "James' Site Title"
 
         return context 
