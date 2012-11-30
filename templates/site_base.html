@@ -19,13 +19,15 @@
     {% block css_app %} {% endblock css_app %}
     <link rel="stylesheet" href="{{STATIC_PREFIX}}css/normalize.css">
     <link rel="stylesheet" href="{{STATIC_PREFIX}}css/main.css">
-    <script src="{{STATIC_PREFIX}}js/vendor/modernizr-2.6.2.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Strait' rel='stylesheet' type='text/css'>
+    <script data-main="{{STATIC_PREFIX}}js/main" src="{{STATIC_PREFIX}}js/libs/require/require.js"></script>
 </head>
 <body>
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
+  <!-- Initially populated by views/app.js -->
+  <div class="container container_16"></div>
 
     {% block body_app %}
     {% endblock body_app %}
@@ -33,10 +35,6 @@
     {% block js_app %} 
     {% endblock js_app %}
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
-        <script src="{% static 'js/plugins.js' %}"></script>
-        <script src="{% static 'js/main.js' %}"></script>
     <script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-36634018-1']);_gaq.push(['_setDomainName', 'jamesrhys.net']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
 </body>
 </html>
