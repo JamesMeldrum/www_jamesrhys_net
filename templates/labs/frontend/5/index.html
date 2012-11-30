@@ -1,0 +1,24 @@
+{% extends "site_base.html" %}
+{% if experiment %}
+  {% block title %}{{experiment.title}}{% endblock title %}
+  {% block css_app %}
+    <link rel="stylesheet" media="screen,projection,tv" href="{{STATIC_PREFIX}}css/labs/5/moz_2d_animations.css">
+  {% endblock css_app %}
+  {% block body_app %}
+
+    <div id="background"></div>
+    <div id="content">Content</div>
+
+    {% block js_app %} 
+
+      <script type="text/javascript">
+
+      </script>
+
+    {% endblock js_app %}
+  {% endblock body_app %}
+{% else %}
+
+Experiment has not been set up :(
+
+{% endif %}
