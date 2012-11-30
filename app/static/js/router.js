@@ -3,8 +3,9 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'vm'
-], function ($, _, Backbone, Vm) {
+  'vm',
+  'impress'
+], function ($, _, Backbone, Vm, Impress) {
   var AppRouter = Backbone.Router.extend({
     routes: {
       // Pages

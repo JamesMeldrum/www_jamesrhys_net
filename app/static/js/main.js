@@ -2,13 +2,11 @@
 // Their usage will become more apparent futher along in the tutorial.
 require.config({
   paths: {
-    // Major libraries
     jquery: 'libs/jquery/jquery-min',
     underscore: 'libs/underscore/underscore-min', // https://github.com/amdjs
     lodash: 'libs/lodash/lodash', // alternative to underscore
     backbone: 'libs/backbone/backbone-min', // https://github.com/amdjs
     sinon: 'libs/sinon/sinon.js',
-
     // Require.js plugins
     text: 'libs/require/text',
     // Impress.js plugins
@@ -26,7 +24,7 @@ require.config({
 require([
   'views/app',
   'router',
-  'vm'
+  'vm',
 ], function(AppView, Router, Vm){
   var appView = Vm.create({}, 'AppView', AppView);
   appView.render();
