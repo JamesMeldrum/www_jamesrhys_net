@@ -1,21 +1,8 @@
-/*
-*
-*   Need more shit in here:
-*     * Resume
-*     * Twitter shit
-*     * Other social network shit
-*     * Shit from old site
-*     * Shit shit shit
-*      
-*
-*/
-
-
 define([
   'jquery',
   'lodash',
   'backbone',
-  'text!templates/core/page.html'
+  'text!templates/products/page.html'
 ], function($, _, Backbone, optimizePageTemplate){
   var OptimizePage = Backbone.View.extend({
     el: '.page',
@@ -25,3 +12,4 @@ define([
   });
   return OptimizePage;
 });
+
