@@ -18,13 +18,13 @@ define([
     el: '.container',
     initialize: function () {
     
-      //var NestedView2 = Backbone.View.extend({});
-      //var NestedView1 = Backbone.View.extend({
-      //  initialize: function () {
-      //    var nestedView2 = Vm.create(this, 'Nested View 2', NestedView2);
-      //  }
-      //});
-      //var nestedView1 = Vm.create(this, 'Nested View 1', NestedView1);
+      var NestedView2 = Backbone.View.extend({});
+      var NestedView1 = Backbone.View.extend({
+        initialize: function () {
+          var nestedView2 = Vm.create(this, 'Nested View 2', NestedView2);
+        }
+      });
+      var nestedView1 = Vm.create(this, 'Nested View 1', NestedView1);
 
     },
     render: function () {

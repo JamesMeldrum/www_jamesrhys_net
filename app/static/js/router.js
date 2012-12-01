@@ -4,8 +4,7 @@ define([
   'underscore',
   'backbone',
   'vm',
-  'impress'
-], function ($, _, Backbone, Vm, Impress) {
+], function ($, _, Backbone, Vm) {
   var AppRouter = Backbone.Router.extend({
     routes: {
       // Pages
@@ -14,7 +13,7 @@ define([
       'backbone/:section': 'backbone',
       'backbone': 'backbone',
       'manager': 'manager',
-      'core' : ' core',
+      'core' : 'core',
       '*actions': 'index'
     }
   });
@@ -22,16 +21,16 @@ define([
   var initialize = function(options){
     var appView = options.appView;
     var router = new AppRouter(options);
-    router.on('route:optimize', function () {
-      require(['views/optimize/page'], function (OptimizePage) {
-        var optimizePage = Vm.create(appView, 'OptimizePage', OptimizePage);
-        optimizePage.render();
+    router.on('route:index', function (actions) {
+      require(['views/index/page'], function (IndexPage) {
+        var indexPage = Vm.create(appView, 'IndexPage', IndexPage);
+        indexPage.render();
       });
     });
-    router.on('route:index', function (actions) {
-      require(['views/index/page'], function (DashboardPage) {
-        var dashboardPage = Vm.create(appView, 'DashboardPage', DashboardPage);
-        dashboardPage.render();
+    router.on('route:core', function (actions) {
+      require(['views/core/page'], function (CorePage) {
+        var corePage = Vm.create(appView, 'CorePage', CorePage);
+        corePage.render();
       });
     });
     router.on('route:defaultAction', function (actions) {
@@ -50,12 +49,6 @@ define([
       require(['views/backbone/page'], function (BackbonePage) {
         var backbonePage = Vm.create(appView, 'BackbonePage', BackbonePage, {section: section});
         backbonePage.render();
-      });
-    });
-    router.on('route:manager', function () {
-      require(['views/manager/page'], function (ManagerPage) {
-        var managerPage = Vm.create(appView, 'ManagerPage', ManagerPage);
-        managerPage.render();
       });
     });
     Backbone.history.start();
