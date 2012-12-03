@@ -4,7 +4,7 @@ define([
   'backbone'
 ], function($, _, Backbone) {
   var blogModel = Backbone.Model.extend({
-    urlRoot: '/api/blog',
+    url: '/api/blog/getLatestEntry', // Set up API so the default action is to get the latest, getEntry takes an id or title - type check on server
     defaults: {
       blog_id: 1,
       date: new Date(),
@@ -14,7 +14,6 @@ define([
       tags: ['carrot','apple','banana']
     },
     initialize: function(){
-      console.log("blogModel init.");
     },
     getNext: function(blog_id){
       return 2;

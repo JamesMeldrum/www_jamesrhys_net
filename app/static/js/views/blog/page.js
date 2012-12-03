@@ -27,7 +27,6 @@ define([
                   }
                 });
               }else{
-                console.log("date"); 
                 $(".value#date").html(val.getDate() + "/" + val.getMonth() +"/"+val.getFullYear());
               }
             break;
