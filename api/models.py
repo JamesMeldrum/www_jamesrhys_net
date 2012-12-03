@@ -18,7 +18,8 @@ class BlogPost(models.Model):
      Describes a blog post object. 
   """
 
-  blog_id = models.IntegerField(primary_key = True, null = False, unique = True, db_index = True)
+  # fuck. need to re-implement this without the custom blog_id. its hurting the API
+  #blog_id = models.IntegerField(primary_key = True, null = False, unique = True, db_index = True)
   date_published = models.DateTimeField([True,True])
   title = models.CharField(max_length = 50, db_index = True)
   subtitle = models.CharField(max_length = 150)
@@ -45,5 +46,5 @@ class Product(models.Model):
   title = models.CharField(max_length=50)
   description = models.TextField(max_length=300)
   date_started = models.DateTimeField([True,True])
-  date_completed = models.DateTimeField([True,True])
+  date_published = models.DateTimeField([True,True])
   tags = models.ForeignKey(Tag)

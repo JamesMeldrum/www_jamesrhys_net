@@ -12,12 +12,9 @@ admin.autodiscover()
 ## Assign site-level meta queries - should be queued to avoid locking
 
 urlpatterns = patterns('',
-    # Used staticfiles module instead
-    #url(r'.*{css|js}^', include ('app.urls_assets_dynamic')),
-    #url(r'.*{png|jpg|jpeg|gif|pdf|csv}^', include ('app.urls_assets_static')),
+    url(r'^api/', include ('api.urls')),
     url(r'^polls/', include('app.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^labs/', include('labs.urls')), 
-    url(r'^.*$', 'app.views.index')
-    #url(r'^blog/', include('blog.urls')),
+    #url(r'^.*$', 'app.views.index')
 )
