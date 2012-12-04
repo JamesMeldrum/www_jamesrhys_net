@@ -19,7 +19,7 @@ class BlogPost(models.Model):
   """
 
   # fuck. need to re-implement this without the custom blog_id. its hurting the API
-  #blog_id = models.IntegerField(primary_key = True, null = False, unique = True, db_index = True)
+  blog_id = models.IntegerField(primary_key = True, null = False, unique = True, db_index = True)
   date_published = models.DateTimeField([True,True])
   title = models.CharField(max_length = 50, db_index = True)
   subtitle = models.CharField(max_length = 150)
@@ -48,3 +48,10 @@ class Product(models.Model):
   date_started = models.DateTimeField([True,True])
   date_published = models.DateTimeField([True,True])
   tags = models.ForeignKey(Tag)
+
+#class Talks(models.Model):
+#  title = models.CharField(max_length=50)
+#  description = models.TextField(max_length=300)
+#  date_published = models.DateTimeField([True,True])
+#  tags = models.ForeignKey(Tag)
+#  slide_deck_url = models.UrlField()

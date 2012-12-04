@@ -7,34 +7,64 @@ define([
 ], function($, _, Backbone, optimizePageTemplate, blogModel){
   var OptimizePage = Backbone.View.extend({
     el: '.page',
+    initialize: function(){
+      this.model.on('change',function(){this.renderBlogEntry();},this);
+      this.model.on('noPrevPosts',function(){this.disablePrev();},this);
+      this.model.on('noNextPosts',function(){this.disableNext();},this);
+      this.model.on('prevPosts',function(){this.enablePrev();},this);
+      this.model.on('nextPosts',function(){this.enableNext();},this);
+      this.disableNext();
+    },
+    model : new blogModel,
+    events : {
+      "click #next" : "getNextPost",
+      "click #prev" : "getPrevPost"
+    },
+    disableNext : function(){
+      $('#next').css('cursor','none');
+      $('#next').animate({
+        opacity: 0.25,
+      },200);
+    },
+    disablePrev : function(){
+      $('#prev').css('cursor','none');
+      $('#prev').animate({
+        opacity: 0.25,
+      },200);
+    },
+    enableNext : function(){
+      $('#next').css('cursor','pointer');
+      $('#next').animate({
+        opacity: 1,
+      },200);
+    },
+    enablePrev : function(){
+      $('#prev').css('cursor','pointer');
+      $('#prev').animate({
+        opacity: 1,
+      },200);
+    },
+    getPrevPost : function(){
+      this.model.getPrevPost();
+    },
+    getNextPost : function(){
+      this.model.getNextPost();
+    },
     that: this,
     render: function () {
       this.$el.html(optimizePageTemplate);
       this.renderBlogEntry();
     },
     renderBlogEntry: function(){
-      var blogEntry = new blogModel;
-      $.each(blogEntry.toJSON(),function(key,val){
-        switch (typeof val) {
-          case "object":
-              if(typeof val.length != 'undefined'){
-                val.sort();
-                $.each(val,function(ndx,tags){
-                  if(ndx == val.length-1){
-                    $(".value#tags").append(tags);  
-                  }else{
-                    $(".value#tags").append(tags+", ");  
-                  }
-                });
-              }else{
-                $(".value#date").html(val.getDate() + "/" + val.getMonth() +"/"+val.getFullYear());
-              }
+      $.each(this.model.attributes,function(key,val){
+        switch(typeof val){
+          case 'object':
             break;
           default:
             $('.value#'+key).html(val);
-            $('.key#'+key).html(key.toString());
             break;
         }
+        
       });
     }
   });

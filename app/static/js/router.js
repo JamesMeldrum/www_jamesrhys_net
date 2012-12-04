@@ -5,20 +5,27 @@ define([
   'backbone',
   'vm',
 ], function ($, _, Backbone, Vm) {
+
+  Backbone.emulateHTTP = true;
+  Backbone.emulateJSON = true;
+
   var AppRouter = Backbone.Router.extend({
     routes: {
       '!/core' : 'core',
       '!/blog' : 'blog',
       '!/blog/:title' : 'blogPost',
       '!/labs' : 'labs',
-      '!/prod' : 'products',
-      '': 'index'
+      '!/prod' : 'products'
     }
   });
 
   var initialize = function(options){
     var appView = options.appView;
     var router = new AppRouter(options);
+    console.log(options);
+    router.on('route:lab_external', function (actions) {
+      window.location.href = 'http://www.google.com';
+    });
     router.on('route:index', function (actions) {
       require(['views/index/page'], function (IndexPage) {
         var indexPage = Vm.create(appView, 'IndexPage', IndexPage);
