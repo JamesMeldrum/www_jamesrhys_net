@@ -29,12 +29,13 @@
     <![endif]-->
   <!-- Initially populated by views/app.js -->
   <div class="container container_16"></div>
+  <canvas id="MyCanvas" resize></canvas>
   <div class="pageParent"></div>
-    {% block body_app %}
-    {% endblock body_app %}
+  {% block body_app %}
+  {% endblock body_app %}
 
-    {% block js_app %} 
-    {% endblock js_app %}
+  {% block js_app %} 
+  {% endblock js_app %}
 
     <script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-36634018-1']);_gaq.push(['_setDomainName', 'jamesrhys.net']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
 </body>

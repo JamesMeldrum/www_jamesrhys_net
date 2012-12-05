@@ -22,11 +22,14 @@ require.config({
 // Let's kick off the application
 
 require([
+  'jquery',
   'views/app',
   'router',
   'vm',
-], function(AppView, Router, Vm){
-  var appView = Vm.create({}, 'AppView', AppView);
-  appView.render();
-  Router.initialize({appView: appView});  // The router now has a copy of all main appview
+], function($, AppView, Router, Vm){
+  $(document).ready(function(){
+    var appView = Vm.create({}, 'AppView', AppView);
+    appView.render();
+    Router.initialize({appView: appView});  // The router now has a copy of all main appview
+  });
 });
