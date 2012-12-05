@@ -8,7 +8,7 @@ define([
   var OptimizePage = Backbone.View.extend({
     el: '.page',
     initialize: function(){
-      this.model.on('change',function(){this.renderBlogEntry();},this);
+      this.model.on('updated',function(){this.renderBlogEntry();},this);
       this.model.on('noPrevPosts',function(){this.disablePrev();},this);
       this.model.on('noNextPosts',function(){this.disableNext();},this);
       this.model.on('prevPosts',function(){this.enablePrev();},this);
@@ -54,6 +54,8 @@ define([
     render: function () {
       this.$el.html(optimizePageTemplate);
       this.renderBlogEntry();
+      this.model.probeNextPost();
+      this.model.probePrevPost();
     },
     renderBlogEntry: function(){
       $.each(this.model.attributes,function(key,val){
@@ -64,8 +66,7 @@ define([
             $('.value#'+key).html(val);
             break;
         }
-        
-      });
+     });
     }
   });
   return OptimizePage;

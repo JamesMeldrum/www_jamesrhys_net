@@ -559,6 +559,8 @@ ul.standardList {
   -moz-border-radius: 5px;
   cursor: pointer;
   position: relative;
+  opacity: 0.25;
+  cursor: none;
 }
 
 .labsPage .labsNav:before {
@@ -590,6 +592,7 @@ ul.standardList {
   -moz-border-radius: 5px;
   margin-bottom:50px;
   margin-left:10px;
+  display:none;
 }
 
 .labsEntry:before {

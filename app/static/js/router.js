@@ -15,6 +15,7 @@ define([
       '!/blog' : 'blog',
       '!/blog/:title' : 'blogPost',
       '!/labs' : 'labs',
+      '!/talks' : 'talks',
       '!/prod' : 'products'
     }
   });
@@ -22,15 +23,18 @@ define([
   var initialize = function(options){
     var appView = options.appView;
     var router = new AppRouter(options);
-    console.log(options);
-    router.on('route:lab_external', function (actions) {
-      window.location.href = 'http://www.google.com';
-    });
     router.on('route:index', function (actions) {
       require(['views/index/page'], function (IndexPage) {
         var indexPage = Vm.create(appView, 'IndexPage', IndexPage);
         indexPage.render();
       });
+    });
+    router.on('route:talks', function (actions) {
+//      require(['views/talks/page'], function (IndexPage) {
+//        var indexPage = Vm.create(appView, 'IndexPage', IndexPage);
+//        indexPage.render();
+      console.log("Talks requested.");
+//     });
     });
     router.on('route:core', function (actions) {
       require(['views/core/page'], function (CorePage) {

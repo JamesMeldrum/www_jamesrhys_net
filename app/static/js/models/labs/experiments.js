@@ -77,14 +77,6 @@ define([
           model.set({c:exp_formatted});
         }
         model.trigger('load_complete');
-       // model.set({blog_id:response[0].pk,
-       //           title:response[0].fields.title,
-       //           date: response[0].fields.date_published.slice(5,7) + " . "+response[0].fields.date_published.slice(8,10) + " . " +response[0].fields.date_published.slice(0,4),
-       //           subtitle: response[0].fields.subtitle,
-       //           body: response[0].fields.body});
-       // model.trigger('change');
-       // model.trigger('prevPosts');
-       // model.trigger('nextPosts');
       }else{
         if(model.last_request == 'next'){
           model.trigger('noNextPosts');

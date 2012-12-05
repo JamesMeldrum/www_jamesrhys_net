@@ -46,7 +46,7 @@ class Product(models.Model):
   title = models.CharField(max_length=50)
   description = models.TextField(max_length=300)
   date_started = models.DateTimeField([True,True])
-  date_published = models.DateTimeField([True,True])
+  date_completed = models.DateTimeField([True,True])
   tags = models.ForeignKey(Tag)
 
 #class Talks(models.Model):

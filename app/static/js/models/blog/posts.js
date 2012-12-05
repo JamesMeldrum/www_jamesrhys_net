@@ -27,7 +27,7 @@ define([
       tags: []
     },
     getPrevPost : function(){
-      that = this
+      that = this;
       this.last_request = 'prev';
       this.request_paras.p = 'prev'; 
       this.fetch({
@@ -35,13 +35,40 @@ define([
       });
     },
     getNextPost : function(){
-      that = this
+      that = this;
       this.last_request = 'next';
       this.request_paras.p = 'next'; 
       this.fetch({
         success: that.postFetch
       });
     },
+    probePrevPost: function(){
+      this.last_request = 'prev';
+      this.request_paras.p = 'prev'; 
+      this.fetch({
+        success: function(model, response,options){
+          if(response.length ==0){
+            model.trigger("noPrevPosts");
+          }else{
+            model.trigger("prevPosts");
+          }
+        }
+      });
+    },
+    probeNextPost: function(){
+      this.last_request = 'next';
+      this.request_paras.p = 'next'; 
+      this.fetch({
+        success: function(model, response,options){
+          if(response.length ==0){
+            model.trigger("noNextPosts");
+          }else{
+            model.trigger("nextPosts");
+          }
+        }
+      });
+    },
+
     last_request : "next",
     postFetch : function(model,response, options) {
       console.log(response);
@@ -52,16 +79,9 @@ define([
                   date: response[0].fields.date_published.slice(5,7) + " . "+response[0].fields.date_published.slice(8,10) + " . " +response[0].fields.date_published.slice(0,4),
                   subtitle: response[0].fields.subtitle,
                   body: response[0].fields.body});
-        model.trigger('change');
-        model.trigger('prevPosts');
-        model.trigger('nextPosts');
-      }else{
-        if(model.last_request == 'next'){
-          model.trigger('noNextPosts');
-        }else{
-          model.trigger('noPrevPosts');
-        }
-        console.log("None left :(");
+        model.trigger('updated');
+        model.probePrevPost();
+        model.probeNextPost();
       }
     },
     initialize: function(){
