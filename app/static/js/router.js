@@ -16,6 +16,7 @@ define([
       '!/blog/:title' : 'blogPost',
       '!/labs' : 'labs',
       '!/talks' : 'talks',
+      '!/talks/:id' : 'talksDetail',
       '!/prod' : 'products'
     }
   });
@@ -30,11 +31,16 @@ define([
       });
     });
     router.on('route:talks', function (actions) {
-//      require(['views/talks/page'], function (IndexPage) {
-//        var indexPage = Vm.create(appView, 'IndexPage', IndexPage);
-//        indexPage.render();
-      console.log("Talks requested.");
-//     });
+      require(['views/talks/page'], function (IndexPage) {
+        var indexPage = Vm.create(appView, 'IndexPage', IndexPage);
+        indexPage.render();
+     });
+    });
+    router.on('route:talksDetail', function (slug_title) {
+      require(['views/talks/detail'], function (IndexPage) {
+        var indexPage = Vm.create(appView, 'IndexPage', IndexPage,slug_title);
+        indexPage.render();
+     });
     });
     router.on('route:core', function (actions) {
       require(['views/core/page'], function (CorePage) {

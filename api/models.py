@@ -49,9 +49,9 @@ class Product(models.Model):
   date_completed = models.DateTimeField([True,True])
   tags = models.ForeignKey(Tag)
 
-#class Talks(models.Model):
-#  title = models.CharField(max_length=50)
-#  description = models.TextField(max_length=300)
-#  date_published = models.DateTimeField([True,True])
-#  tags = models.ForeignKey(Tag)
-#  slide_deck_url = models.UrlField()
+class Talks(models.Model):
+  title = models.CharField(max_length=50)
+  description = models.TextField(max_length=300)
+  date_published = models.DateTimeField([True,True])
+  tags = models.ForeignKey(Tag)
+  slide_deck_url = models.CharField(max_length=200)

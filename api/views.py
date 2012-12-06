@@ -1,7 +1,7 @@
 from django.core import serializers
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, Http404
-from api.models import Tag, BlogPost, Experiment, Product
+from api.models import Tag, BlogPost, Experiment, Product, Talks
 from datetime import datetime
 import re
 
@@ -55,13 +55,17 @@ class APIRequestHandler(object):
                                   'lab':'Experiment',
                                   'prod':'Product',
                                   'tag':'Tag',
+                                  'talks':'Talks'
     }
     self.object_types_sort = {
                                   'blog':'date_published',    # As this comes along, 
                                   'lab':'date_published',     # allow users to change
                                   'prod':'date_published',    # default sort order
                                   'tag':'pk',
+                                  'talks':'pk'
     }
+
+# ./api/talks/get/q?t=all
 
     # Operations supported by the object_types
 
@@ -69,7 +73,8 @@ class APIRequestHandler(object):
                                'tag' : ['id','title','all'],
                                'blog' : ['id', 'title', 'tag', 'date', 'all'], 
                                'lab' : ['id', 'title', 'tag', 'date', 'all'],  
-                               'prod' : ['id', 'title', 'tag', 'date', 'all']
+                               'prod' : ['id', 'title', 'tag', 'date', 'all'],
+                               'talks' : ['id', 'title', 'tag', 'date', 'all']
     }
 
     # Paramters supported by operations
@@ -78,7 +83,7 @@ class APIRequestHandler(object):
                               'id': ['prev','next','int'],
                               'title': ['string'],
                               'tag': ['int','string'],
-                              'date': ['prev','next','date'],
+                              'date': ['prev','next','date']
     }
                             
     self.validateRequest()
@@ -131,6 +136,18 @@ class APIRequestHandler(object):
 
 
     exec_string = ''
+    if self.request_object['object_name'] == 'talks':
+      """
+          Two request types: list and detail
+            * List retrieves all entries
+            * Detail retrives one by ID
+      """
+      if self.request_object['get_type'] == 'all':
+        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').all()'
+      elif self.request_object['get_type'] == 'id':
+        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').filter(id__exact='+self.request_object['get_base']+').all()'
+      else:
+        pass
     if self.request_object['object_name'] == 'prod':
         exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').filter(id__gte='+self.request_object['get_base']+').all()'
     elif self.request_object['object_name'] == 'lab':
