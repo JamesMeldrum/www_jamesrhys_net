@@ -34,7 +34,7 @@ class Experiment(models.Model):
     return self.title
 
 class Product(models.Model):
-  title = models.CharField(max_length=50, db_idnex = True)
+  title = models.CharField(max_length=50, db_index = True)
   body = models.TextField() 
   date_description = models.CharField(max_length=100)
   tags = generic.GenericRelation(Tag)

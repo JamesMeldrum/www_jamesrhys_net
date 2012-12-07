@@ -8,7 +8,7 @@
 """
 
 from app.view_templates.JRMBase import JRMDetailView
-from labs.models import Experiment 
+from api.models import Experiment 
 
 class LabDetailView(JRMDetailView):
 
