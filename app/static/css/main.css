@@ -375,7 +375,7 @@ textarea {
   width: 980px;
   margin: auto;
   min-height:400px;
-  padding: 100px;
+  padding: 50px 100px 100px 100px;
   overflow: hidden;
 }
 
@@ -430,9 +430,10 @@ hr {
   font: 26px/32px 'Julius Sans One', sans-serif;
 }
 
-p {
+p, .p {
   font: 14px/18px 'Anaheim', sans-serif;
 }
+
 
 a {
   font-weight: bold;
@@ -789,6 +790,144 @@ canvas#MyCanvas {
 
 .talksField .value {
   margin-left:15px;
+}
+
+/* Talks */
+
+.prodDetail {
+  width:100%;
+}
+
+.prodSlideCont, .prodPost p {
+  float:right;
+  width:250px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  position: relative;
+  padding: 30px 10px 30px 10px;
+  background-color: rgba(0,0,0,0.05);
+  -webkit-box-shadow: inset 0px 3px 3px rgba(0,0,0,0.3);
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: inset 0px 3px 3px rgba(0,0,0,0.3);
+  -moz-border-radius: 5px;
+  margin-left: 30px;
+
+}
+
+.prodSlideCont:before, .prodPost p:before {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    -webkit-box-shadow: inset 0px -1px 1px rgba(255,255,255,0.5);
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: inset 0px -1px 1px rgba(255,255,255,0.5);
+    -moz-border-radius: 5px;
+    height: 100%;   
+    content: " ";
+}
+
+.prodSlideCont:after, .prodPost p:after {
+    position: absolute;
+    left: 0px;
+    top: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    content: " ";
+}
+.prodPost p {
+  width:720px;
+  padding: 30px;
+  background-color: rgba(0, 0, 0,0.07);
+  margin:auto;
+  float:none;
+}
+
+.prodSlideCont {
+  width:920px;
+  padding: 30px;
+  background-color: rgba(0, 0, 0,0.07);
+  margin:auto;
+  float:none;
+}
+
+.prodNav {
+  float:left;
+  width:100px;
+  text-align:center;
+  margin-top:20px;
+  margin-left:16px;
+  background-color: rgba(0,0,0,0.05);
+  -webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.3);
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.3);
+  -moz-border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.prodNav:before {
+    -webkit-box-shadow: 0px -1px 1px rgba(255,255,255,0.5);
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0px -1px 1px rgba(255,255,255,0.5);
+    -moz-border-radius: 5px;
+
+}
+.prodNav:after {
+
+}
+
+.prodNav#back{
+  margin-left:0px;
+  margin-bottom:50px;
+  margin-top:0px;
+  float:none;
+}
+
+.prodPost .title, .prodPost .prodSlideCont{
+  margin-bottom:50px;
+}
+
+.subtitleCont {
+  width:720px;
+  margin:auto;
+}
+
+.subtitleCont .subtitle {
+  width:50%;
+  float:left
+}
+
+.subtitleCont .subtitle ul {
+
+}
+
+.bjqs-next a, .bjqs-prev a {
+  width:100px;
+  text-align:center;
+  background-color: rgba(0,0,0,0.05);
+  -webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.3);
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.3);
+  -moz-border-radius: 5px;
+  cursor: pointer;
+}
+
+.bjqs-next a:before, .bjqs-prev a:before{
+    -webkit-box-shadow: 0px -1px 1px rgba(255,255,255,0.5);
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0px -1px 1px rgba(255,255,255,0.5);
+    -moz-border-radius: 5px;
+}
+
+.bjqs-prev a{
+  margin-left:-120px;
+}
+.bjqs-next a{
+  margin-right:-120px;
 }
 
 /*

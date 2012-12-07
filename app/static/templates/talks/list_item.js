@@ -1,6 +1,6 @@
 define([
   'underscore'
 ], function(_){
-  var list_item = _.template("<li id='<%= id %>'><a id='<%= id %>' class='detailLink' href='#!/talks/<% print(title.replace(' ','-')) %>'><%= title %></a></li>");
+  var list_item = _.template("<li id='<%= id %>'><p><a id='<%= id %>' class='detailLink' href='#!/talks/<% print(title.replace(' ','-')) %>'>⇀&nbsp;&nbsp;&nbsp;<%= title %></a></p></li>");
   return list_item;  
 })

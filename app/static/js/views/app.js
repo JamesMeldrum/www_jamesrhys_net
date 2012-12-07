@@ -25,3 +25,5 @@ define([
   });
   return AppView;
 });
+
+// Events object. Bind anchor click events here

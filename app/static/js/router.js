@@ -12,12 +12,13 @@ define([
   var AppRouter = Backbone.Router.extend({
     routes: {
       '!/core' : 'core',
-      '!/blog' : 'blog',
-      '!/blog/:title' : 'blogPost',
       '!/labs' : 'labs',
+      '!/blog' : 'blog',
+      '!/blog/:slug_title' : 'blogDetail',
       '!/talks' : 'talks',
-      '!/talks/:id' : 'talksDetail',
-      '!/prod' : 'products'
+      '!/talks/:slug_title' : 'talksDetail',
+      '!/prod' : 'products',
+      '!/prod/:slug_title' : 'productsDetail'
     }
   });
 
@@ -54,9 +55,9 @@ define([
         blogPage.render();
       });
     });
-    router.on('route:blogPost', function (actions, blog_title) {
-      require(['views/blog/post'], function (BlogPage) {
-        var blogPage = Vm.create(appView, 'BlogPage', BlogPage);
+    router.on('route:blogDetail', function (slug_title) {
+      require(['views/blog/detail'], function (BlogPage) {
+        var blogPage = Vm.create(appView, 'BlogPage', BlogPage,slug_title);
         blogPage.render();
       });
     });
@@ -66,10 +67,16 @@ define([
         modulePage.render();
       });
     });
-    router.on('route:products', function (section) {
-      require(['views/products/page'], function (BackbonePage) {
-        var backbonePage = Vm.create(appView, 'BackbonePage', BackbonePage, {section: section});
-        backbonePage.render();
+    router.on('route:products', function () {
+      require(['views/products/page'], function (ProductsPage) {
+        var productsPage = Vm.create(appView, 'BackbonePage', ProductsPage);
+        productsPage.render();
+      });
+    });
+    router.on('route:productsDetail', function (slug_title) {
+      require(['views/products/detail'], function (ProductsPage) {
+        var productsPage = Vm.create(appView, 'BackbonePage', ProductsPage,slug_title);
+        productsPage.render();
       });
     });
     Backbone.history.start();

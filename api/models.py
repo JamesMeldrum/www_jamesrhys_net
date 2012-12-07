@@ -44,10 +44,13 @@ class Product(models.Model):
   """
 
   title = models.CharField(max_length=50)
-  description = models.TextField(max_length=300)
+  description = models.TextField(max_length=500) # Max length of characters - 2000?
   date_started = models.DateTimeField([True,True])
   date_completed = models.DateTimeField([True,True])
   tags = models.ForeignKey(Tag)
+  # technologies = models.TextField(max_length=500)
+  # goals = models.TextField(max_length=500)
+  # images = models.FileField()
 
 class Talks(models.Model):
   title = models.CharField(max_length=50)

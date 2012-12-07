@@ -16,7 +16,6 @@ define([
     initialize: function(req_title){
       this.model = new talksModel,
       this.model.on('load_complete', function(){this.renderDetail();},this); 
-      console.log(req_title);
       this.req_title = req_title;
       this.model.getAll();
     },

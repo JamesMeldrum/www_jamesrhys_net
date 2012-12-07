@@ -17,85 +17,34 @@ define([
       'b' : '1'
     },
     defaults: {
-      0: {
-        id: "",
-        title: "",
-        description: "",
-        date_started: "",
-        date_published: "",
-        tags: []
-      },
-      1: {
-        id: "",
-        title: "",
-        description: "",
-        date_started: "",
-        date_published: "",
-        tags: []
-      },
-      2: {
-        id: "",
-        title: "",
-        description: "",
-        date_started: "",
-        date_published: "",
-        tags: []
-      },
-      3: {
-        id: "",
-        title: "",
-        description: "",
-        date_started: "",
-        date_published: "",
-        tags: []
-      },
-      4: {
-        id: "",
-        title: "",
-        description: "",
-        date_started: "",
-        date_published: "",
-        tags: []
-      },
-      5: {
-        id: "",
-        title: "",
-        description: "",
-        date_started: "",
-        date_published: "",
-        tags: []
-      }
+      all : []
+    },
+    getAll : function(){
+      console.log("All requested.");
+      this.fetch({
+        success: this.postFetch
+      });
     },
     getPrevPage : function(){
     },
     getNextPage: function(){
     },
     postFetch : function(model,response, options) {
-      if(response.length !=0){
-        for(var c = 0; c<response.length; c++){
-          var exp_formatted = {
-            id: response[""+c.toString()].pk,
-            title: response[c].fields.title,
-            description: response[c].fields.description,
-            date_published: response[c].fields.date_published,
-            tags: response[c].fields.tags
-          };
-          model.set({c:exp_formatted});
-        }
-        model.trigger('load_complete');
-      }else{
-        if(model.last_request == 'next'){
-          model.trigger('noNextPosts');
-        }else{
-          model.trigger('noPrevPosts');
-        }
-        console.log("None left :(");
+      var formatted_prods = [];
+      for(var c = 0; c<response.length; c++){
+        var formatted_prod = {
+          id: response[""+c.toString()].pk,
+          title: response[c].fields.title,
+          description: response[c].fields.description,
+          date_published: response[c].fields.date_published,
+          tags: response[c].fields.tags
+        };
+        formatted_prods[c] = formatted_prod;
       }
+      model.set({all:formatted_prods});
+      model.trigger('load_complete');
     },
     initialize: function(){
-      this.fetch({
-        success: this.postFetch
-      });
     }
   });
   return blogModel;

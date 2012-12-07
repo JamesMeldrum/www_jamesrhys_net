@@ -149,6 +149,9 @@ class APIRequestHandler(object):
       else:
         pass
     if self.request_object['object_name'] == 'prod':
+      if self.request_object['get_type'] == 'title':
+        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.filter(title__exact=\''+self.request_object['get_base']+'\').all()'
+      else:
         exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').filter(id__gte='+self.request_object['get_base']+').all()'
     elif self.request_object['object_name'] == 'lab':
         exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').filter(id__gte='+self.request_object['get_base']+').all()'
