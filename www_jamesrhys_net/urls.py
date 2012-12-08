@@ -15,5 +15,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include ('api.urls')),
     url(r'^labs/', include('labs.urls')), 
-    url(r'^.*$', 'app.views.index')
+    url(r'^$', 'app.views.index')
 )

@@ -6,7 +6,7 @@ from django.contrib.contenttypes import generic
 
 class Tag(models.Model):
   title = models.CharField(max_length = 50)
-  content_type = models.ForeignKey(ContentType)
+  content_type = models.ForeignKey(ContentType) # ManyToMany Field
   object_id = models.PositiveIntegerField()
   content_object = generic.GenericForeignKey('content_type','object_id')
 
@@ -14,7 +14,6 @@ class Tag(models.Model):
     return self.title
 
 class BlogPost(models.Model):
-  #blog_id = models.IntegerField(primary_key = True, null = False, unique = True, db_index = True)
   date_published = models.DateTimeField()
   title = models.CharField(max_length = 100, db_index = True)
   subtitle = models.CharField(max_length = 250)
@@ -29,6 +28,7 @@ class Experiment(models.Model):
   body = models.TextField() 
   date_published = models.DateTimeField()
   tags = generic.GenericRelation(Tag)
+  thumbnail = models.ImageField(upload_to='thumbs')
   
   def __unicode__(self):
     return self.title
@@ -40,6 +40,7 @@ class Product(models.Model):
   tags = generic.GenericRelation(Tag)
   technologies = models.TextField(max_length=500)
   goals = models.TextField(max_length=500)
+  thumbnail = models.ImageField(upload_to='thumbs')
 
   def __unicode__(self):
     return self.title

@@ -6,8 +6,7 @@ from api.models import Experiment
 from app.models import SiteMetaData
 from django.http import HttpResponse, HttpResponseRedirect
 
-def list_experiments(request,experiment_id):
-  print "In list_exp"
+def list_experiment(request,experiment_id):
   experiment = get_object_or_404(Experiment, pk=experiment_id)
   t = loader.get_template('labs/frontend/'+str(experiment_id)+'/index.html')
   c = Context({

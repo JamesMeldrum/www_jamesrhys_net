@@ -434,6 +434,12 @@ p, .p {
   font: 14px/18px 'Anaheim', sans-serif;
 }
 
+.pageTitle {
+  font: 18px/32px 'Julius Sans One', sans-serif;
+  width: 400px;
+  margin: auto;
+  text-align: justify;
+}
 
 a {
   font-weight: bold;

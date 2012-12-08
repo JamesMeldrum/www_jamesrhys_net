@@ -157,29 +157,18 @@ class APIRequestHandler(object):
         exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').filter(id__gte='+self.request_object['get_base']+').all()'
     elif self.request_object['object_name'] == 'prod':
         exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').filter(id__gte='+self.request_object['get_base']+').all()'
-    elif self.request_object['get_type'] == 'id':
-      if self.request_object['get_param_type'] == 'int':
-        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.filter(id__exact='+self.request_object['get_param']+').all()'
-      elif self.request_object['get_param_type'] == 'next': 
-        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\''+self.request_object['get_type']+'\').filter(id__gt='+self.request_object['get_base']+').all()[:'+self.request_object['get_quantity']+']'
-      elif self.request_object['get_param_type'] == 'prev': 
-        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-'+self.request_object['get_type']+'\').filter(id__lt='+self.request_object['get_base']+').all()[:'+self.request_object['get_quantity']+']'
-    elif self.request_object['get_type'] == 'title':
-      if self.request_object['get_param_type'] == 'string':
-        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.filter(title__exact=\''+self.request_object['get_param']+'\').all()'
-    elif self.request_object['get_type'] == 'tag':
-      if self.request_object['get_param_type'] == 'string':
-        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.filter(tags__title__exact=\''+self.request_object['get_param']+'\').all()'
-      elif self.request_object['get_param_type'] == 'int': 
-        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.filter(tags__id__exact='+self.request_object['get_param']+').all()'
-    elif self.request_object['get_type'] == 'date':
-      if self.request_object['get_param_type'] == 'date':
-        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.filter(date_published__gte=\''+str(self.request_object['get_base'])+'\').all()[:1]'
-      elif self.request_object['get_param_type'] == 'next': 
-        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.filter(date_published__gt=\''+str(self.request_object['get_base'])+'\').all()[:1]'
-      elif self.request_object['get_param_type'] == 'prev': 
-        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.filter(date_published__lt=\''+str(self.request_object['get_base'])+'\').all()[:1]'
-#       raise Exception(exec_string)
+    elif self.request_object['object_name'] == 'blog':
+      if self.request_object['get_type'] == 'all':
+        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').all()'
+      elif self.request_object['get_type'] == 'next':
+        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.filter(id__gt=\''+self.request_object['get_base']+'\').order_by(\'id\').all()[:1]'
+      elif self.request_object['get_type'] == 'prev':
+        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.filter(id__lt=\''+self.request_object['get_base']+'\').order_by(\'-id\').all()[:1]'
+      elif self.request_object['get_type'] == 'title':
+        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.filter(title__exact=\''+self.request_object['get_base'].replace('-',' ')+'\').all()'
+    else:
+       raise Exception("Bee bop a loo laa")
+
     code = compile(exec_string,'<string>','exec')
     exec code 
 

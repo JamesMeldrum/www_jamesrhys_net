@@ -2,15 +2,29 @@
     TODO: Restrict fk's on Tags and Images manually https://docs.djangoproject.com/en/dev/ref/contrib/admin/#using-generic-relations-as-an-inline
 """
 
-
+from django.contrib.contenttypes import generic
 from django.contrib import admin
 from api.models import Tag, BlogPost, Experiment, Product, Talks, Images
 
 ## Custom ModelAdmin objects where needed
 
 class SiteMetaDataAdmin(admin.ModelAdmin):
-    list_display = ('meta_key','meta_var','site_section') # Used to show the attrs on the list page
-    list_filter = ('site_section','meta_key','meta_var') # Creates filter on right of page
+  list_display = ('meta_key','meta_var','site_section') # Used to show the attrs on the list page
+  list_filter = ('site_section','meta_key','meta_var') # Creates filter on right of page
+
+class ImagesGeneric(generic.GenericTabularInline):
+  model = Images 
+
+class TagsGeneric(generic.GenericTabularInline):
+  model = Tag
+
+class BlogAdmin(admin.ModelAdmin):
+  filter_horizontal
+  inlines = [
+    ImagesGeneric,
+    TagsGeneric
+  ]
+
 
 #class ChoiceInline(admin.TabularInline):
 #    model = Choice
@@ -37,8 +51,9 @@ class SiteMetaDataAdmin(admin.ModelAdmin):
 #admin.site.register(Poll,PollAdmin)
 
 ## Adding the admin fields to the admin
+admin.site.register(BlogPost, BlogAdmin)
 
-admin_fields = [Tag, BlogPost, Experiment, Product, Talks, Images]
+admin_fields = [Tag, Experiment, Product, Talks, Images]
 
 for field in admin_fields:
     admin.site.register(field)

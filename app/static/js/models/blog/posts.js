@@ -12,19 +12,18 @@ define([
       return ret_url; // Set up API so the default action is to get the latest, getEntry takes an id or title - type check on server
     },
     request_paras : {
-      't' : 'date',
-      'p' : 'date',
-      'b' : (((new Date().getDate().toString()).length == 2)?(new Date().getDate().toString()):"0"+(new Date().getDate().toString()))
-                + (((new Date().getMonth().toString()).length == 2)?(new Date().getMonth().toString()):"0"+(new Date().getMonth().toString()))
-                + new Date().getFullYear().toString()
+      't' : 'all',
+      'p' : '',
+      'b' : ''
     },
     defaults: {
-      blog_id: "",
-      date: "",
-      title: "",
-      subtitle: "",
-      body: "",
-      tags: []
+      all : []
+    },
+    getAll : function(){
+      console.log("All requested");
+      this.fetch({
+        success: this.postFetch;
+      });
     },
     getPrevPost : function(){
       that = this;
@@ -70,19 +69,9 @@ define([
     },
 
     last_request : "next",
-    postFetch : function(model,response, options) {
+    postFetch : function(model,response, options
+    {
       console.log(response);
-      if(response.length !=0){
-        model.request_paras.b = response[0].fields.date_published.slice(5,7)+response[0].fields.date_published.slice(8,10)+response[0].fields.date_published.slice(0,4)
-        model.set({blog_id:response[0].pk,
-                  title:response[0].fields.title,
-                  date: response[0].fields.date_published.slice(5,7) + " . "+response[0].fields.date_published.slice(8,10) + " . " +response[0].fields.date_published.slice(0,4),
-                  subtitle: response[0].fields.subtitle,
-                  body: response[0].fields.body});
-        model.trigger('updated');
-        model.probePrevPost();
-        model.probeNextPost();
-      }
     },
     initialize: function(){
       this.fetch({
