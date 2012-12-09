@@ -14,41 +14,12 @@ class SiteMetaDataAdmin(admin.ModelAdmin):
 
 class ImagesGeneric(generic.GenericTabularInline):
   model = Images 
-
-class TagsGeneric(generic.GenericTabularInline):
-  model = Tag
+# extra = 1
 
 class BlogAdmin(admin.ModelAdmin):
-  filter_horizontal
-  inlines = [
-    ImagesGeneric,
-    TagsGeneric
-  ]
-
-
-#class ChoiceInline(admin.TabularInline):
-#    model = Choice
-#    extra = 3
-#    
-#
-#class PollAdmin(admin.ModelAdmin):
-#    #fields = ['pub_date', 'question']
-#    fieldsets = [
-#        (None, {'fields':['question']}),
-#        ('Date Information', {'fields':['pub_date'],'classes':['collapse']}),
-#        ]
-#
-#    inlines = [ChoiceInline]
-#
-#    list_display = ('question', 'pub_date','was_published_recently')
-#
-#    list_filter = ['pub_date']
-#
-#    search_fields = ['question']
-#
-#    date_heirarchy = 'pub_date'
-#
-#admin.site.register(Poll,PollAdmin)
+ inlines = [
+   ImagesGeneric
+ ]
 
 ## Adding the admin fields to the admin
 admin.site.register(BlogPost, BlogAdmin)
