@@ -31,6 +31,9 @@ def index(request, object_name, request_operation):
   elif request.GET.get('t') == 'title' and object_name == 'talks':
     data = serializers.serialize("json", arh.getResp(), ensure_ascii = False,relations=('tags'))
     return HttpResponse(data,mimetype='application/json') 
+  elif request.GET.get('t') == 'all' and object_name == 'lab':
+    data = serializers.serialize("json", arh.getResp(), ensure_ascii = False,relations=('tags'))
+    return HttpResponse(data,mimetype='application/json') 
   else:
     data = serializers.serialize("json", arh.getResp(), ensure_ascii = False)
     return HttpResponse(data,mimetype='application/json') 
@@ -166,7 +169,7 @@ class APIRequestHandler(object):
       else:
         exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').filter(id__gte='+self.request_object['get_base']+').all()'
     elif self.request_object['object_name'] == 'lab':
-        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').filter(id__gte='+self.request_object['get_base']+').all()'
+        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').all()'
     elif self.request_object['object_name'] == 'prod':
         exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').filter(id__gte='+self.request_object['get_base']+').all()'
     elif self.request_object['object_name'] == 'blog':

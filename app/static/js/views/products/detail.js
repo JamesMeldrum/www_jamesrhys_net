@@ -60,8 +60,7 @@ define([
         $('ul.standardList#tags').append(detail_list_item({list_val:val.fields.title}));
       });
       // IMAGES 
-      
-      if(!this.model.attributes.prod.images.length){
+      if(this.model.attributes.prod.images.length){
         $.each(this.model.attributes.prod.images,function(ndx,val){
           console.log(ndx);
           console.log(val);
@@ -76,6 +75,7 @@ define([
         var BJQSClient = document.body;
         BJQSClient.appendChild(BJQSInject,BJQSClient);
       }else{
+        $('.prodSlideCont').remove();
       }
 
     },

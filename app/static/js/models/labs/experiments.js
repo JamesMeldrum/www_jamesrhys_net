@@ -12,81 +12,32 @@ define([
       return ret_url; 
     },
     request_paras : {
-      't' : 'id',
-      'qn' : '6',
-      'b' : '1'
+      't' : 'all',
+      'b' : ''
     },
     defaults: {
-      0: {
-        id: "",
-        title: "",
-        description: "",
-        date_published: "",
-        tags: []
-      },
-      1: {
-        id: "",
-        title: "",
-        description: "",
-        date_published: "",
-        tags: []
-      },
-      2: {
-        id: "",
-        title: "",
-        description: "",
-        date_published: "",
-        tags: []
-      },
-      3: {
-        id: "",
-        title: "",
-        description: "",
-        date_published: "",
-        tags: []
-      },
-      4: {
-        id: "",
-        title: "",
-        description: "",
-        date_published: "",
-        tags: []
-      },
-      5: {
-        id: "",
-        title: "",
-        description: "",
-        date_published: "",
-        tags: []
-      }
-    },
-    getPrevPage : function(){
-    },
-    getNextPage: function(){
+      all: []
     },
     postFetch : function(model,response, options) {
-      if(response.length !=0){
-        for(var c = 0; c<response.length; c++){
-          var exp_formatted = {
-            id: response[""+c.toString()].pk,
-            title: response[c].fields.title,
-            description: response[c].fields.description,
-            date_published: response[c].fields.date_published,
-            tags: response[c].fields.tags
-          };
-          model.set({c:exp_formatted});
-        }
-        model.trigger('load_complete');
-      }else{
-        if(model.last_request == 'next'){
-          model.trigger('noNextPosts');
-        }else{
-          model.trigger('noPrevPosts');
-        }
-        console.log("None left :(");
+      var formatted_talks = [];
+      for(var i = 0; i<response.length; i++){
+        var formatted_talk ={
+            id: response[""+i.toString()].pk,
+            title: response[i].fields.title,
+            body: response[i].fields.body,
+            date_published: response[i].fields.date_published.slice(5,7) + '/' + 
+                  response[i].fields.date_published.slice(8,10) + '/' +
+                  response[i].fields.date_published.slice(0,4),
+            tags: response[i].fields.tags,
+            thumbnail: response[i].fields.thumbnail
+        };
+        formatted_talks[i] = formatted_talk;
       }
+      model.set({all:formatted_talks});
+      model.trigger('load_complete');
     },
-    initialize: function(){
+    
+    getAll : function(){
       this.fetch({
         success: this.postFetch
       });

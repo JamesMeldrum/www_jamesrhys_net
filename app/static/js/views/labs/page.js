@@ -3,34 +3,32 @@ define([
   'lodash',
   'backbone',
   'text!templates/labs/page.html',
-  'models/labs/experiments'
-], function($, _, Backbone, optimizePageTemplate, experimentsModel){
+  'models/labs/experiments',
+  'templates/labs/list_item'
+], function($, _, Backbone, optimizePageTemplate, experimentsModel, listItemTemplate){
   var OptimizePage = Backbone.View.extend({
     el: '.page',
     model : new experimentsModel,
     nextDisabled : false,
     prevDisabled : false,
     initialize: function(){
-      this.model.on('load_complete', function(){this.renderLabs();},this);
+      this.model.on('load_complete', function(){this.renderList();},this);
+      this.model.request_paras['t'] = 'all';
+      this.model.request_paras['b'] = '';
+      this.model.getAll();
     },
     render: function () {
       this.$el.html(optimizePageTemplate);
-      this.renderLabs();
     },
-    renderLabs: function(){
+    renderList: function(){
       this.disablePrev();
       this.disableNext();
-      $.each(this.model.attributes,function(key,val){
-        if(key in [0,1,2,3,4,5]){
-          if(typeof val.fields != 'undefined'){
-            $('.labsEntry#'+key).children('.labsTitle').html(val.fields.title);
-            $('.labsEntry#'+key).parent().attr('href','http://127.0.0.1:8000/labs/'+val.pk);
-            $('.labsEntry#'+key).fadeIn();
-          }else{
-            $('.labsEntry#'+key).fadeOut();
-          }
-        }
+      console.log(this.model.attributes);
+      if($('.labsEntryCont').children().length == 0){
+      $.each(this.model.attributes.all,function(ndx, talkObject){
+        $(".labsEntryCont").append(listItemTemplate({title:talkObject.title, id:ndx, date:talkObject.date_published, href:'',thumbnail:talkObject.thumbnail}));
       });
+      }
     },
     disableNext : function(){
       if(!this.nextDiabled){
