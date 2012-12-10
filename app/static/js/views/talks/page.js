@@ -10,11 +10,12 @@ define([
   var TalksIndex = Backbone.View.extend({
     el: '.page',
     events: {
-      "click a.detailLink" : "renderDetail",
-      "click .talksNav#back" : "closeDetail"
+      "click a.detailLink" : "renderDetail"
     },
     initialize: function(){
       this.model.on('load_complete', function(){this.renderList();},this); 
+      this.model.request_paras['t'] = 'all';
+      this.model.request_paras['b'] = '';
       this.model.getAll();
     },
     model : new talksModel,
@@ -23,48 +24,20 @@ define([
     },
     renderList : function(){
       $.each(this.model.attributes.all,function(ndx, talkObject){
-      console.log(talkObject);
       if($('.talksList').children('#'+ndx).length == 0){
-        $(".talksList").append(listItemTemplate({title:talkObject.title, id:ndx}));
-        console.log("Index: "+ndx);
+        $(".talksList").append(listItemTemplate({title:talkObject.title, id:ndx, date:talkObject.date_published}));
       }
       });
     },
     renderDetail: function(e){
-      console.log(this.model.attributes.all[e.target.id]);
-      var talkCachedData = this.model.attributes.all[e.target.id];
-      var talkCachedRef = $('.talksDetail').children('.talksPost');
-
-      talkCachedRef.children('#title').html(talkCachedData.title);
-      talkCachedRef.children('#subtitle').html(talkCachedData.slide_deck_url);
-      talkCachedRef.children('#body').html(talkCachedData.description);
-
+      e.preventDefault();
       $('.talksCont').animate({
         'margin-left':'-980px',
         'opacity': 'toggle'
-      },1000,function(){});
-      $('.talksDetail').animate({
-        'margin-left':'0px',
-        'opacity': 'toggle'
-        },1000,function(){
-        console.log("Animateion complete");
+      },1000,function(){
+        window.location.href=e.currentTarget.href;
       });
 
-    },
-    closeDetail: function(e){
-      $('.talksCont').animate({
-        'margin-left':'0px',
-        'opacity': 'toggle'
-      },1000,function(){});
-      $('.talksDetail').animate({
-        'margin-left':'980px',
-        'opacity': 'toggle'
-        },1000,function(){
-          var talkCachedRef = $('.talksDetail').children('.talksPost');
-          talkCachedRef.children('#title').html('');
-          talkCachedRef.children('#subtitle').html('');
-          talkCachedRef.children('#body').html('');
-      });
     }
   });
   return TalksIndex;

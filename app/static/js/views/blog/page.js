@@ -19,8 +19,6 @@ define([
     },
     renderDetail: function(e){
       e.preventDefault();
-      console.log(e.target);
-      console.log("click");
       $('.blogsCont').animate({
         'margin-left':'-980px',
         'opacity': 'toggle'
@@ -31,7 +29,6 @@ define([
         'margin-left':'0px',
         'opacity': 'toggle'
         },1000,function(){
-        console.log("Animateion complete");
       });
 
     },
@@ -73,9 +70,7 @@ define([
     },
     renderList : function(){
       $.each(this.model.attributes.all,function(ndx, blogObject){
-      console.log($('.blogsList').children('#'+ndx).length);
       if($('.blogsList').children('#'+ndx).length == 0){
-        console.log(blogObject);
         $(".blogsList").append(listItemTemplate({date: blogObject.date, title:blogObject.title,subtitle:blogObject.subtitle, id:ndx}));
       }
       });

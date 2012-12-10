@@ -29,7 +29,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 ## Adding the admin fields to the admin
 
-admin_fields = [Tag, Experiment,Talks, Images]
+admin_fields = [Tag, Experiment,Talks, Images,BlogPost]
 
 for field in admin_fields:
     admin.site.register(field)

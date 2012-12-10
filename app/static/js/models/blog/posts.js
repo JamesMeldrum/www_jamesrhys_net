@@ -17,7 +17,7 @@ define([
     defaults: {
       all : []
     },
-    getDetail: function(){
+    getDetail : function(){
       this.fetch({
         success: this.postFetchDetail
       });
@@ -28,7 +28,6 @@ define([
       });
     },
     postFetchDetail : function(model,response,options){
-      console.log(response);
       var formatted_talks = [];
       for(var i = 0; i<response.length; i++){
         var formatted_talk ={
@@ -37,10 +36,16 @@ define([
             subtitle: response[i].fields.subtitle,
             tags: response[i].fields.tags,
             body: response[i].fields.body,
-            date: response[i].fields.date_published.slice(6,7) + '/' + 
-                  response[i].fields.date_published.slice(9,10) + '/' +
+            date: response[i].fields.date_published.slice(5,7) + '/' + 
+                  response[i].fields.date_published.slice(8,10) + '/' +
                   response[i].fields.date_published.slice(0,4) 
         };
+        var tags_string = '';
+        $.each(response[i].fields.tags, function(ndx,el){
+          tags_string += el.fields.title+', ';
+        });
+        tags_string = tags_string.slice(0,-2);
+        formatted_talk.tags = tags_string;
         formatted_talks[i] = formatted_talk;
       }
       model.set({all:formatted_talks});
@@ -62,7 +67,6 @@ define([
       }
       model.set({all:formatted_talks});
       model.trigger('load_complete');
-      console.log(response);
     },
     initialize: function(){}
   });

@@ -20,8 +20,21 @@ define([
       this.model.on('load_complete', function(){this.renderList();},this);
       this.model.getAll();
     },
-    closeDetail: function(){},
-    renderDetail: function(){},
+    closeDetail: function(){
+
+    },
+    renderDetail: function(e){
+      e.preventDefault();
+      console.log(e);
+      var e_href = (e.currentTarget.href);
+
+      $('.labsPage').animate({
+        'margin-left':'-980px',
+        'opacity': 'toggle'
+        },1000,function(){
+          window.location.href=e_href;
+      });
+    },
     renderList: function(){
       this.disablePrev();
       this.disableNext();
@@ -31,7 +44,6 @@ define([
         $('.labsEntryCont').append(listItemTemplate({id:prodObject.id, title:prodObject.title, date_description:prodObject.date_description, tags:prodObject.tags, thumbnail:prodObject.thumbnail,href:prodObject.href})); 
       });
       $('.labsEntry').each(function(ndx,el){
-        console.log($(el));
         $(el).fadeIn();
       });
     },

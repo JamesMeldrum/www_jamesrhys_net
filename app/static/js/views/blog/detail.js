@@ -31,8 +31,8 @@ define([
     renderDetail: function(){
       that = this;
       console.log("RENDER DEET");
-     var talkCachedData = this.model.attributes.all[this.req_id];
-     var talkCachedRef = $('.blogDetail').children('.blogPost');
+      var talkCachedData = this.model.attributes.all[this.req_id];
+      var talkCachedRef = $('.blogDetail').children('.blogPost');
 
       console.log(this.model.attributes.all);
 

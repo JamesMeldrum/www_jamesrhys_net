@@ -12,10 +12,10 @@ def index(request, object_name, request_operation):
   if respData == None:
     raise Http404
   elif request.GET.get('t') == 'all' and object_name == 'blog':
-    data = serializers.serialize("json", arh.getResp(), ensure_ascii = False,fields=('title','subtitle','tags','date_published'))
+    data = serializers.serialize("json", arh.getResp(), excludes=('body',),ensure_ascii = False,relations=('tags'))
     return HttpResponse(data,mimetype='application/json') 
   elif request.GET.get('t') == 'title' and object_name == 'blog':
-    data = serializers.serialize("json", arh.getResp(), ensure_ascii = False,fields=('title','subtitle','tags','date_published'))
+    data = serializers.serialize("json", arh.getResp(), ensure_ascii = False,fields=('title','subtitle','tags','date_published','body'),relations=('tags'))
     return HttpResponse(data,mimetype='application/json') 
   elif request.GET.get('t') == 'all' and object_name == 'prod':
     data = serializers.serialize("json", arh.getResp(), ensure_ascii = False,relations=('tags'),excludes=('body','goals','technologies','date_description'))
@@ -24,6 +24,12 @@ def index(request, object_name, request_operation):
     data = serializers.serialize("json", arh.getResp(), ensure_ascii = False,relations=('tags','images'))
     data2 = serializers.serialize("json", arh.getResp()[0].images.all(), ensure_ascii = False,relations=('tags','images'))
     data = data[:-3]+", \"images\":"+data2+data[-3:]
+    return HttpResponse(data,mimetype='application/json') 
+  elif request.GET.get('t') == 'all' and object_name == 'talks':
+    data = serializers.serialize("json", arh.getResp(), ensure_ascii = False,relations=('tags'),excludes=('body','slide_deck_url','description'))
+    return HttpResponse(data,mimetype='application/json') 
+  elif request.GET.get('t') == 'title' and object_name == 'talks':
+    data = serializers.serialize("json", arh.getResp(), ensure_ascii = False,relations=('tags'))
     return HttpResponse(data,mimetype='application/json') 
   else:
     data = serializers.serialize("json", arh.getResp(), ensure_ascii = False)
@@ -100,7 +106,7 @@ class APIRequestHandler(object):
                               'date': ['prev','next','date']
     }
                             
-    self.validateRequest()
+#    self.validateRequest()
     self.parseRequest()
 
   ## Minute attempt at preventing SQL injection through method side-effects and slugification
@@ -142,27 +148,17 @@ class APIRequestHandler(object):
 
   def parseRequest(self):
 
-    # Build statement and execute
-
-    # object_name = Tag
-    # get_type = 'id'
-    # get_param = '1'
-
-
     exec_string = ''
     if self.request_object['object_name'] == 'talks':
-      """
-          Two request types: list and detail
-            * List retrieves all entries
-            * Detail retrives one by ID
-      """
       if self.request_object['get_type'] == 'all':
         exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').all()'
+      elif self.request_object['get_type'] == 'title':
+        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').filter(title__exact=\''+self.request_object['get_base'].replace('-',' ')+'\').all()'
       elif self.request_object['get_type'] == 'id':
         exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').filter(id__exact='+self.request_object['get_base']+').all()'
       else:
         pass
-    if self.request_object['object_name'] == 'prod':
+    elif self.request_object['object_name'] == 'prod':
       if self.request_object['get_type'] == 'title':
         exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.select_related().filter(title__exact=\''+self.request_object['get_base'].replace('-',' ')+'\').all()'
       elif self.request_object['get_type'] == 'all':
@@ -175,7 +171,7 @@ class APIRequestHandler(object):
         exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').filter(id__gte='+self.request_object['get_base']+').all()'
     elif self.request_object['object_name'] == 'blog':
       if self.request_object['get_type'] == 'all':
-        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.select_related().only("title","subtitle","tags","date_published").order_by(\'-id\').all()'
+        exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.order_by(\'-id\').all()'
       elif self.request_object['get_type'] == 'next':
         exec_string = 'self.response_object = '+self.object_types_callable[self.request_object['object_name']]+'.objects.filter(id__gt=\''+self.request_object['get_base']+'\').order_by(\'id\').all()[:1]'
       elif self.request_object['get_type'] == 'prev':

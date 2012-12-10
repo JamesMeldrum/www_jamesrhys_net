@@ -669,6 +669,11 @@ ul.standardList {
   content: " ";
 }
 
+.labsEntry .labsPreview {
+  padding: 0;
+  overflow:hidden;
+}
+
 .labsTitle{
   height: 44px;
   width:310px;
