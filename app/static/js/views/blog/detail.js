@@ -3,72 +3,69 @@ define([
   'lodash',
   'backbone',
   'text!templates/blog/page.html',
+  'templates/blog/list_item',
+  'text!templates/blog/detail.html',
   'models/blog/posts'
-], function($, _, Backbone, optimizePageTemplate, blogModel){
-  var OptimizePage = Backbone.View.extend({
+], function($, _, Backbone, indexPageTemplate, listItemTemplate, detailPageTemplate, blogsModel){
+  var TalksIndex = Backbone.View.extend({
     el: '.page',
-    initialize: function(){
-      this.model = new blogModel;
-      this.model.on('updated',function(){this.renderBlogEntry();},this);
-      this.model.on('noPrevPosts',function(){this.disablePrev();},this);
-      this.model.on('noNextPosts',function(){this.disableNext();},this);
-      this.model.on('prevPosts',function(){this.enablePrev();},this);
-      this.model.on('nextPosts',function(){this.enableNext();},this);
-      this.disableNext();
+    events: {
+      "click a.detailLink" : "renderDetail",
+      "click .talksNav#back" : "closeDetail"
     },
+    initialize: function(req_title){
+      this.model = new blogsModel,
+      this.model.request_paras = {
+        't':'title',
+        'b':req_title
+      };
+      this.model.on('load_complete', function(){this.renderDetail();},this); 
+      this.model.getDetail();
+    },
+    req_id: 0,
+    req_title: '',
     model : {},
-    events : {
-      "click #next" : "getNextPost",
-      "click #prev" : "getPrevPost"
+    render: function(id){
+      this.$el.html(detailPageTemplate);
     },
-    disableNext : function(){
-      $('#next').css('cursor','none');
-      $('#next').animate({
-        opacity: 0.25,
-      },200);
+    renderDetail: function(){
+      that = this;
+      console.log("RENDER DEET");
+     var talkCachedData = this.model.attributes.all[this.req_id];
+     var talkCachedRef = $('.blogDetail').children('.blogPost');
+
+      console.log(this.model.attributes.all);
+
+      $('#title').html(talkCachedData.title);
+      $('#subtitle').html(talkCachedData.subtitle);
+      $('#body').html(talkCachedData.body);
+      $('#tags').html(talkCachedData.tags.toString());
+      $('#date').html(talkCachedData.date);
+
+      $('.blogCont').animate({
+        'margin-left':'-980px',
+      },500,function(){});
+      $('.blogDetail').animate({
+        'margin-left':'0px',
+        'opacity':'toggle'
+        },1000,function(){
+        console.log("Animateion complete");
+      });
+
     },
-    disablePrev : function(){
-      $('#prev').css('cursor','none');
-      $('#prev').animate({
-        opacity: 0.25,
-      },200);
-    },
-    enableNext : function(){
-      $('#next').css('cursor','pointer');
-      $('#next').animate({
-        opacity: 1,
-      },200);
-    },
-    enablePrev : function(){
-      $('#prev').css('cursor','pointer');
-      $('#prev').animate({
-        opacity: 1,
-      },200);
-    },
-    getPrevPost : function(){
-      this.model.getPrevPost();
-    },
-    getNextPost : function(){
-      this.model.getNextPost();
-    },
-    render: function () {
-      this.$el.html(optimizePageTemplate);
-      this.renderBlogEntry();
-    },
-    renderBlogEntry: function(){
-      $.each(this.model.attributes,function(key,val){
-        switch(typeof val){
-          case 'object':
-            break;
-          default:
-            $('.value#'+key).html(val);
-            break;
-        }
-     });
-     this.model.probeNextPost();
-     this.model.probePrevPost();
+    closeDetail: function(e){
+      $('.blogCont').animate({
+        'margin-left':'0px',
+        'opacity': 'toggle'
+      },1000,function(){});
+      $('.blogDetail').animate({
+        'margin-left':'980px',
+        'opacity': 'toggle'
+        },1000,function(){
+      window.location.href='http://127.0.0.1:8000/#!/blog';
+      });
     }
   });
-  return OptimizePage;
+  return TalksIndex;
 });
 

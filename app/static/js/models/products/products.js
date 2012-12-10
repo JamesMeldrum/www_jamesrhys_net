@@ -12,32 +12,27 @@ define([
       return ret_url; 
     },
     request_paras : {
-      't' : 'id',
-      'qn' : '6',
-      'b' : '1'
+      't' : 'all'
     },
     defaults: {
       all : []
     },
     getAll : function(){
-      console.log("All requested.");
       this.fetch({
         success: this.postFetch
       });
     },
-    getPrevPage : function(){
-    },
-    getNextPage: function(){
-    },
     postFetch : function(model,response, options) {
+      console.log(response);
       var formatted_prods = [];
       for(var c = 0; c<response.length; c++){
         var formatted_prod = {
           id: response[""+c.toString()].pk,
           title: response[c].fields.title,
-          description: response[c].fields.description,
-          date_published: response[c].fields.date_published,
-          tags: response[c].fields.tags
+          date_description: response[c].fields.date_description,
+          tags: response[c].fields.tags,
+          href: "http://127.0.0.1:8000/#!/prod/" + response[c].fields.title.replace(' ','-'),
+          thumbnail: response[c].fields.thumbnail
         };
         formatted_prods[c] = formatted_prod;
       }

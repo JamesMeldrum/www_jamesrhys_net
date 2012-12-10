@@ -16,15 +16,22 @@ class ImagesGeneric(generic.GenericTabularInline):
   model = Images 
 # extra = 1
 
-class BlogAdmin(admin.ModelAdmin):
- inlines = [
-   ImagesGeneric
- ]
+#class ImagesFKInline(admin.TabularInline):
+  model = Images
+
+class ProductAdmin(admin.ModelAdmin):
+  inlines = (ImagesGeneric,)
+
+#class BlogAdmin(admin.ModelAdmin):
+# inlines = [
+#   ImagesGeneric
+# ]
 
 ## Adding the admin fields to the admin
-admin.site.register(BlogPost, BlogAdmin)
 
-admin_fields = [Tag, Experiment, Product, Talks, Images]
+admin_fields = [Tag, Experiment,Talks, Images]
 
 for field in admin_fields:
     admin.site.register(field)
+
+admin.site.register(Product,ProductAdmin)

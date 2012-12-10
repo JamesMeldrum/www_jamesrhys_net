@@ -4,8 +4,10 @@ define([
   'backbone',
   'text!templates/products/detail.html',
   'models/products/productDetail',
-  'bjqs'
-], function($, _, Backbone, optimizePageTemplate,productDetailModel,bjqs){
+  'bjqs',
+  'templates/products/detail_list_item',
+  'templates/products/image_list_item'
+], function($, _, Backbone, optimizePageTemplate,productDetailModel,bjqs,detail_list_item,image_list_item){
   var OptimizePage = Backbone.View.extend({
     el: '.page',
     events:{
@@ -16,8 +18,9 @@ define([
     nextDisabled : false,
     prevDisabled : false,
     initialize: function(slug_title){
+      this.render();
       this.model = new productDetailModel(slug_title);
-      this.model.req_title = slug_title.replace('-',' ');
+      this.model.req_title = slug_title;
       this.model.on('load_complete', function(){this.renderDetail();},this);
       this.model.getDetail();
     },
@@ -30,10 +33,51 @@ define([
       });
     },
     renderDetail: function(){
+    
+     // Render:
+      // body
+
+      $('#body').html(this.model.attributes.prod.body);
+
+      // Technologies
+      $.each(this.model.attributes.prod.technologies.split(', '),function(ndx,val){
+        $('ul.standardList#technologies').append(detail_list_item({list_val:val}));
+      });
+
+      // Goals
+      $.each(this.model.attributes.prod.goals.split(', '),function(ndx,val){
+        $('ul.standardList#goals').append(detail_list_item({list_val:val}));
+      });
+
+      // title
+      $('#title').html(this.model.attributes.prod.title);
+
+      // Date desc
+      $('#date_description').html(this.model.attributes.prod.date_description);
+
+      // Tags
+      $.each(this.model.attributes.prod.tags,function(ndx,val){
+        $('ul.standardList#tags').append(detail_list_item({list_val:val.fields.title}));
+      });
+      // IMAGES 
       
-    },
-    renderProducts: function(){
-      console.log("Products render call");
+      if(!this.model.attributes.prod.images.length){
+        $.each(this.model.attributes.prod.images,function(ndx,val){
+          console.log(ndx);
+          console.log(val);
+          $('ul.bjqs').append(image_list_item({url:val.fields.image}));
+        });
+
+        // BJQS script
+    
+        var BJQSInject = document.createElement('script');
+        BJQSInject.type = 'text/javascript';
+        BJQSInject.src = '/static/js/libs/bjqs/client.js';
+        var BJQSClient = document.body;
+        BJQSClient.appendChild(BJQSInject,BJQSClient);
+      }else{
+      }
+
     },
     disableNext : function(){
       if(!this.nextDiabled){

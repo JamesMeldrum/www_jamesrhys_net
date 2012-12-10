@@ -3,35 +3,52 @@ define([
   'lodash',
   'backbone',
   'text!templates/blog/page.html',
-  'models/blog/posts'
-], function($, _, Backbone, optimizePageTemplate, blogModel){
-  var OptimizePage = Backbone.View.extend({
+  'models/blog/posts',
+  'templates/blog/list_item'
+], function($, _, Backbone, optimizePageTemplate, blogModel,listItemTemplate){
+  var BlogIndex = Backbone.View.extend({
     el: '.page',
     initialize: function(){
       this.model = new blogModel;
-      this.model.on('updated',function(){this.renderBlogEntry();},this);
-      this.model.on('noPrevPosts',function(){this.disablePrev();},this);
-      this.model.on('noNextPosts',function(){this.disableNext();},this);
-      this.model.on('prevPosts',function(){this.enablePrev();},this);
-      this.model.on('nextPosts',function(){this.enableNext();},this);
-      this.disableNext();
+      this.model.on('load_complete',function(){this.renderList();},this);
+      this.model.getAll();
     },
     model : {},
-    events : {
-      "click #next" : "getNextPost",
-      "click #prev" : "getPrevPost"
+    events: {
+      "click a.detailLink" : "renderDetail"
     },
-    disableNext : function(){
-      $('#next').css('cursor','none');
-      $('#next').animate({
-        opacity: 0.25,
-      },200);
+    renderDetail: function(e){
+      e.preventDefault();
+      console.log(e.target);
+      console.log("click");
+      $('.blogsCont').animate({
+        'margin-left':'-980px',
+        'opacity': 'toggle'
+      },500,function(){
+        window.location.href=e.target.href;
+      });
+      $('.blogsDetail').animate({
+        'margin-left':'0px',
+        'opacity': 'toggle'
+        },1000,function(){
+        console.log("Animateion complete");
+      });
+
     },
-    disablePrev : function(){
-      $('#prev').css('cursor','none');
-      $('#prev').animate({
-        opacity: 0.25,
-      },200);
+    closeDetail: function(e){
+      $('.blogsCont').animate({
+        'margin-left':'0px',
+        'opacity': 'toggle'
+      },1000,function(){});
+      $('.blogsDetail').animate({
+        'margin-left':'980px',
+        'opacity': 'toggle'
+        },1000,function(){
+          var talkCachedRef = $('.blogsDetail').children('.blogsPost');
+          talkCachedRef.children('#title').html('');
+          talkCachedRef.children('#subtitle').html('');
+          talkCachedRef.children('#body').html('');
+      });
     },
     enableNext : function(){
       $('#next').css('cursor','pointer');
@@ -53,21 +70,16 @@ define([
     },
     render: function () {
       this.$el.html(optimizePageTemplate);
-      this.renderBlogEntry();
     },
-    renderBlogEntry: function(){
-      $.each(this.model.attributes,function(key,val){
-        switch(typeof val){
-          case 'object':
-            break;
-          default:
-            $('.value#'+key).html(val);
-            break;
-        }
-     });
-     this.model.probeNextPost();
-     this.model.probePrevPost();
-    }
+    renderList : function(){
+      $.each(this.model.attributes.all,function(ndx, blogObject){
+      console.log($('.blogsList').children('#'+ndx).length);
+      if($('.blogsList').children('#'+ndx).length == 0){
+        console.log(blogObject);
+        $(".blogsList").append(listItemTemplate({date: blogObject.date, title:blogObject.title,subtitle:blogObject.subtitle, id:ndx}));
+      }
+      });
+    },
   });
-  return OptimizePage;
+  return BlogIndex;
 });

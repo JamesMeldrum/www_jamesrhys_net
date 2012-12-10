@@ -693,6 +693,11 @@ canvas#MyCanvas {
   display: none;
 }
 
+.rightOS {
+  margin-left:980px;
+  display: none;
+}
+
 /* Talks */
 
 

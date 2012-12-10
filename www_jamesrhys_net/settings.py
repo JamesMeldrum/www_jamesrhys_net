@@ -101,6 +101,10 @@ ROOT_URLCONF = 'www_jamesrhys_net.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'www_jamesrhys_net.wsgi.application'
 
+SERIALIZATION_MODULES = {
+  'json': 'wadofstuff.django.serializers.json'
+}
+
 TEMPLATE_DIRS = (
     '/var/www/django-sites/www_jamesrhys_net/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

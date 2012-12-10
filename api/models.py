@@ -4,6 +4,24 @@ from django.db import models
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 
+class Images(models.Model):
+
+  """
+  
+    Stores images used in all parts of the application. Depends on generic foreign key relations
+    https://docs.djangoproject.com/en/1.3/ref/contrib/contenttypes/#generic-relations
+  
+  """
+  title = models.CharField(max_length=50)
+  caption = models.CharField(max_length=150,blank=True)
+  image = models.ImageField(upload_to='uploads')
+  content_type = models.ForeignKey(ContentType)
+  object_id = models.PositiveIntegerField()
+  content_object = generic.GenericForeignKey('content_type','object_id') # These text fields are refs to the named fields of this model (Images)
+
+  def __unicode__(self):
+    return self.title
+
 class Tag(models.Model):
   title = models.CharField(max_length = 50)
 
@@ -38,6 +56,7 @@ class Product(models.Model):
   technologies = models.TextField(max_length=500)
   goals = models.TextField(max_length=500)
   thumbnail = models.ImageField(upload_to='thumbs')
+  images = generic.GenericRelation(Images)
 
   def __unicode__(self):
     return self.title
@@ -53,20 +72,3 @@ class Talks(models.Model):
   def __unicode__(self):
     return self.title
 
-class Images(models.Model):
-
-  """
-  
-    Stores images used in all parts of the application. Depends on generic foreign key relations
-    https://docs.djangoproject.com/en/1.3/ref/contrib/contenttypes/#generic-relations
-  
-  """
-  title = models.CharField(max_length=50)
-  caption = models.CharField(max_length=150,blank=True)
-  image = models.ImageField(upload_to='uploads')
-  content_type = models.ForeignKey(ContentType)
-  object_id = models.PositiveIntegerField()
-  content_object = generic.GenericForeignKey('content_type','object_id') # These text fields are refs to the named fields of this model (Images)
-
-  def __unicode__(self):
-    return self.title

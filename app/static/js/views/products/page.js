@@ -3,8 +3,9 @@ define([
   'lodash',
   'backbone',
   'text!templates/products/page.html',
-  'models/products/products'
-], function($, _, Backbone, optimizePageTemplate,productsModel){
+  'models/products/products',
+  'templates/products/list_item'
+], function($, _, Backbone, optimizePageTemplate,productsModel,listItemTemplate){
   var OptimizePage = Backbone.View.extend({
     el: '.page',
     events:{
@@ -16,24 +17,22 @@ define([
     prevDisabled : false,
     initialize: function(){
       this.model = new productsModel;
-      this.model.on('load_complete', function(){this.renderProducts();},this);
+      this.model.on('load_complete', function(){this.renderList();},this);
       this.model.getAll();
     },
     closeDetail: function(){},
     renderDetail: function(){},
-    renderProducts: function(){
+    renderList: function(){
       this.disablePrev();
       this.disableNext();
-      $.each(this.model.attributes,function(key,val){
-        if(key in [0,1,2,3,4,5]){
-          if(typeof val.fields != 'undefined'){
-            $('.labsEntry#'+key).children('.labsTitle').html(val.fields.title);
-            $('.labsEntry#'+key).parent().attr('href','http://127.0.0.1:8000/#!/prod/'+val.fields.title);
-            $('.labsEntry#'+key).fadeIn();
-          }else{
-            $('.labsEntry#'+key).fadeOut();
-          }
-        }
+      $.each(this.model.attributes.all,function(ndx,prodObject){
+        console.log(ndx);
+        console.log(prodObject);
+        $('.labsEntryCont').append(listItemTemplate({id:prodObject.id, title:prodObject.title, date_description:prodObject.date_description, tags:prodObject.tags, thumbnail:prodObject.thumbnail,href:prodObject.href})); 
+      });
+      $('.labsEntry').each(function(ndx,el){
+        console.log($(el));
+        $(el).fadeIn();
       });
     },
     disableNext : function(){
@@ -56,7 +55,6 @@ define([
     },
     render: function () {
       this.$el.html(optimizePageTemplate);
-      this.renderProducts();
     }
   });
   return OptimizePage;

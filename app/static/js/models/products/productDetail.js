@@ -13,16 +13,14 @@ define([
     },
     request_paras : {
       't' : 'title',
-      'qn' : '1',
       'b' : ''
     },
-    req_title:'',
+    req_title: '',
     defaults: {
       prod : {}
     },
     getDetail : function(){
-      console.log("Detail requested.");
-      console.log(this.req_title);
+      console.log("getDetail");
       this.request_paras.b = this.req_title;
       this.fetch({
         success: this.postFetch
@@ -32,13 +30,21 @@ define([
     },
     getNextPage: function(){
     },
+    intiailize: function(slug_title){
+      this.req_title = slug_title;
+    },
     postFetch : function(model,response, options) {
+      console.log("PostFetch detail");
+      console.log(response);
       var formatted_prod = {
         id: response[0].pk,
         title: response[0].fields.title,
-        description: response[0].fields.description,
-        date_published: response[0].fields.date_published,
-        tags: response[0].fields.tags
+        goals: response[0].fields.goals,
+        technologies: response[0].fields.technologies,
+        body: response[0].fields.body,
+        date_description: response[0].fields.date_description,
+        tags: response[0].fields.tags,
+        images: response[0].fields.images
       };
       model.set({prod:formatted_prod});
       model.trigger('load_complete');
