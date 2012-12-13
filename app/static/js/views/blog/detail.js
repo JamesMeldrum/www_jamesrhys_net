@@ -30,11 +30,9 @@ define([
     },
     renderDetail: function(){
       that = this;
-      console.log("RENDER DEET");
       var talkCachedData = this.model.attributes.all[this.req_id];
       var talkCachedRef = $('.blogDetail').children('.blogPost');
 
-      console.log(this.model.attributes.all);
 
       $('#title').html(talkCachedData.title);
       $('#subtitle').html(talkCachedData.subtitle);
@@ -49,7 +47,6 @@ define([
         'margin-left':'0px',
         'opacity':'toggle'
         },1000,function(){
-        console.log("Animateion complete");
       });
 
     },

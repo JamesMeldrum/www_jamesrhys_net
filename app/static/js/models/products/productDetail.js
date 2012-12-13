@@ -20,7 +20,6 @@ define([
       prod : {}
     },
     getDetail : function(){
-      console.log("getDetail");
       this.request_paras.b = this.req_title;
       this.fetch({
         success: this.postFetch
@@ -34,8 +33,6 @@ define([
       this.req_title = slug_title;
     },
     postFetch : function(model,response, options) {
-      console.log("PostFetch detail");
-      console.log(response);
       var formatted_prod = {
         id: response[0].pk,
         title: response[0].fields.title,

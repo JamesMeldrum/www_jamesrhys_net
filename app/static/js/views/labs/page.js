@@ -23,7 +23,6 @@ define([
     renderList: function(){
       this.disablePrev();
       this.disableNext();
-      console.log(this.model.attributes);
       if($('.labsEntryCont').children().length == 0){
       $.each(this.model.attributes.all,function(ndx, talkObject){
         $(".labsEntryCont").append(listItemTemplate({title:talkObject.title, id:ndx, date:talkObject.date_published, href:'',thumbnail:talkObject.thumbnail}));

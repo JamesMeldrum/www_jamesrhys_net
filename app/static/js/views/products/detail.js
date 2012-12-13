@@ -62,8 +62,6 @@ define([
       // IMAGES 
       if(this.model.attributes.prod.images.length){
         $.each(this.model.attributes.prod.images,function(ndx,val){
-          console.log(ndx);
-          console.log(val);
           $('ul.bjqs').append(image_list_item({url:val.fields.image}));
         });
 

@@ -7,7 +7,19 @@ define([
   var OptimizePage = Backbone.View.extend({
     el: '.page',
     events:{
-      'click a.coreNav' : 'coreNavClicked'
+      'click a.coreNav' : 'coreNavClicked',
+      'click div.methodNav' : 'coreMethodClicked',
+      'click .floatOutSlide' : 'coreMethodClosed'
+    },
+    coreMethodClicked : function(e){
+      var req_id = e.currentTarget.id;
+      $('.floatOutPanel').fadeIn();
+      $('.floatOutSlide#'+req_id).fadeIn();
+    },
+    coreMethodClosed: function(e){
+      var req_id = e.currentTarget.id;
+      $('.floatOutPanel').fadeOut();
+      $('.floatOutSlide#'+req_id).fadeOut();
     },
     coreNavClicked : function(e){
   

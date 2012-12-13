@@ -23,7 +23,6 @@ define([
       });
     },
     postFetch : function(model,response, options) {
-      console.log(response);
       var formatted_prods = [];
       for(var c = 0; c<response.length; c++){
         var formatted_prod = {

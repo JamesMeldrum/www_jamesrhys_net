@@ -464,6 +464,22 @@ a.active {
   opacity:0.8;
 }
 
+.textBlur {
+  -webkit-transition:all .5s ease;
+  -moz-transition:all .5s ease;
+  -o-transition:all .5s ease;
+  -ms-transition:all .5s ease;
+  transition:all .5s ease;
+}
+
+.textBlur:hover {
+  text-shadow: 1px 1px 4px white;
+}
+
+.methodNav {
+  cursor:pointer;
+}
+
 .blueTextAnchors {
   -webkit-transition:all .5s ease;
   -moz-transition:all .5s ease;
@@ -1241,22 +1257,25 @@ canvas#MyCanvas {
   -webkit-border-radius:5px;
   -moz-border-radius:5px;
   border-radius:5px;
+  display:none;
 }
 
-.floatOutPanel .parentRel {
+.floatOutPanel .floatOutSlide {
   position:relative;
   height:100%;
   width:100%;
+  cursor: pointer;
+  display:none
 }
 
 .floatOutPanel .subtitle {
   top:50%;
   left:50%;
   height:30%;
-  width:50%;
-  margin: 15% 0 0 25%;
+  width:370px;
+  margin: 15% auto auto auto;
   color:white;
-  text-align:justify;
+  text-align:center;
 }
 
 .floatingPanelCont {

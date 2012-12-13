@@ -25,7 +25,6 @@ define([
     },
     renderDetail: function(e){
       e.preventDefault();
-      console.log(e);
       var e_href = (e.currentTarget.href);
 
       $('.labsPage').animate({
@@ -39,8 +38,6 @@ define([
       this.disablePrev();
       this.disableNext();
       $.each(this.model.attributes.all,function(ndx,prodObject){
-        console.log(ndx);
-        console.log(prodObject);
         $('.labsEntryCont').append(listItemTemplate({id:prodObject.id, title:prodObject.title, date_description:prodObject.date_description, tags:prodObject.tags, thumbnail:prodObject.thumbnail,href:prodObject.href})); 
       });
       $('.labsEntry').each(function(ndx,el){
