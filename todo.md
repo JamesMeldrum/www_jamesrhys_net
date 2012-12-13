@@ -4,9 +4,6 @@ Todo:
 * Use this for the menu: http://desandro.github.com/3dtransforms/docs/carousel.html
 * Make creating Lab entries an admin action - https://docs.djangoproject.com/en/1.4/ref/contrib/admin/actions/
 
-* Add the methodNav click states
-* Organize CSS
-* Remove console statements
 * Minify
 * Boot site in cloud
 * Change over DNS
