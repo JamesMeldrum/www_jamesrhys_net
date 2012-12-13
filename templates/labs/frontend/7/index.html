@@ -1,0 +1,46 @@
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js webgl - particles - sprites</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				background-color: #000000;
+				margin: 0px;
+				overflow: hidden;
+				font-family:Monospace;
+				font-size:13px;
+				text-align:center;
+				font-weight: bold;
+				text-align:center;
+			}
+
+			a {
+				color:#0078ff;
+			}
+
+			#info {
+				color:#fff;
+				position: absolute;
+				top: 0px; width: 100%;
+				padding: 5px;
+				z-index:100;
+			}
+
+		</style>
+	</head>
+	<body>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}labs/three.js"></script>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}labs/Detector.js"></script>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}labs/stats.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}labs/snowflakes.js"></script>
+	</body>
+</html>
+
+
+<html>
+</html>
+

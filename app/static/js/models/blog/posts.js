@@ -59,8 +59,8 @@ define([
             title: response[i].fields.title,
             subtitle: response[i].fields.subtitle,
             tags: response[i].fields.tags,
-            date: response[i].fields.date_published.slice(6,7) + '/' + 
-                  response[i].fields.date_published.slice(9,10) + '/' +
+            date: response[i].fields.date_published.slice(5,7) + '/' + 
+                  response[i].fields.date_published.slice(8,10) + '/' +
                   response[i].fields.date_published.slice(0,4) 
         };
         formatted_talks[i] = formatted_talk;

@@ -21,19 +21,16 @@ define([
       all : []
     },
     getAll: function(){
-      console.log("All requested");
       this.fetch({
         success: this.postFetch
       });
     },
     getDetail: function(){
-      console.log("Detail requested");
       this.fetch({
         success: this.postFetchDetail
       });
     },
     postFetchDetail : function(model,response,options){
-      console.log(response);
       var formatted_talks = [];
       for(var i = 0; i<response.length; i++){
         var formatted_talk ={

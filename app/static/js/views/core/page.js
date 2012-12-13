@@ -1,16 +1,3 @@
-/*
-*
-*   Need more shit in here:
-*     * Resume
-*     * Twitter shit
-*     * Other social network shit
-*     * Shit from old site
-*     * Shit shit shit
-*      
-*
-*/
-
-
 define([
   'jquery',
   'lodash',
@@ -19,9 +6,29 @@ define([
 ], function($, _, Backbone, optimizePageTemplate){
   var OptimizePage = Backbone.View.extend({
     el: '.page',
+    events:{
+      'click a.coreNav' : 'coreNavClicked'
+    },
+    coreNavClicked : function(e){
+  
+      // Toggle view classes
+
+      $('ul.coreNav').children().each(function(ndx, el){
+        $(el).children('a.coreNav').removeClass('active');
+      });
+      $(e.currentTarget).addClass('active');
+
+
+      // Navigate downwaaards
+      var req_el = $(e.currentTarget).attr('id'),
+      target_el_scroll = Math.floor($('.DataPanelSection#'+req_el).offset().top - $('.DataPanelSection#introduction').offset().top);
+      $('.DataPanel').animate({
+        scrollTop : target_el_scroll
+      },500);
+    },
     render: function () {
       this.$el.html(optimizePageTemplate);
-    }
+    },
   });
   return OptimizePage;
 });

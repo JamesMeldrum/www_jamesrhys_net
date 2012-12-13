@@ -53,12 +53,12 @@ define([
       $('#title').html(this.model.attributes.prod.title);
 
       // Date desc
-      $('#date_description').html(this.model.attributes.prod.date_description);
-
-      // Tags
-      $.each(this.model.attributes.prod.tags,function(ndx,val){
-        $('ul.standardList#tags').append(detail_list_item({list_val:val.fields.title}));
-      });
+//      $('#date_description').html(this.model.attributes.prod.date_description);
+//
+//      // Tags
+//      $.each(this.model.attributes.prod.tags,function(ndx,val){
+//        $('ul.standardList#tags').append(detail_list_item({list_val:val.fields.title}));
+//      });
       // IMAGES 
       if(this.model.attributes.prod.images.length){
         $.each(this.model.attributes.prod.images,function(ndx,val){

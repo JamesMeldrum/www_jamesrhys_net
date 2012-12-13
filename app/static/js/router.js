@@ -18,7 +18,8 @@ define([
       '!/talks' : 'talks',
       '!/talks/:slug_title' : 'talksDetail',
       '!/prod' : 'products',
-      '!/prod/:slug_title' : 'productsDetail'
+      '!/prod/:slug_title' : 'productsDetail',
+      '!/people' : 'people'
     }
   });
 
@@ -69,6 +70,12 @@ define([
     });
     router.on('route:products', function () {
       require(['views/products/page'], function (ProductsPage) {
+        var productsPage = Vm.create(appView, 'BackbonePage', ProductsPage);
+        productsPage.render();
+      });
+    });
+    router.on('route:people', function (slug_title) {
+      require(['views/people/page'], function (ProductsPage) {
         var productsPage = Vm.create(appView, 'BackbonePage', ProductsPage);
         productsPage.render();
       });
