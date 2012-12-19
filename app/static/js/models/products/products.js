@@ -30,7 +30,7 @@ define([
           title: response[c].fields.title,
           date_description: response[c].fields.date_description,
           tags: response[c].fields.tags,
-          href: "http://127.0.0.1:8000/#!/prod/" + response[c].fields.title.replace(' ','-'),
+          href: "/#!/prod/" + response[c].fields.title.replace(' ','-'),
           thumbnail: response[c].fields.thumbnail
         };
         formatted_prods[c] = formatted_prod;

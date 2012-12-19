@@ -1,8 +1,27 @@
 # Django settings for www_jamesrhys_net project.
 
-DEBUG = True
-#DEBUG = False
+DEBUG = True # Django Debug var
+PROD = True # Whether deployed in production servers
 TEMPLATE_DEBUG = DEBUG
+
+if PROD:
+  # Absolute filesystem path to the directory that will hold user-uploaded files.
+  # Example: "/home/media/media.lawrence.com/media/"
+  MEDIA_ROOT = '/var/www/html/files/www_jamesrhys_net/'
+  
+  # URL that handles the media served from MEDIA_ROOT. Make sure to use a
+  # trailing slash.
+  # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+  MEDIA_URL = 'www.jamesrhys.net/files/www_jamesrhys_net/'
+else:
+  # Absolute filesystem path to the directory that will hold user-uploaded files.
+  # Example: "/home/media/media.lawrence.com/media/"
+  MEDIA_ROOT = '/var/www/files/www_jamesrhys_net/'
+  
+  # URL that handles the media served from MEDIA_ROOT. Make sure to use a
+  # trailing slash.
+  # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+  MEDIA_URL = 'http://127.0.0.1/files/www_jamesrhys_net/'
 
 ADMINS = (
     ('James Rhys', 'james@jamesrhys.net'),
@@ -14,8 +33,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'www_jamesrhys_net',                      # Or path to database file if using sqlite3.
-        'USER': 'guest',                      # Not used with sqlite3.
-        'PASSWORD': 'derpFUCKbag',                  # Not used with sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
+        'PASSWORD': 'root',                  # Not used with sqlite3.
         'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -44,20 +63,12 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/var/www/files/www_jamesrhys_net/'
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'http://127.0.0.1/files/www_jamesrhys_net/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/var/www/django-sites/www_jamesrhys_net/app/static'
+STATIC_ROOT = '/var/www/html/www_jamesrhys_net/app/static'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -106,7 +117,7 @@ SERIALIZATION_MODULES = {
 }
 
 TEMPLATE_DIRS = (
-    '/var/www/django-sites/www_jamesrhys_net/templates',
+    '/var/www/html/www_jamesrhys_net/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

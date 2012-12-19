@@ -57,7 +57,7 @@ define([
         'margin-left':'980px',
         'opacity': 'toggle'
       },1000,function(){
-        window.location.href='http://127.0.0.1:8000/#!/talks';
+        window.location.href='/#!/talks';
       });
     }
   });

@@ -15,12 +15,14 @@ define([
       $(this.el).html(layoutTemplate);
     },
     bindPageEvents: function(){
-      var active_page = window.location.href.slice(25);
+
+      var section_re = /(core|labs|blog|prod|talks)/im;
+      var active_page = section_re.exec(window.location.href)[0]; // handle undef results - there won't be any buttttttt
       $('ul#nav li a.textTransform').removeClass('active');
       $('#'+active_page).addClass('active');
 
       $('ul#nav li a.textTransform').bind('click',function(e){
-        var active_page = e.currentTarget.href.slice(25);
+      	var active_page = e.currentTarget.id; // handle undef results - there won't be any buttttttt
         $('ul#nav li a.textTransform').removeClass('active');
         $('#'+active_page).addClass('active');
       });
