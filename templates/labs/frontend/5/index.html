@@ -1,24 +1,350 @@
-{% extends "site_base.html" %}
-{% if experiment %}
-  {% block title %}{{experiment.title}}{% endblock title %}
-  {% block css_app %}
-    <link rel="stylesheet" media="screen,projection,tv" href="{{STATIC_PREFIX}}css/labs/5/moz_2d_animations.css">
-  {% endblock css_app %}
-  {% block body_app %}
+<!doctype html>
+<html lang="en">
 
-    <div id="background"></div>
-    <div id="content">Content</div>
+	<head>
+		<meta charset="utf-8">
 
-    {% block js_app %} 
+		<title>Production-Ready Backbone - James Rhys</title>
 
-      <script type="text/javascript">
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
 
-      </script>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    {% endblock js_app %}
-  {% endblock body_app %}
-{% else %}
+		<link rel="stylesheet" href="/static/js/libs/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="/static/js/libs/reveal.js/css/theme/default.css" id="theme">
 
-Experiment has not been set up :(
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="/static/js/libs/reveal.js/lib/css/zenburn.css">
 
-{% endif %}
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="/static/js/libs/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Production-ready Backbone</h1>
+					<h3>How to save on S3 costs, play with new tech and not get cut by the bleeding edge.</h3>
+					<p>
+						<small>Froooom <a href="http://www.jamesrhys.net">James Rhys</a> / <a href="http://twitter.com/jamejamebutdiff">@jamejamebutdiff</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>whois</h2>
+          <img src="http://en.gravatar.com/userimage/28157597/8089429ef8fa8688bb1463e1eef138c2.jpg?size=200"/>
+					<p>
+            James Rhys - UNSW, Sydney, Down Under</br > </br > 
+            <small style="text-align: left">
+              Functional Programming Paradigms</br >
+              ADT's</br >
+              High Fives</br >
+            </small><br/></br > 
+            <small>Dev/SysOp at <a href="http://www.exhibit-e.com">Exhibit-E</a></small></br>
+            <small>Co-Founder at <a href="http://www.jamesrhys.net">Cold Crescent Interactive</a></small>
+					</p>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>The Story</h2>
+            <br />
+						<p>The chat around using anything outside of the stack STL goes like this.</p>
+            <div class="fragment">
+              <div style="float:left"><img height="200px" width="200px" src="/static/img/labs/5/twighlight_sparkle.png"/></div>
+              <div style="float:right">Heyy there's this new hotness that-</div>
+            </div>
+            <br style="clear:both"/>
+            <div class="fragment">
+              <div style="float:left">Will it support IE6?</div>
+              <div style="float:right"><img height="200px" width="200px" src="/static/img/labs/5/boss.png"/></div>
+            </div>
+            <br style="clear:both"/>
+            <div class="fragment">
+              <div style="float:left"><img height="200px" width="200px" src="/static/img/labs/5/twighlight_sparkle.png"/></div>
+              <div style="float:right">Well, no, but it could save us-</div>
+            </div>
+            <br style="clear:both"/>
+          </section>
+          <section>
+            <div>
+              <div style="float:left">I've heard enouuuuughhh!</div>
+              <div style="float:right"><img height="200px" width="200px" src="/static/img/labs/5/boss.png"/></div>
+            </div>
+            <br style="clear:both"/>
+						<aside class="notes">
+							This slide has fragments which are also stepped through in the notes window.
+						</aside>
+					</section>
+				</section>
+				<section>
+          <section>
+					<h2>Lets go back</h2>
+					<p>
+            <br />
+            <strong class="fragment">1989</strong>
+						<div class="fragment"><b>T-mofuggin-BL</b> writes the internet at CERN.</div> 		 </p>
+				</section>
+          <section>
+					<p>
+            <br />
+            <strong>Yes. *THAT* CERN.</strong><br /><br />
+            <img class="fragment" src="/static/img/labs/5/blackhole.png"/>
+				</section>
+        <section>
+            <div>
+              <div style="float:left">Phones looked like this</div>
+              <div class="fragment" style="float:right"><img src="/static/img/labs/5/90sphone.jpg"/></div>
+            </div>
+            <br style="clear:both"/>
+            <div class='fragment'>
+              <div style="float:left">Music looked like this</div>
+              <div class="fragment" style="float:right"><img src="/static/img/labs/5/music.jpg"/></div>
+            </div>
+        </section>
+        <section>
+            <div>
+              <div style="float:left">MMO's looked like this</div>
+              <div class="fragment" style="float:right"><img src="/static/img/labs/5/mmo.png"/></div>
+            </div>
+            <br style="clear:both"/>
+            <div class='fragment'>
+              <div style="float:left">Friday nights looked like this</div>
+              <div class="fragment" style="float:right"><img src="/static/img/labs/5/fridays.jpg"/></div>
+            </div>
+        </section>
+        </section>
+
+				<section>
+				  <section>
+				  	<h2>Now</h2>
+				  	<p>
+              <br />
+              <strong class="fragment">2012</strong>
+				  		<div class="fragment"><b>CERN</b> proves the standard model. Renews faith in hoverboard technology</div></p>
+				  </section>
+				  <section>
+            <div>
+              <div style="float:left">Phones look like this</div>
+              <div class="fragment" style="float:right"><img src="/static/img/labs/5/iphone4.jpg"/></div>
+            </div>
+            <br style="clear:both"/>
+            <div class='fragment'>
+              <div style="float:left">Music looks like this</div>
+              <div class="fragment" style="float:right"><img src="/static/img/labs/5/music.jpg"/></div>
+            </div>
+          </section>
+				  <section>
+            <div>
+              <div style="float:left">MMO's look like this</div>
+              <div class="fragment" style="float:right"><img src="/static/img/labs/5/mmo12.jpg"/></div>
+            </div>
+            <br style="clear:both"/>
+            <div class='fragment'>
+              <div style="float:left">Friday nights look like this</div>
+              <div class="fragment" style="float:right"><img src="/static/img/labs/5/rfv.png"/></div>
+            </div>
+          </section>
+				</section>
+				<section>
+					<h2>Complexity moving from device to media</h2>
+				</section>
+				<section>
+					<h2>'Smarter' servers/frameworks/DB's are getting this </h2><h2 class="fragment highlight-red">ass-backwards</h2>
+				</section>
+				<section data-state="alert">
+					<h2>High-profile offenders</h2>
+					<ul>
+						<li class="fragment highlight-red">GWT</li>
+						<li class="fragment highlight-red">Symfony 2</li>
+						<li class="fragment highlight-red">Django</li>
+						<li class="fragment highlight-red">AppEngine</li>
+					</ul>
+				</section>
+
+				<section data-state="soothe">
+					<h2>The right way</h2>
+					<ul>
+						<li class="fragment highlight-green">Backbone.js</li>
+						<li class="fragment highlight-green">Couchebase</li>
+						<li class="fragment highlight-green">YouTube</li>
+					</ul>
+				</section>
+				<section >
+          <section>
+					<h2>Anatomy of sustainable scale</h2>
+					<ul>
+						<li class="fragment">HTTP Requests</li>
+						<li class="fragment">Static Core</li>
+						<li class="fragment">Async Content</li>
+					</ul>
+          <br />
+          <p class="fragment">Cached application code. Dynamic content. Infrequent platform updates done through planned distribution cycles.</p>
+          </section>
+          <section>
+					<h2>Remind you of anything?</h2>
+            <img class="fragment" src="/static/img/labs/5/gaming4.gif"/>
+          <p class="fragment">Static application code. User-created dynamic content. Infrequent platform updates done through patches</p><p class="fragment">...unless you fucked up Daikatana so badly you embarassed yourself for life.</p>
+          </section>
+          <section>
+            <h2>I'm still angry</h2>
+              <img src="/static/img/labs/5/romero.jpg"/>
+          </section>
+          <section>
+            <h2>And where the hells is Half Life 3?!?!?!?!?</h2>
+              <img class="fragment" src="/static/img/labs/5/gaben.jpg"/>
+          </section>
+        </section>
+				<section id="transitions">
+					<h2>Implementation</h2>
+					<p>
+					Let's write a Facebook.<br>
+          <img src="/static/img/labs/5/markz.jpg"/>
+					</p>
+				</section>
+				<section>
+          <h2>Architecture</h2>
+          <p class="fragment">Back-End</p>
+          <p class="fragment">↕</p>
+          <p class="fragment">HTTP/1.1</p>
+          <p class="fragment">↡</p>
+          <p class="fragment">→  iOS repo </p>
+          <p class="fragment">→  Droid repo</p>
+          <p class="fragment">→  Desktop / Mobile Web repo</p>
+          <p class="fragment">→  Smart TV repo</p>
+          <p class="fragment">/etc</p>
+				</section>
+				<section>
+          <h2>Desktop Repo</h2>
+            Application structure:
+            <p>/</p>
+            <p class="fragment">↳  models</p>
+            <p class="fragment">↳  views</p>
+            <p class="fragment">↳  controllers</p>
+            <p class="fragment">⇀  main.js</p>
+            <p class="fragment">⇀  router.js</p>
+				</section>
+
+				<section>
+          <h2>Why is this already better?</h2>
+          <ul>
+            <li class="fragment">Web and Desktop code is parallel with user-agent flags in Apache</li>
+            <li class="fragment">Device-specific languages adhere to interfaces not frameworks</li>
+            <li class="fragment">Processing farmed out to devices</li>
+            <li class="fragment">More tools available to debug JS than *SOME* popular web languages</li>
+            <li class="fragment">JavaScript done correctly is beautiful</li>
+          </ul>
+				</section>
+				<section>
+					<h2>Network infrastructure</h2>
+          <p>Inside the VPN</p>
+          <p class="fragment">DB</p>
+          <p class="fragment">↕</p>
+          <p class="fragment">local/distributed caches</p>
+          <p class="fragment">↕</p>
+          <p class="fragment">httpd</p>
+          <p class="fragment">↕</p>
+          <p class="fragment">upstream caches</p>
+				</section>
+				<section>
+					<h2>Cracks appear</h2>
+          <ul>
+            <li class="fragment">Workload shifted to balancing requests across the VPN</li>
+            <li class="fragment">Cacheing methodologies for different platforms</li>
+            <li class="fragment">Managing request paths for different content types</li></br >
+          </ul>
+            <blockquote class="fragment">There are only two hard things in Computer Science: cache invalidation and naming things. -- Phil Karlton</blockquote>
+				</section>
+        <section>
+          <h2>Gap-fillers</h2>
+          <ul>
+            <li>Layers of abstraction!</li>
+            <li>Platform-specific cache management</li>
+          </ul><br />
+          <p>Not that big a deal in practise</p>
+        </section>
+        <section>
+          <h2>Benefits of early-adoption</h2>
+          <ul> 
+            <li>Lower virtualization costs. We've saved $800 a month on a load of 6 million DNS queries a month.</li>
+            <li>Book deals.</li>
+            <li>Unwritten design patterns.</li>
+          </ul>
+        </section>
+        <section>
+					<h2>Long-Term BIG issues</h2>
+            <ul>
+              <li>Pipe-dream: Vendor adoption of standard development libraries</li>
+              <li>Likely: Standardized include paths from replicated web libs</li>
+              <li>Large-scale JS management - who ISN'T talking about this?</li>
+            </ul>
+				</section>
+        <section> 
+          <h2>I promised you free money, so...</h2>
+          <ul>
+            <li class="fragment">Backbone.js</li>
+            <li class="fragment">Zepto.js</li>
+            <li class="fragment">Django middleware cacheing</li>
+            <li class="fragment">WAD-of-stuff JSON serializer</li>
+            <li class="fragment">MySQL - seriously</li>
+          </ul>
+        </section>
+				<section>
+					<h1>END</h1>
+						<small><a href="http://www.jamesrhys.net">James Rhys</a> / <a href="http://twitter.com/jamejamebutdiff">@jamejamebutdiff</a></small>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="/static/js/libs/reveal.js/lib/js/head.min.js"></script>
+		<script src="/static/js/libs/reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '/static/js/libs/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/static/js/libs/reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/static/js/libs/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/static/js/libs/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/static/js/libs/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '/static/js/libs/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: '/static/js/libs/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
