@@ -1,7 +1,18 @@
-{% extends "site_base.html" %}
-{% if experiment %}
-{% block title %}{{experiment.title}}{% endblock title %}
-{% block css_app %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <title>Canvas Fireworks</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    {% block meta_app %} 
+        {% for meta in meta_data %}
+            <meta property="{{meta.meta_key}}" content="{{meta.meta_var}}"/>
+        {% endfor %}
+    {% endblock meta_app %}
    <style>
    html {
        height: 100%;
@@ -13,13 +24,25 @@
        overflow: hidden;
    }
    </style>
-
-{% endblock css_app %}
-{% block body_app %}
-
+    <link rel="stylesheet" href="{{STATIC_PREFIX}}css/normalize.css">
+    <link rel="stylesheet" href="{{STATIC_PREFIX}}css/main.css">
+    <link rel="stylesheet" href="{{STATIC_PREFIX}}css/libs/bjqs.css">
+    <link href="{{STATIC_PREFIX}}css/labs/4/impress.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One|Anaheim|Scada:700italic|Julius+Sans+One' rel='stylesheet' type='text/css'>
+    <script data-main="{{STATIC_PREFIX}}js/main" src="{{STATIC_PREFIX}}js/libs/require/require.js"></script>
+</head>
+<body>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}labs/three.js"></script>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}labs/Detector.js"></script>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}labs/stats.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}labs/snowflakes.js"></script>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+  <!-- Initially populated by views/app.js -->
+  <div class="pageParent"></div>
  <canvas id="canvas"></canvas>
 
-{% block js_app %} 
 <script type="text/javascript">
    (function(){
    // shim layer with setTimeout fallback
@@ -127,12 +150,7 @@
    animate();   
    })();  
 </script>
-{% endblock js_app %}
 
-{% endblock body_app %}
-
-{% else %}
-
-Experiment has not been set up :(
-
-{% endif %}
+    <script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-36634018-1']);_gaq.push(['_setDomainName', 'jamesrhys.net']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+</body>
+</html>
