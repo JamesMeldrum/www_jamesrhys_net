@@ -33,20 +33,24 @@ define([
       var talkCachedData = this.model.attributes.all[this.req_id];
       var talkCachedRef = $('.blogDetail').children('.blogPost');
 
-
       $('#title').html(talkCachedData.title);
       $('#subtitle').html(talkCachedData.subtitle);
-      $('#body').html(talkCachedData.body);
+			var re_newline = /\r\n/g;
+			talkCachedData.body = talkCachedData.body.replace(re_newline,'</br>');
+      $('#body').html(talkCachedData.body.toString());
       $('#tags').html(talkCachedData.tags.toString());
       $('#date').html(talkCachedData.date);
 
+
       $('.blogCont').animate({
         'margin-left':'-980px',
-      },500,function(){});
+      },500,function(){
+	});
       $('.blogDetail').animate({
         'margin-left':'0px',
         'opacity':'toggle'
         },1000,function(){
+			hljs.initHighlighting();
       });
 
     },

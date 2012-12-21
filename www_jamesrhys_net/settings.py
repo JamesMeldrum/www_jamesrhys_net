@@ -103,6 +103,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+## CACHEING - per-site
+#    'django.middleware.cache.UpdateCacheMiddleware',
+#    'django.middleware.common.CommonMiddleware',
+#    'django.middleware.cache.FetchFromCacheMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -181,3 +185,12 @@ LOGGING = {
     }
 }
 
+#CACHES = {
+#    'default' : {
+#		'BACKEND' : 'django.core.cache.backends.filebased.FileBasedCache',
+#		'LOCATION' : '/var/www/html/django_cache'
+#	}
+#}
+#
+#CACHE_MIDDLEWARE_SECONDS = 604800 #60*60*24*7 - seconds to cache for - hold cache for a week
+#CACHE_MIDDLEWARE_KEY_PREFIX = 'www_jamesrhys_net' # Prefix for cache keys

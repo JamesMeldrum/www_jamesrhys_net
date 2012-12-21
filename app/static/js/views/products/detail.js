@@ -29,6 +29,8 @@ define([
         'margin-left':'980px',
         'opacity': 'toggle'
         },1000,function(){
+	  
+//	  document.body.removeChild(document.getElementById('bjqs_ss'));
           window.location.href='/#!/prod';
       });
     },
@@ -68,6 +70,7 @@ define([
         // BJQS script
     
         var BJQSInject = document.createElement('script');
+	BJQSInject.id = 'bjqs_ss';
         BJQSInject.type = 'text/javascript';
         BJQSInject.src = '/static/js/libs/bjqs/client.js';
         var BJQSClient = document.body;
