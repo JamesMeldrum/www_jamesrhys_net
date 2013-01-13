@@ -7,15 +7,9 @@ Dependencies:
 * Python 2.7 (core deps - virtualenvwrapper, Pip) 
 * MySQL
 * Pip deps:
-    Django==1.4.2
-    MySQL-python==1.2.4c1
-    South==0.7.6
-    argparse==1.2.1
-    wsgiref==0.1.2
-    yolk==0.4.3
-Django==1.4.2
-MySQL-python==1.2.4c1
-South==0.7.6
-argparse==1.2.1
-wsgiref==0.1.2
-yolk==0.4.3
+	Django==1.4.2
+	MySQL-python==1.2.4c1
+	South==0.7.6
+	argparse==1.2.1
+	wsgiref==0.1.2
+	yolk==0.4.3
