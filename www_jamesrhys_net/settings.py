@@ -1,8 +1,6 @@
 # Django settings for www_jamesrhys_net project.
 
-DEBUG = True # Django Debug var
 PROD = True # Whether deployed in production servers
-TEMPLATE_DEBUG = DEBUG
 
 if PROD:
   # Absolute filesystem path to the directory that will hold user-uploaded files.
@@ -13,6 +11,8 @@ if PROD:
   # trailing slash.
   # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
   MEDIA_URL = 'www.jamesrhys.net/files/www_jamesrhys_net/'
+  DEBUG = True # Django Debug var
+  TEMPLATE_DEBUG = True
 else:
   # Absolute filesystem path to the directory that will hold user-uploaded files.
   # Example: "/home/media/media.lawrence.com/media/"
@@ -22,6 +22,8 @@ else:
   # trailing slash.
   # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
   MEDIA_URL = 'http://127.0.0.1/files/www_jamesrhys_net/'
+  DEBUG = True # Django Debug var
+  TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('James Rhys', 'james@jamesrhys.net'),
