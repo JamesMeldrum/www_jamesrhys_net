@@ -1,3 +1,10 @@
+dev
+===
+
+1) Add products
+2) Add talks
+3) Do cross-browser tests
+
 Todo:
 
 * Implement previews on labs list -http://codetheory.in/showcase-your-creations-in-a-gallery/

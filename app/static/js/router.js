@@ -1,4 +1,3 @@
-// Filename: router.js
 define([
   'jquery',
   'underscore',
@@ -19,7 +18,8 @@ define([
       '!/talks/:slug_title' : 'talksDetail',
       '!/prod' : 'products',
       '!/prod/:slug_title' : 'productsDetail',
-      '!/people' : 'people'
+      '!/people' : 'people',
+      '' : 'index'
     }
   });
 

@@ -17,7 +17,7 @@ def index(request):
   context = Context()
           
   context['meta_data'] = SiteMetaData.objects.all()
-  context['site_title'] = "James' Site Title"
+  context['site_title'] = "Cold Crescent Interactive"
 
   return HttpResponse(template.render(context))
 
