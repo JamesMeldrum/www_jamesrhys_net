@@ -24,6 +24,25 @@ else:
   MEDIA_URL = 'http://127.0.0.1/files/www_jamesrhys_net/'
   DEBUG = True # Django Debug var
   TEMPLATE_DEBUG = DEBUG
+=======
+LCL_ENV = True
+LCL_STATIC_PREFIX = '/var/www/django-sites'
+LCL_DYNAMIC_PREFIX = '/var/www/files'
+PROD_STATIC_PREFIX = '/var/www/html'
+PROD_DYNAMIC_PREFIX = '/var/www/html/files'
+SITE_PREFIX = '/www_jamesrhys_net'
+SITE_URL = 'http://www.jamesrhys_net'
+
+if LCL_ENV:
+  STATIC_FILES_PREFIX = LCL_STATIC_PREFIX + SITE_PREFIX
+  DYNAMIC_FILES_PREFIX = LCL_DYNAMIC_PREFIX + SITE_PREFIX
+  DEBUG = True
+  TEMPLATE_DEBUG = True
+else:
+  STATIC_FILES_PREFIX = PROD_STATIC_PREFIX + SITE_PREFIX
+  DYNAMIC_FILES_PREFIX = PROD_DYNAMIC_PREFIX + SITE_PREFIX
+  DEBUG = True
+  TEMPLATE_DEBUG = True
 
 ADMINS = (
     ('James Rhys', 'james@jamesrhys.net'),
@@ -65,21 +84,35 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
+# Absolute filesystem path to the directory that will hold user-uploaded files.
+# Example: "/home/media/media.lawrence.com/media/"
+MEDIA_ROOT = DYNAMIC_FILES_PREFIX
+
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash.
+# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+MEDIA_URL = SITE_URL+'/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/var/www/html/www_jamesrhys_net/app/static'
+#if LCL_ENV:
+#  STATIC_ROOT = STATIC_PREFIX +'/var/www/django-sites/www_futureequation_com/static_files'
+#else:
+#  STATIC_ROOT = '/var/www/html/www_futureequation_com/static_files'
+STATIC_ROOT = STATIC_FILES_PREFIX +'/templates'
+print STATIC_ROOT
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
 # Additional locations of static files
-#STATICFILES_DIRS = (
-#    ('/var/www/django-sites/www_jamesrhys_net/app/static')
-#)
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+#STATICFILES_DIRS = ((STATIC_FILES_PREFIX+'/templates'),)
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -123,10 +156,8 @@ SERIALIZATION_MODULES = {
 }
 
 TEMPLATE_DIRS = (
-    '/var/www/html/www_jamesrhys_net/templates',
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+  STATIC_FILES_PREFIX + '/views/templates',
+  STATIC_FILES_PREFIX + '/templates'
 )
 
 INSTALLED_APPS = (
