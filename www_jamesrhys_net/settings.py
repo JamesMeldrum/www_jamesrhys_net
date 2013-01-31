@@ -5,23 +5,23 @@ PROD = True # Whether deployed in production servers
 if PROD:
   # Absolute filesystem path to the directory that will hold user-uploaded files.
   # Example: "/home/media/media.lawrence.com/media/"
-  MEDIA_ROOT = '/var/www/html/files/www_jamesrhys_net/'
+  #MEDIA_ROOT = '/var/www/html/files/www_jamesrhys_net/'
   
   # URL that handles the media served from MEDIA_ROOT. Make sure to use a
   # trailing slash.
   # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-  MEDIA_URL = 'www.jamesrhys.net/files/www_jamesrhys_net/'
+  #MEDIA_URL = 'www.jamesrhys.net/files/www_jamesrhys_net/'
   DEBUG = True # Django Debug var
   TEMPLATE_DEBUG = True
 else:
   # Absolute filesystem path to the directory that will hold user-uploaded files.
   # Example: "/home/media/media.lawrence.com/media/"
-  MEDIA_ROOT = '/var/www/files/www_jamesrhys_net/'
+  #MEDIA_ROOT = '/var/www/files/www_jamesrhys_net/'
   
   # URL that handles the media served from MEDIA_ROOT. Make sure to use a
   # trailing slash.
   # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-  MEDIA_URL = 'http://127.0.0.1/files/www_jamesrhys_net/'
+  #MEDIA_URL = 'http://127.0.0.1/files/www_jamesrhys_net/'
   DEBUG = True # Django Debug var
   TEMPLATE_DEBUG = DEBUG
 
@@ -31,14 +31,15 @@ LCL_DYNAMIC_PREFIX = '/var/www/files'
 PROD_STATIC_PREFIX = '/var/www/html'
 PROD_DYNAMIC_PREFIX = '/var/www/html/files'
 SITE_PREFIX = '/www_jamesrhys_net'
-SITE_URL = 'http://www.jamesrhys_net'
 
 if LCL_ENV:
+  SITE_URL = 'http://www.jamesrhys.net'
   STATIC_FILES_PREFIX = LCL_STATIC_PREFIX + SITE_PREFIX
   DYNAMIC_FILES_PREFIX = LCL_DYNAMIC_PREFIX + SITE_PREFIX
   DEBUG = True
   TEMPLATE_DEBUG = True
 else:
+  SITE_URL = 'http://www.jamesrhys.net:8080'
   STATIC_FILES_PREFIX = PROD_STATIC_PREFIX + SITE_PREFIX
   DYNAMIC_FILES_PREFIX = PROD_DYNAMIC_PREFIX + SITE_PREFIX
   DEBUG = True
@@ -87,11 +88,12 @@ USE_TZ = True
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = DYNAMIC_FILES_PREFIX
-
+print "media root:",MEDIA_ROOT
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = SITE_URL+'/media/'
+MEDIA_URL = 'http://www.jamesrhys.net:8080/media/'
+print "media url:",MEDIA_URL
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files

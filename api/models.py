@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.db import models
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
+from stdimage import StdImageField
 
 class Images(models.Model):
 
@@ -55,7 +56,8 @@ class Product(models.Model):
   tags = models.ManyToManyField(Tag)
   technologies = models.TextField(max_length=500)
   goals = models.TextField(max_length=500)
-  thumbnail = models.ImageField(upload_to='thumbs')
+#  thumbnail = models.ImageField(upload_to='thumbs',null=True)
+  thumbnail = StdImageField(upload_to='thumbs', blank=True, thumbnail_size =(270,270))
   images = generic.GenericRelation(Images)
 
   def __unicode__(self):
@@ -71,4 +73,3 @@ class Talks(models.Model):
 
   def __unicode__(self):
     return self.title
-

@@ -5,6 +5,7 @@
 from django.contrib.contenttypes import generic
 from django.contrib import admin
 from api.models import Tag, BlogPost, Experiment, Product, Talks, Images
+from django import forms
 
 ## Custom ModelAdmin objects where needed
 
@@ -21,12 +22,7 @@ class ImagesGeneric(generic.GenericTabularInline):
 
 class ProductAdmin(admin.ModelAdmin):
   inlines = (ImagesGeneric,)
-
-#class BlogAdmin(admin.ModelAdmin):
-# inlines = [
-#   ImagesGeneric
-# ]
-
+  
 ## Adding the admin fields to the admin
 
 admin_fields = [Tag, Experiment,Talks, Images,BlogPost]
@@ -35,3 +31,4 @@ for field in admin_fields:
     admin.site.register(field)
 
 admin.site.register(Product,ProductAdmin)
+
