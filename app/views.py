@@ -21,19 +21,6 @@ def index(request):
 
   return HttpResponse(template.render(context))
 
-#def index(request):
-#
-#    latest_poll_list = Poll.objects.all().order_by('-pub_date')[:5]
-#    #t = loader.get_template('frontend/index.html')
-#    #c = Context({
-#    #    'latest_poll_list':latest_poll_list,
-#    #})
-#
-#    #output = ', '.join([p.question for p in latest_poll_list])
-#
-#    #return HttpResponse(t.render(c))
-#    return render_to_response('frontend/index.html', {'latest_poll_list':latest_poll_list})
-#
 def detail(request,poll_id):
     try:
         p = Poll.objects.get(pk=poll_id)

@@ -1,7 +1,4 @@
-{% load static %}
-{% get_static_prefix as STATIC_PREFIX %}
-
-<!DOCTYPE html>
+{% load static %}{% get_static_prefix as STATIC_PREFIX %}<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -25,16 +22,20 @@
     <script data-main="{{STATIC_PREFIX}}js/main" src="{{STATIC_PREFIX}}js/libs/require/require.js"></script>
 </head>
 <body>
-    <script type="text/javascript" src="{{STATIC_PREFIX}}labs/three.js"></script>
-    <script type="text/javascript" src="{{STATIC_PREFIX}}labs/Detector.js"></script>
-    <script type="text/javascript" src="{{STATIC_PREFIX}}labs/stats.min.js"></script>
-    <script type="text/javascript" src="{{STATIC_PREFIX}}labs/snowflakes.js"></script>
+    <!--[if gt IE 6]>
+    <script type='text/javascript'>
+        // Modernizr  test harness
+    </script> 
+    <!--[if gt IE 8]>
+    	<script data-main="{{STATIC_PREFIX}}js/main" src="{{STATIC_PREFIX}}js/libs/modernizr/modernizr.js"></script>
+    	<script type="text/javascript" src="{{STATIC_PREFIX}}labs/three.js"></script>
+    	<script type="text/javascript" src="{{STATIC_PREFIX}}labs/Detector.js"></script>
+    	<script type="text/javascript" src="{{STATIC_PREFIX}}labs/stats.min.js"></script>
+    	<script type="text/javascript" src="{{STATIC_PREFIX}}labs/snowflakes.js"></script>
+    <![endif]-->
 <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/solarized_light.min.css">
 <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
 
-    <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
   <!-- Initially populated by views/app.js -->
   <div class="pageParent"></div>
   {% block body_app %}
@@ -44,5 +45,8 @@
   {% endblock js_app %}
 
     <script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-36634018-1']);_gaq.push(['_setDomainName', 'jamesrhys.net']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+<!--[if lte IE 6]>
+IE 6 is not supported. Please upgrade your browser.
+<![endif]-->
 </body>
 </html>
