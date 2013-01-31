@@ -24,7 +24,7 @@ else:
   MEDIA_URL = 'http://127.0.0.1/files/www_jamesrhys_net/'
   DEBUG = True # Django Debug var
   TEMPLATE_DEBUG = DEBUG
-=======
+
 LCL_ENV = True
 LCL_STATIC_PREFIX = '/var/www/django-sites'
 LCL_DYNAMIC_PREFIX = '/var/www/files'
