@@ -26,14 +26,16 @@ define([
       this.$el.html(detailPageTemplate);
     },
     renderDetail: function(){
-     var talkCachedData = this.model.attributes.all[this.req_id];
-     var talkCachedRef = $('.talksDetail').children('.talksPost');
+      var talkCachedData = this.model.attributes.all[this.req_id];
+      var talkCachedRef = $('.talksDetail').children('.talksPost');
 
       $('#title').html(talkCachedData.title);
-      $('#subtitle').html(talkCachedData.slide_deck_url);
-      $('#body').html(talkCachedData.description);
+      $('#subtitle').html(talkCachedData.description+" <a href='"+talkCachedData.slide_deck_url+"'>Slides here</a>.");
+      $('#body').html(talkCachedData.body);
       $('#tags').html(talkCachedData.tags.toString());
       $('#date').html(talkCachedData.date);
+      $('meta[name=og\\:title]').attr('content',talkCachedData.title);
+      document.title = talkCachedData.title;
 
       $('.talksCont').animate({
         'margin-left':'-980px',

@@ -40,6 +40,8 @@ define([
     },
     render: function () {
       this.$el.html(optimizePageTemplate);
+      $('meta[name=og\\:title]').attr('content','ColdCrescentInteractive - Core Data Services');
+      document.title = "ColdCrescentInteractive - Core Data Services"
     },
   });
   return OptimizePage;

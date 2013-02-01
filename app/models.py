@@ -15,4 +15,3 @@ class SiteMetaData(models.Model):
     meta_key = models.CharField(max_length = 256)
     meta_var = models.CharField(max_length = 512)
     site_section = models.CharField(max_length=1, choices = SITE_SECTIONS, default='C')
-

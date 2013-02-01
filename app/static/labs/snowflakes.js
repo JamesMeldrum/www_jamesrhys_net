@@ -30,8 +30,9 @@ function init() {
 	sprite3 = THREE.ImageUtils.loadTexture( "/static/labs/textures/snowflake3.png" );
 	sprite4 = THREE.ImageUtils.loadTexture( "/static/labs/textures/snowflake4.png" );
 	sprite5 = THREE.ImageUtils.loadTexture( "/static/labs/textures/snowflake5.png" );
+  snowflake_count = 800
 
-	for ( i = 0; i < 500; i ++ ) {
+	for ( i = 0; i < snowflake_count; i ++ ) {
 
 		var vertex = new THREE.Vector3();
 		vertex.x = Math.random() * 2000 - 1000;

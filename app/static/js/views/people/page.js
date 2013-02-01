@@ -11,6 +11,8 @@ define([
     initialize: function () {
     },
     render: function () {
+      $('meta[name=og\\:title]').attr('content','ColdCrescentInteractive - People');
+      document.title = "ColdCrescentInteractive - People"
       $(this.el).html(layoutTemplate);
     },
   });

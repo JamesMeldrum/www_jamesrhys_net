@@ -69,6 +69,8 @@ define([
       this.$el.html(optimizePageTemplate);
     },
     renderList : function(){
+      $('meta[name=og\\:title]').attr('content','ColdCrescentInteractive - DevBlog');
+      document.title = "ColdCrescentInteractive - DevBlog"
       $.each(this.model.attributes.all,function(ndx, blogObject){
       if($('.blogsList').children('#'+ndx).length == 0){
         $(".blogsList").append(listItemTemplate({date: blogObject.date, title:blogObject.title,subtitle:blogObject.subtitle, id:ndx}));

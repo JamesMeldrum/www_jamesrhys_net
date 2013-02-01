@@ -56,7 +56,6 @@ class Product(models.Model):
   tags = models.ManyToManyField(Tag)
   technologies = models.TextField(max_length=500)
   goals = models.TextField(max_length=500)
-#  thumbnail = models.ImageField(upload_to='thumbs',null=True)
   thumbnail = StdImageField(upload_to='thumbs', blank=True, thumbnail_size =(270,270))
   images = generic.GenericRelation(Images)
 

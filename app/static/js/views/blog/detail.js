@@ -40,7 +40,8 @@ define([
       $('#body').html(talkCachedData.body.toString());
       $('#tags').html(talkCachedData.tags.toString());
       $('#date').html(talkCachedData.date);
-
+      $('meta[name=og\\:title]').attr('content',talkCachedData.title);
+      document.title = talkCachedData.title;
 
       $('.blogCont').animate({
         'margin-left':'-980px',

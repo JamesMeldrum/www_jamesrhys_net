@@ -20,6 +20,8 @@ define([
     },
     model : new talksModel,
     render: function(){
+      $('meta[name=og\\:title]').attr('content','ColdCrescentInteractive - Talks');
+      document.title = "ColdCrescentInteractive - Talks"
       this.$el.html(indexPageTemplate);
     },
     renderList : function(){

@@ -37,6 +37,7 @@ define([
             id: response[""+i.toString()].pk,
             title: response[i].fields.title,
             description: response[i].fields.description,
+            body: response[i].fields.body,
             date: response[i].fields.date_published.slice(5,7) + '/' + 
                   response[i].fields.date_published.slice(8,10) + '/' +
                   response[i].fields.date_published.slice(0,4),
